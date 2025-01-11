@@ -1,0 +1,823 @@
+---
+import Welcome from '../../components/Welcome.astro';
+import Layout from '../../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout
+  title='履修'
+  headerTitle='履修'
+>
+  <div class="contents">
+    <section class="box">
+      <h3 class="section_title">履修選択</h3>
+      <div class="help_box">
+        <p class="box_label">ヘルプ</p>
+        <ul class="help_box_list">
+          <li class="help_box_item">
+            <button class="help_box_close">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.46399 15.535L15.536 8.46497M8.46399 8.46497L15.536 15.535" stroke="#252528" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>	
+            </button>
+            <a href="/help" class="help_box_link">
+              <p class="help_box_itemlabel">履修登録の仕方</p>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+              </svg>                    
+            </a>
+          </li>
+          <li class="help_box_item">
+            <button class="help_box_close">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.46399 15.535L15.536 8.46497M8.46399 8.46497L15.536 15.535" stroke="#252528" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>	
+            </button>
+            <a href="/help" class="help_box_link">
+              <p class="help_box_itemlabel">履修登録の仕方</p>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+              </svg>                    
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="box">
+      <p class="box_label">取得単位</p>
+      <div class="detail_contents">
+        <div class="detail_box">
+          <div class="detail_box_total">
+            <p class="detail_box_total_label">これまでの総取得単位</p>
+            <p class="detail_box_total_numberwrapper">
+              <span class="detail_box_total_number">22</span>
+              <span>/</span>
+              <span>124</span>
+            </p>
+          </div>
+          <ul class="detail_box_list">
+            <li class="detail_box_item">
+              <p class="detail_box_item_Label">専門科目</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress"></div>
+              </div>
+              <p class="detail_box_item_number">12/84</p>
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_Label">選択科目</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress"></div>
+              </div>
+              <p class="detail_box_item_number">10/84</p>
+            </li>
+
+            <ul class="detail_box_item_list">
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+            </ul>
+          </ul>
+        </div>
+        <!-- <div class="detail_box_slash"></div> -->
+        <div class="detail_box">
+          <div class="detail_box_total">
+            <p class="detail_box_total_label">これまでの総取得単位</p>
+            <p class="detail_box_total_numberwrapper">
+              <span class="detail_box_total_number">22</span>
+              <span>/</span>
+              <span>124</span>
+            </p>
+          </div>
+          <ul class="detail_box_list">
+            <li class="detail_box_item">
+              <p class="detail_box_item_Label">専門科目</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress"></div>
+              </div>
+              <p class="detail_box_item_number">12/84</p>
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_Label">選択科目</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress"></div>
+              </div>
+              <p class="detail_box_item_number">10/84</p>
+            </li>
+
+            <ul class="detail_box_item_list">
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+              <li class="detail_box_item">
+                <p class="detail_box_item_label">専門科目</p>
+                <div class="detail_box_item_progresswrapper">
+                  <div class="detail_box_item_progress"></div>
+                </div>
+                <p class="detail_box_item_number">12/84</p>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="box box_register">
+      <div class="box_header">
+        <p class="box_label">履修登録</p>
+        <div class="box_btns">
+          <button class="box_btn">選択をリセット</button>
+          <button class="box_btn judge">見込み判定</button>
+        </div>
+      </div>
+      <nav class="tag">
+        <ul class="tag_list">
+          <li class="tag_item active">
+            <button class="tag_btn active">月曜</button>
+          </li>
+          <li class="tag_item">
+            <button class="tag_btn">火曜</button>
+          </li>
+          <li class="tag_item">
+            <button class="tag_btn">水曜</button>
+          </li>
+          <li class="tag_item">
+            <button class="tag_btn">木曜</button>
+          </li>
+          <li class="tag_item">
+            <button class="tag_btn">金曜</button>
+          </li>
+          <li class="tag_item">
+            <button class="tag_btn">土曜</button>
+          </li>
+        </ul>
+      </nav>
+      <div class="register_contents">
+        <div class="register_box">
+          <div class="time_list">
+            <div class="time_item">
+              <p class="time_period">1</p>
+              <p class="time_number">9:00 - 10:00</p>
+            </div>
+            <div class="time_item">
+              <p class="time_period">2</p>
+              <p class="time_number">10:00 - 11:00</p>
+            </div>
+            <div class="time_item">
+              <p class="time_period">3</p>
+              <p class="time_number">11:00 - 12:00</p>
+            </div>
+            <div class="time_item">
+              <p class="time_period">4</p>
+              <p class="time_number">12:00 - 13:00</p>
+            </div>
+            <div class="time_item">
+              <p class="time_period">5</p>
+              <p class="time_number">13:00 - 14:00</p>
+            </div>
+            <div class="time_item">
+              <p class="time_period">6</p>
+              <p class="time_number">14:00 - 15:00</p>
+            </div>
+            <div class="time_item">
+              <p class="time_period">7</p>
+              <p class="time_number">15:00 - 16:00</p>
+            </div>
+            <div class="time_item">
+              <p class="time_period">8</p>
+              <p class="time_number">16:00 - 17:00</p>
+            </div>
+            <div class="time_item">
+              <p class="time_period">9</p>
+              <p class="time_number">17:00 - 18:00</p>
+            </div>
+            <div class="time_item">
+              <p class="time_period">10</p>
+              <p class="time_number">18:00 - 19:00</p>
+            </div>
+          </div>
+          <div class="class_list" id="class_list">
+            <button class="class_item" id="class_item">
+              <!-- <h4 class="class_name">創造工学デザイン論</h4>
+              <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.4417 10.058C15.5581 10.1756 15.6234 10.3343 15.6234 10.4997C15.6234 10.6651 15.5581 10.8239 15.4417 10.9414L11.275 15.108C11.2178 15.1694 11.1488 15.2187 11.0721 15.2529C10.9954 15.287 10.9127 15.3054 10.8288 15.3069C10.7448 15.3083 10.6615 15.2929 10.5837 15.2615C10.5058 15.23 10.4351 15.1833 10.3758 15.1239C10.3164 15.0646 10.2697 14.9939 10.2382 14.916C10.2068 14.8382 10.1914 14.7549 10.1928 14.6709C10.1943 14.587 10.2127 14.5043 10.2468 14.4276C10.281 14.3509 10.3303 14.2819 10.3917 14.2247L13.4917 11.1247H5C4.83424 11.1247 4.67526 11.0589 4.55805 10.9417C4.44084 10.8244 4.375 10.6655 4.375 10.4997C4.375 10.3339 4.44084 10.175 4.55805 10.0578C4.67526 9.94056 4.83424 9.87471 5 9.87471H13.4917L10.3917 6.77471C10.2813 6.65623 10.2212 6.49952 10.224 6.33761C10.2269 6.17569 10.2925 6.0212 10.407 5.90669C10.5215 5.79218 10.676 5.72659 10.8379 5.72373C10.9998 5.72087 11.1565 5.78098 11.275 5.89138L15.4417 10.058Z" fill="#252528"/>
+              </svg>      -->
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                                                    
+            </button>          
+            <button class="class_item" id="class_item">
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                                     
+            </button>
+            <button class="class_item" id="class_item">
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                                  
+            </button>
+            <button class="class_item" id="class_item">
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                                  
+            </button>
+            <button class="class_item">
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                                   
+            </button>
+            <button class="class_item">
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                                      
+            </button>
+            <button class="class_item">
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                                  
+            </button>
+            <button class="class_item">
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                              
+            </button>
+            <button class="class_item">
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                               
+            </button>
+            <button class="class_item">
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                                 
+            </button>
+          </div>
+        </div>
+        <div class="register_modal dis-none" id="register_modal">
+          <p class="register_modal_label">月曜1限</p>
+          <ul class="register_modal_list">
+            <li class="register_modal_item">
+              <button class="register_modal_btn" id="register_modal_item">
+                <p class="register_modal_period">1-4</p>
+                <div class="register_modal_box">
+                  <h4 class="register_modal_class_name">数学演習</h4>
+                  <div class="register_modal_details">
+                    <p class="register_modal_text">津田沼キャンパス4号館3002</p>
+                    <p class="register_modal_text">千葉 工大</p>
+                    <p class="register_modal_text">4単位</p>
+                  </div>
+                </div>
+              </button>
+              <button class="register_modal_detail_btn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.33333 9.16667H15M8.33333 11.6667H11.6667M8.33333 6.66667H15M16.6667 18.3333H7C4.51667 18.3333 2.5 16.3167 2.5 13.8333V4.16667M7 2.5H16.3333C16.596 2.5 16.856 2.55173 17.0987 2.65224C17.3414 2.75275 17.5618 2.90007 17.7475 3.08579C17.9333 3.2715 18.0806 3.49198 18.1811 3.73463C18.2816 3.97728 18.3333 4.23736 18.3333 4.5V13.8333C18.3333 14.3638 18.1226 14.8725 17.7475 15.2475C17.3725 15.6226 16.8638 15.8333 16.3333 15.8333H7C6.73736 15.8333 6.47728 15.7816 6.23463 15.6811C5.99198 15.5806 5.7715 15.4333 5.58579 15.2475C5.21071 14.8725 5 14.3638 5 13.8333V4.5C5 4.23736 5.05173 3.97728 5.15224 3.73463C5.25275 3.49198 5.40007 3.2715 5.58579 3.08579C5.96086 2.71071 6.46957 2.5 7 2.5Z" stroke="#252528" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                  
+              </button>
+            </li>
+            <li class="register_modal_item">
+              <button class="register_modal_btn" id="register_modal_item">
+                <p class="register_modal_period">1-4</p>
+                <div class="register_modal_box">
+                  <h4 class="register_modal_class_name">創造工学デザイン論</h4>
+                  <div class="register_modal_details">
+                    <p class="register_modal_text">津田沼キャンパス4号館3002</p>
+                    <p class="register_modal_text">千葉 工大</p>
+                    <p class="register_modal_text">4単位</p>
+                  </div>
+                </div>
+              </button>
+              <button class="register_modal_detail_btn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.33333 9.16667H15M8.33333 11.6667H11.6667M8.33333 6.66667H15M16.6667 18.3333H7C4.51667 18.3333 2.5 16.3167 2.5 13.8333V4.16667M7 2.5H16.3333C16.596 2.5 16.856 2.55173 17.0987 2.65224C17.3414 2.75275 17.5618 2.90007 17.7475 3.08579C17.9333 3.2715 18.0806 3.49198 18.1811 3.73463C18.2816 3.97728 18.3333 4.23736 18.3333 4.5V13.8333C18.3333 14.3638 18.1226 14.8725 17.7475 15.2475C17.3725 15.6226 16.8638 15.8333 16.3333 15.8333H7C6.73736 15.8333 6.47728 15.7816 6.23463 15.6811C5.99198 15.5806 5.7715 15.4333 5.58579 15.2475C5.21071 14.8725 5 14.3638 5 13.8333V4.5C5 4.23736 5.05173 3.97728 5.15224 3.73463C5.25275 3.49198 5.40007 3.2715 5.58579 3.08579C5.96086 2.71071 6.46957 2.5 7 2.5Z" stroke="#252528" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                  
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style lang="scss">
+  .contents{
+    padding-bottom: 80px;
+  }
+
+  .box{
+    margin-top: 32px;
+
+    &_register{
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #dadae3;
+    }
+
+    &_header{
+      position: sticky;
+      top: 40px;
+      display: flex;
+      align-items: center;
+      z-index: 2;
+    }
+
+    &_btns{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      >.judge{
+        background-color: #F88B17;
+      }
+    }
+
+    &_btn{
+      padding: 16px 32px;
+      background-color: #dadae3;
+      border-radius: 100px;
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+
+  .tag{
+		margin-top: 16px;
+		display: flex;
+		gap: 8;
+		align-items: center;
+
+		&_list{
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		&_item{
+			font-size: 12px;
+			color: #66666d;
+			font-weight: 500;
+
+			>.active{
+				color: #fff;
+				background-color: #252528;
+			}
+		}
+
+		&_btn{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 56px;
+			height: 36px;
+			border-radius: 100px;
+		}
+	}
+
+  .section_title{
+		font-size: 20px;
+		font-weight: 600;
+		color: #252528;
+	}
+
+  .box_label{
+    font-size: 14px;
+    color: #66666d;
+    font-weight: 400;
+    flex: 1;
+  }
+
+  .help_box{
+    margin-top: 32px;
+
+    &_list{
+      margin-top: 16px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    &_item{
+      display: flex;
+      align-items: center;
+      border-radius: 100px;
+      border: 1px solid #66666d;
+      padding: 0 8px;
+    }
+
+    &_close{
+      padding: 0 8px;
+      border-right: 1px solid #dadae3;
+    }
+
+    &_link{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 16px;
+    }
+
+    &_itemlabel{
+      font-size: 12px;
+      font-weight: 400;
+      color: #252528;
+    }
+  }
+
+  .detail_contents{
+    position: relative;
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+
+    &::after{
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 100%;
+      background-color: #dadae3;
+    }
+  }
+
+  .detail_box{
+
+    &_total{
+      width: 100%;
+      padding: 16px 24px;
+      background-color: #fff;
+      border-radius: 16px;
+      border: 1px solid #dadae3;
+
+      &_label{
+        font-size: 14px;
+        font-weight: 400;
+        color: #66666d;
+      }
+
+      &_numberwrapper{
+        margin-top: 16px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #66666d;
+        text-align: right;
+      }
+
+      &_number{
+        font-size: 32px;
+        color: #252528;
+      }
+    }
+
+    &_list{
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &_item{
+      display: flex;
+      gap: 8px;
+      align-items: center;
+
+      &_label{
+        width: 72px;
+        font-size: 10px;
+        font-weight: 400;
+        color: #66666d;
+      }
+
+      &_Label{
+        font-size: 10px;
+        font-weight: 400;
+        color: #66666d;
+      }
+
+      &_progresswrapper{
+        flex: 1;
+        height: 6px;
+        background-color: #dadae3;
+        border-radius: 100px;
+      }
+
+      &_progress{
+        width: 60%;
+        height: 100%;
+        border-radius: 100px;
+        background-color: #6161DA;
+      }
+
+      &_number{
+        font-size: 12px;
+        font-weight: 400;
+        color: #66666d;
+      }
+
+      &_list{
+        margin-left: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  }
+
+  .register_contents{
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .register_box{
+    flex: 1;
+    display: grid;
+    grid-template-columns: auto 1fr; /* 左:右の比率 */
+  }
+
+  .register_modal{
+    width: 30%;
+    min-width: 300px;
+    height: 100%;
+
+    &_label{
+      font-size: 14px;
+      font-weight: 400;
+      color: #66666d;
+    }
+
+    &_list{
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &_item{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background-color: #fff;
+      border: 1px solid #dadae3;
+    }
+
+    &_btn{
+      display: flex;
+      flex: 1;
+      gap: 16px;
+    }
+
+    &_period{
+      font-size: 12px;
+      font-weight: 400;
+      color: #66666d;
+    }
+
+    &_box{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &_class_name{
+      font-size: 14px;
+      font-weight: 500;
+      color: #252528;
+    }
+
+    &_details{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 400;
+      color: #66666d;
+    }
+
+    &_detail_btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid #66666d;
+      border-radius: 16px;
+    }
+  }
+
+  .time_list, .class_list {
+    display: grid;
+    grid-auto-rows: 1fr; /* 各行の高さを均等に */
+    gap: 8px;
+  }
+
+  .time_item{
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    font-size: 14px;
+    color: #66666d;
+  }
+
+  .class_item{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px rgba($color: #252528, $alpha: 0.25);
+  }
+
+  .class_none{
+    background-color: #F9F9F9;
+    box-shadow: none;
+  }
+
+  .class_name{
+    font-size: 14px;
+    font-weight: 500;
+    color: #252528;
+  }
+
+  .class_add{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dis-none{
+    display: none;
+  }
+
+  .back-hover{
+    background-color: #f2f2f3;
+  }
+  .back-active{
+    background-color: #dadae3;
+  }
+</style>
+
+<script>
+  const register_modal = document.getElementById('register_modal')
+  document.querySelectorAll('.class_item').forEach((class_item)=>{
+    class_item.addEventListener('click', () => {
+      if (register_modal?.classList.contains('dis-none')) {
+        register_modal.classList.remove('dis-none')
+      }
+    })
+
+    class_item.addEventListener('mouseover', () => {
+      class_item.classList.add('back-hover')
+    })
+    class_item.addEventListener('mouseleave', () => {
+      class_item.classList.remove('back-hover')
+    })
+
+    document.querySelectorAll('#register_modal_item').forEach((register_modal_item) => {
+      const register_class_name = register_modal_item.querySelector('.register_modal_class_name')?.textContent?.trim()
+      console.log(register_class_name)
+      register_modal_item.addEventListener('click', () => {
+        if (class_item && register_class_name) {
+          class_item.textContent = register_class_name
+        }
+      })
+    })
+  })
+</script>

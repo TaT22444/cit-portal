@@ -6,6 +6,446 @@ import Layout from '../layouts/Layout.astro';
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title='トップ'
+  headerTitle='トップ'
+ >
+ <div class="contents">
+	<section class="box">
+		<h3 class="section_title">
+			時間割
+		</h3>
+		<nav class="tag">
+			<ul class="tag_list">
+				<li class="tag_item active">
+					<button class="tag_btn active">月曜</button>
+				</li>
+				<li class="tag_item">
+					<button class="tag_btn">火曜</button>
+				</li>
+				<li class="tag_item">
+					<button class="tag_btn">水曜</button>
+				</li>
+				<li class="tag_item">
+					<button class="tag_btn">木曜</button>
+				</li>
+				<li class="tag_item">
+					<button class="tag_btn">金曜</button>
+				</li>
+				<li class="tag_item">
+					<button class="tag_btn">土曜</button>
+				</li>
+			</ul>
+		</nav>
+		<div class="class_list" id="sidebar_list">
+			<button class="class sidebar_item" id="sidebar_item">
+				<p class="class_time">
+					<span>1-4限</span>
+					<span>9:00-11:00</span>
+				</p>
+				<div class="class_header">
+					<h4 class="class_name">創造工学デザイン論</h4>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>
+				</div>
+				<p class="class_location">津田沼キャンパス4号館3002</p>
+				<p class="class_teacher">千葉 工大</p>
+			</button>
+			<button class="class sidebar_item" id="sidebar_item">
+				<p class="class_time">
+					<span>1-4限</span>
+					<span>9:00-11:00</span>
+				</p>
+				<div class="class_header">
+					<h4 class="class_name">英語表現Ⅱ</h4>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>
+				</div>
+				<p class="class_location">津田沼キャンパス4号館3002</p>
+				<p class="class_teacher">千葉 工大</p>
+			</button>
+			<button class="class sidebar_item" id="sidebar_item">
+				<p class="class_time">
+					<span>1-4限</span>
+					<span>9:00-11:00</span>
+				</p>
+				<div class="class_header">
+					<h4 class="class_name">物理学演習</h4>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>
+				</div>
+				<p class="class_location">津田沼キャンパス4号館3002</p>
+				<p class="class_teacher">千葉 工大</p>
+			</button>
+			<button class="class sidebar_item" id="sidebar_item">
+				<p class="class_time">
+					<span>1-4限</span>
+					<span>9:00-11:00</span>
+				</p>
+				<div class="class_header">
+					<h4 class="class_name">デザイン基礎</h4>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>
+				</div>
+				<p class="class_location">津田沼キャンパス4号館3002</p>
+				<p class="class_teacher">千葉 工大</p>
+			</button>
+			<button class="class sidebar_item" id="sidebar_item">
+				<p class="class_time">
+					<span>1-4限</span>
+					<span>9:00-11:00</span>
+				</p>
+				<div class="class_header">
+					<h4 class="class_name">創造工学デザイン論及び演習</h4>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>
+				</div>
+				<p class="class_location">津田沼キャンパス4号館3002</p>
+				<p class="class_teacher">千葉 工大</p>
+			</button>
+		</div>
+		<div class="section_btn_wrapper">
+			<a href="/class" class="section_btn">
+				<p class="section_btn_label">授業ページへ</p>
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M11.2251 7.10838C11.1637 7.05116 11.1144 6.98216 11.0802 6.90549C11.0461 6.82883 11.0277 6.74607 11.0262 6.66215C11.0248 6.57823 11.0402 6.49487 11.0716 6.41705C11.1031 6.33922 11.1498 6.26853 11.2092 6.20918C11.2685 6.14983 11.3392 6.10305 11.4171 6.07161C11.4949 6.04018 11.5782 6.02474 11.6622 6.02622C11.7461 6.0277 11.8288 6.04607 11.9055 6.08023C11.9822 6.11439 12.0512 6.16364 12.1084 6.22505L15.4417 9.55838C15.5588 9.67557 15.6245 9.83442 15.6245 10C15.6245 10.1657 15.5588 10.3245 15.4417 10.4417L12.1084 13.775C12.0512 13.8365 11.9822 13.8857 11.9055 13.9199C11.8288 13.954 11.7461 13.9724 11.6622 13.9739C11.5782 13.9754 11.4949 13.9599 11.4171 13.9285C11.3392 13.897 11.2685 13.8503 11.2092 13.7909C11.1498 13.7316 11.1031 13.6609 11.0716 13.583C11.0402 13.5052 11.0248 13.4219 11.0262 13.3379C11.0277 13.254 11.0461 13.1713 11.0802 13.0946C11.1144 13.0179 11.1637 12.9489 11.2251 12.8917L13.4917 10.625H5.41673C5.25097 10.625 5.092 10.5592 4.97479 10.442C4.85758 10.3248 4.79173 10.1658 4.79173 10C4.79173 9.83429 4.85758 9.67532 4.97479 9.5581C5.092 9.44089 5.25097 9.37505 5.41673 9.37505H13.4917L11.2251 7.10838Z" fill="#6161DA"/>
+				</svg>				
+			</a>
+		</div>
+	</section>
+	<!-- <div class="section_slash"></div> -->
+	<section class="box">
+		<h3 class="section_title">
+			お知らせ
+		</h3>
+		<ul class="news_list">
+			<li class="news_item newssidebar_item">
+				<button class="news_btn">
+					<div class="news_left">
+						<div class="news_left_header">
+							<p class="news_tag">重要</p>
+							<p class="news_pub">2024-11-24</p>
+						</div>
+						<h4 class="news_title">学生生活についてのアンケートのお願い</h4>
+					</div>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>						
+				</button>
+			</li>
+			<li class="news_item newssidebar_item">
+				<button class="news_btn">
+					<div class="news_left">
+						<div class="news_left_header">
+							<p class="news_tag">重要</p>
+							<p class="news_pub">2024-11-24</p>
+						</div>
+						<h4 class="news_title">学生生活についてのアンケートのお願い</h4>
+					</div>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>						
+				</button>
+			</li>
+			<li class="news_item newssidebar_item">
+				<button class="news_btn">
+					<div class="news_left">
+						<div class="news_left_header">
+							<p class="news_tag">重要</p>
+							<p class="news_pub">2024-11-24</p>
+						</div>
+						<h4 class="news_title">学生生活についてのアンケートのお願い</h4>
+					</div>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>						
+				</button>
+			</li>
+			<li class="news_item newssidebar_item">
+				<button class="news_btn">
+					<div class="news_left">
+						<div class="news_left_header">
+							<p class="news_tag">重要</p>
+							<p class="news_pub">2024-11-24</p>
+						</div>
+						<h4 class="news_title">学生生活についてのアンケートのお願い</h4>
+					</div>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>						
+				</button>
+			</li>
+			<li class="news_item newssidebar_item">
+				<button class="news_btn">
+					<div class="news_left">
+						<div class="news_left_header">
+							<p class="news_tag">重要</p>
+							<p class="news_pub">2024-11-24</p>
+						</div>
+						<h4 class="news_title">学生生活についてのアンケートのお願い</h4>
+					</div>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>						
+				</button>
+			</li>
+			<li class="news_item newssidebar_item">
+				<button class="news_btn">
+					<div class="news_left">
+						<div class="news_left_header">
+							<p class="news_tag">重要</p>
+							<p class="news_pub">2024-11-24</p>
+						</div>
+						<h4 class="news_title">学生生活についてのアンケートのお願い</h4>
+					</div>
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+					</svg>						
+				</button>
+			</li>
+		</ul>
+		<div class="section_btn_wrapper">
+			<a href="/news" class="section_btn">
+				<p class="section_btn_label">お知らせページへ</p>
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M11.2251 7.10838C11.1637 7.05116 11.1144 6.98216 11.0802 6.90549C11.0461 6.82883 11.0277 6.74607 11.0262 6.66215C11.0248 6.57823 11.0402 6.49487 11.0716 6.41705C11.1031 6.33922 11.1498 6.26853 11.2092 6.20918C11.2685 6.14983 11.3392 6.10305 11.4171 6.07161C11.4949 6.04018 11.5782 6.02474 11.6622 6.02622C11.7461 6.0277 11.8288 6.04607 11.9055 6.08023C11.9822 6.11439 12.0512 6.16364 12.1084 6.22505L15.4417 9.55838C15.5588 9.67557 15.6245 9.83442 15.6245 10C15.6245 10.1657 15.5588 10.3245 15.4417 10.4417L12.1084 13.775C12.0512 13.8365 11.9822 13.8857 11.9055 13.9199C11.8288 13.954 11.7461 13.9724 11.6622 13.9739C11.5782 13.9754 11.4949 13.9599 11.4171 13.9285C11.3392 13.897 11.2685 13.8503 11.2092 13.7909C11.1498 13.7316 11.1031 13.6609 11.0716 13.583C11.0402 13.5052 11.0248 13.4219 11.0262 13.3379C11.0277 13.254 11.0461 13.1713 11.0802 13.0946C11.1144 13.0179 11.1637 12.9489 11.2251 12.8917L13.4917 10.625H5.41673C5.25097 10.625 5.092 10.5592 4.97479 10.442C4.85758 10.3248 4.79173 10.1658 4.79173 10C4.79173 9.83429 4.85758 9.67532 4.97479 9.5581C5.092 9.44089 5.25097 9.37505 5.41673 9.37505H13.4917L11.2251 7.10838Z" fill="#6161DA"/>
+				</svg>				
+			</a>
+		</div>
+	</section>
+</div>
 </Layout>
+
+
+<style lang="scss">
+	.contents{
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 80px;
+	}
+	
+	.box{
+		margin-top: 40px;
+	}
+
+  .section_title{
+		font-size: 20px;
+		font-weight: 600;
+		color: #252528;
+	}
+
+	.section_btn_wrapper{
+		position: relative;
+		margin-top: 40px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&::before{
+			content: "";
+			flex: 1;
+			height: 1px;
+			background-color: #dadae3;
+		}
+		
+		&::after{
+			content: "";
+			flex: 1;
+			height: 1px;
+			background-color: #dadae3;
+		}
+	}
+
+	.section_btn{
+		display: flex;
+		align-items: center;
+		padding: 16px 24px;
+		margin: 0 16px;
+		gap: 16px;
+		border: 1px solid #6161DA;
+		border-radius: 100px;
+		transition: all .3s;
+
+		&:hover{
+			background-color: #6161DA;
+			border-color: #e6e6ea;
+			transition: all .3s;
+		}
+
+		&_label{
+			font-weight: 500;
+			font-size: 14px;
+			color: #6161DA;
+
+			&:hover{
+				color: #fff;
+			  transition: all .3s;
+		  }
+		}
+	}
+	
+	.section_slash{
+		width: 100%;
+		height: 1px;
+		background-color: #dadae3;
+		margin: 32px 0;
+	}
+
+	.tag{
+		margin-top: 24px;
+		display: flex;
+		gap: 8;
+		align-items: center;
+
+		&_list{
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		&_item{
+			font-size: 12px;
+			color: #66666d;
+			font-weight: 500;
+
+			>.active{
+				color: #fff;
+				background-color: #252528;
+			}
+		}
+
+		&_btn{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 56px;
+			height: 36px;
+			border-radius: 100px;
+		}
+	}
+
+
+  .class_list{
+    margin-top: 16px;
+		display: grid;
+		// grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    // display: flex;
+		// flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .class{
+		// min-width: calc((100% - 16px)/3);
+    padding: 16px 16px;
+    border-radius: 16px;
+    background-color: #fff;
+    border: 1px solid #e6e6ea;
+
+		&:hover{
+			transition: all .3s;
+			background-color: #f2f2f3;
+		}
+
+    &_text{
+      display: flex;
+      gap: 8px;
+    }
+
+    &_header{
+			margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+		&_name{
+			font-size: 16px;
+			color: #252528;
+			font-weight: 600;
+		}
+
+		&_time{
+			font-size: 14px;
+			font-weight: 500;
+			color: #66666d;
+		}
+
+		&_location{
+			font-size: 14px;
+			font-weight: 400;
+			color: #66666d;
+			margin-top: 12px;
+		}
+
+		&_teacher{
+			font-size: 14px;
+			font-weight: 400;
+			color: #66666d;
+			margin-top: 8px;
+		}
+  }
+
+	.news_list{
+		width: 100%;
+		margin-top: 24px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.news_item{
+	}
+
+	.news_btn{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 16px 24px;
+		border-radius: 16px;
+		background-color: #fff;
+		cursor: pointer;
+		box-shadow: 0px 0px 2px rgba($color: #252528, $alpha: 0.25);
+		transition: all .3s;
+
+		&:hover{
+			transition: all .3s;
+			background-color: #f2f2f3;
+		}
+	}
+
+	.news_left{
+
+		&_header{
+			display: flex;
+			gap: 16px;
+			align-items: center;
+		}
+	}
+
+	.news_tag{
+		font-size: 12px;
+		font-weight: 500;
+		color: #66666d;
+	}
+
+	.news_pub{
+		font-size: 12px;
+		color: #66666d;
+	}
+
+	.news_title{
+		font-size: 14px;
+		color: #252528;
+		font-weight: 500;
+		margin-top: 8px;
+		line-height: 1.6;
+	}
+</style>

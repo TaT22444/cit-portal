@@ -440,8 +440,7 @@ const isGradesPage = currentPath === "/grades/";
 					<div class="slash"></div>
 					<div class="sidebar_textbox">
 						<p class="sidebar_textbox_label">本文</p>
-						<p class="sidebar_textbox_text">
-							ここにお知らせの本文が入ります。ここにお知らせの本文が入ります。ここにお知らせの本文が入ります。ここにお知らせの本文が入ります。ここにお知らせの本文が入ります。ここにお知らせの本文が入ります。ここにお知らせの本文が入ります。ここにお知らせの本文が入ります。ここにお知らせの本文が入ります。ここにお知らせの本文が入ります。
+						<p class="sidebar_textbox_text" id="sidebar_news_text">
 						</p>
 					</div>
 				</div>
@@ -659,7 +658,6 @@ const isGradesPage = currentPath === "/grades/";
 		}
 
 		&_title_box{
-
 		}
 
 		&_title{
@@ -667,6 +665,13 @@ const isGradesPage = currentPath === "/grades/";
 			font-weight: 500;
 			color: #252528;
 			text-align: center;
+		}
+
+		&_textbox_text{
+			line-height: 1.6;
+			margin-top: 24px;
+			font-size: 14px;
+			color: #252528;
 		}
 
 		&_details{
@@ -1100,13 +1105,20 @@ const isGradesPage = currentPath === "/grades/";
 		})
 	})
 
+document.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('.newssidebar_item').forEach((newssidebar_item) => {
 		const close_btn = document.getElementById('handle_newssidebar_close')
 		newssidebar_item.addEventListener('click', () => {
 			const sidebar_title = document.getElementById('newssidebar_title')
+			const sidebar_news_text = document.getElementById('sidebar_news_text')
 			const sidebar_text = newssidebar_item.querySelector('.news_title')?.textContent?.trim()
+			const news_text = newssidebar_item.querySelector('.news_text')?.textContent?.trim()
+			// const newsId = newssidebar_item.getAttribute('data-news-id');
+			// console.log(`Clicked News ID: ${newsId}`);
 			console.log(sidebar_title)
 			console.log(sidebar_text)
+			console.log(sidebar_news_text)
+			console.log(news_text)
 
 			if (sidebar?.classList.contains('dis-block')) {
 				sidebar?.classList.remove('dis-block')
@@ -1121,6 +1133,10 @@ const isGradesPage = currentPath === "/grades/";
 			if (sidebar_title && sidebar_text) {
 				sidebar_title.textContent = sidebar_text;
 			}
+
+			if (sidebar_news_text && news_text) {
+				sidebar_news_text.textContent = news_text;
+			}
 		})
 
 		close_btn?.addEventListener('click', () =>{
@@ -1128,6 +1144,8 @@ const isGradesPage = currentPath === "/grades/";
 			newssidebar?.classList.add('dis-none')
 		})
 	})
+});
+
 
 	const currentPath = window.location.pathname;
 </script>

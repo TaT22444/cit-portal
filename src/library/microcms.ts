@@ -16,6 +16,7 @@ export type News = {
   image:{
     url: string;
   }
+  text: string;
   tag: string;
   intro: string;
   name: string;

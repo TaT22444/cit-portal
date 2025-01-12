@@ -2,7 +2,7 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import { getNewss } from '../library/microcms'
-const response = await getNewss({ fields: ["id", "title", "image", "tag", "publishedAt", "name", "text"] })
+const response = await getNewss({ fields: ["id", "title", "image", "tag", "publishedAt", "end", "name", "text"] })
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -132,7 +132,11 @@ const response = await getNewss({ fields: ["id", "title", "image", "tag", "publi
 						<div class="news_left">
 							<div class="news_left_header">
 						  	<p class="news_tag">{content.tag}</p>
-						  	<p class="news_pub">{content.publishedAt.substring(0, 10)}</p>
+								<p class="news_pubwrapper">
+									<span class="news_pub">{content.publishedAt.substring(0, 10)}</span>
+									<span>~</span>
+									<span class="news_end">{content.end}</span>
+								</p>
 						  </div>
 						  <h4 class="news_title">{content.title}</h4>
 							<div class="news_text" set:html={content.text} />
@@ -371,9 +375,13 @@ const response = await getNewss({ fields: ["id", "title", "image", "tag", "publi
 		color: #66666d;
 	}
 
-	.news_pub{
+	.news_pubwrapper{
 		font-size: 12px;
 		color: #66666d;
+	}
+
+	.news_pub{
+
 	}
 
 	.news_title{

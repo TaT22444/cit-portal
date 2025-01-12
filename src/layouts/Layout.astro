@@ -431,9 +431,9 @@ const isGradesPage = currentPath === "/grades/";
 								掲載期間
 							</p>
 							<p class="sidebar_publication period">
-								<span>2024-11-12(水)</span>
+								<span class="sidebar_news_pub" id="sidebar_news_pub"></span>
 								<span> ~ </span>
-								<span>2025-11-12(水)</span>
+								<span class="sidebar_news_end" id="sidebar_news_end"></span>
 							</p>
 						</div>
 					</div>
@@ -759,6 +759,29 @@ const isGradesPage = currentPath === "/grades/";
 				color: #252528;
 				text-decoration: underline;
 			}
+		}
+
+		&_timebox{
+			margin-top: 24px;
+			text-align: center;
+			color: #66666d;
+
+			&_label{
+				font-size: 12px;
+			}
+		}
+
+		&_textbox{
+
+			&_label{
+				text-align: center;
+				color: #66666d;
+				font-size: 12px;
+			}
+		}
+
+		&_publication{
+			margin-top: 8px;
 		}
 	}
 
@@ -1113,6 +1136,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			const sidebar_news_text = document.getElementById('sidebar_news_text')
 			const sidebar_text = newssidebar_item.querySelector('.news_title')?.textContent?.trim()
 			const news_text = newssidebar_item.querySelector('.news_text')?.textContent?.trim()
+			const news_pub = newssidebar_item.querySelector('.news_pub')?.textContent?.trim()
+			const sidebar_news_pub = document.getElementById('sidebar_news_pub')
+			const news_end = newssidebar_item.querySelector('.news_end')?.textContent?.trim()
+			const sidebar_news_end = document.getElementById('sidebar_news_end')
 			// const newsId = newssidebar_item.getAttribute('data-news-id');
 			// console.log(`Clicked News ID: ${newsId}`);
 			console.log(sidebar_title)
@@ -1136,6 +1163,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			if (sidebar_news_text && news_text) {
 				sidebar_news_text.textContent = news_text;
+			}
+
+			if (sidebar_news_pub && news_pub) {
+				sidebar_news_pub.textContent = news_pub;
+			}
+
+			if (sidebar_news_end && news_end) {
+				sidebar_news_end.textContent = news_end;
 			}
 		})
 

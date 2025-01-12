@@ -53,7 +53,7 @@ const isGradesPage = currentPath === "/grades/";
 					<h1 class="aside_header_title" id="min_item">
 						<a href="/" id="min_item">CIT Portal</a>
 					</h1>
-					<a href="#" class="aside_header_btn" id="aside_min_btn">
+					<button class="aside_header_btn" id="aside_min_btn">
 						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<mask id="mask0_1191_1813" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
 							<path d="M0 0H18V18H0V0Z" fill="white"/>
@@ -62,7 +62,7 @@ const isGradesPage = currentPath === "/grades/";
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M3.375 14.0625H2.8125C2.66332 14.0625 2.52024 14.0032 2.41475 13.8977C2.30926 13.7923 2.25 13.6492 2.25 13.5V4.5C2.25 4.35082 2.30926 4.20774 2.41475 4.10225C2.52024 3.99676 2.66332 3.9375 2.8125 3.9375H3.375C3.52418 3.9375 3.66726 3.99676 3.77275 4.10225C3.87824 4.20774 3.9375 4.35082 3.9375 4.5V13.5C3.9375 13.6492 3.87824 13.7923 3.77275 13.8977C3.66726 14.0032 3.52418 14.0625 3.375 14.0625ZM2.8125 15.75H3.375C3.97174 15.75 4.54403 15.5129 4.96599 15.091C5.38795 14.669 5.625 14.0967 5.625 13.5V4.5C5.625 3.90326 5.38795 3.33097 4.96599 2.90901C4.54403 2.48705 3.97174 2.25 3.375 2.25H2.8125C2.21576 2.25 1.64347 2.48705 1.22151 2.90901C0.799553 3.33097 0.5625 3.90326 0.5625 4.5V13.5C0.5625 14.0967 0.799553 14.669 1.22151 15.091C1.64347 15.5129 2.21576 15.75 2.8125 15.75ZM14.625 14.0625H9.5625C9.26413 14.0625 8.97798 13.944 8.767 13.733C8.55603 13.522 8.4375 13.2359 8.4375 12.9375V5.0625C8.4375 4.76413 8.55603 4.47798 8.767 4.267C8.97798 4.05603 9.26413 3.9375 9.5625 3.9375H14.625C14.9234 3.9375 15.2095 4.05603 15.4205 4.267C15.6315 4.47798 15.75 4.76413 15.75 5.0625V12.9375C15.75 13.2359 15.6315 13.522 15.4205 13.733C15.2095 13.944 14.9234 14.0625 14.625 14.0625ZM9.5625 15.75H14.625C15.3709 15.75 16.0863 15.4537 16.6137 14.9262C17.1412 14.3988 17.4375 13.6834 17.4375 12.9375V5.0625C17.4375 4.31658 17.1412 3.60121 16.6137 3.07376C16.0863 2.54632 15.3709 2.25 14.625 2.25H9.5625C8.81658 2.25 8.10121 2.54632 7.57376 3.07376C7.04632 3.60121 6.75 4.31658 6.75 5.0625V12.9375C6.75 13.6834 7.04632 14.3988 7.57376 14.9262C8.10121 15.4537 8.81658 15.75 9.5625 15.75Z" fill="#252528"/>
 							</g>
 						</svg>						
-					</a>
+					</button>
 				</header>
 				<div class="aside_content">
 					<div class="aside_content_box">
@@ -1115,7 +1115,7 @@ const isGradesPage = currentPath === "/grades/";
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			padding: 8px 8px 8px;
+			padding: 24px 16px;
 		}
 	}
 	
@@ -1130,7 +1130,7 @@ const isGradesPage = currentPath === "/grades/";
 	document.addEventListener('DOMContentLoaded', () => {
 		const aside_min_btn = document.getElementById('aside_min_btn')
 		const aside = document.getElementById('aside')
-		const aside_min_inner = document.getElementById('aside_min_inner')
+		const aside_min_inner = document.getElementById('aside_inner')
 		const main = document.getElementById('main')
 		aside_min_btn?.addEventListener('click', () => {
 			document.querySelectorAll('#min_item').forEach((min_item) => {

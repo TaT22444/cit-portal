@@ -1128,21 +1128,48 @@ const isGradesPage = currentPath === "/grades/";
 <script>
 
 	document.addEventListener('DOMContentLoaded', () => {
-		const aside_min_btn = document.getElementById('aside_min_btn')
-		const aside = document.getElementById('aside')
-		const aside_min_inner = document.getElementById('aside_inner')
-		const main = document.getElementById('main')
-		aside_min_btn?.addEventListener('click', () => {
-			document.querySelectorAll('#min_item').forEach((min_item) => {
-			  console.log(min_item)
-				min_item.classList.add('dis-none')
-				aside?.classList.add('aside_min')
-				aside_min_inner?.classList.add('aside_min_inner')
-				main?.classList.add('main_min')
-		  })
-		})
-		console.log(aside_min_btn)
+  const aside_min_btn = document.getElementById('aside_min_btn');
+  const aside = document.getElementById('aside');
+  const aside_min_inner = document.getElementById('aside_inner');
+  const main = document.getElementById('main');
+
+  // ページ読み込み時に状態を復元
+  const isAsideMinimized = localStorage.getItem('aside_minimized') === 'true';
+  if (isAsideMinimized) {
+    minimizeAside();
+  }
+
+  aside_min_btn?.addEventListener('click', () => {
+    const currentlyMinimized = aside?.classList.contains('aside_min');
+
+    if (currentlyMinimized) {
+      maximizeAside();
+      localStorage.setItem('aside_minimized', 'false');
+    } else {
+      minimizeAside();
+      localStorage.setItem('aside_minimized', 'true');
+    }
   });
+
+  function minimizeAside() {
+    document.querySelectorAll('#min_item').forEach((min_item) => {
+      min_item.classList.add('dis-none');
+    });
+    aside?.classList.add('aside_min');
+    aside_min_inner?.classList.add('aside_min_inner');
+    main?.classList.add('main_min');
+  }
+
+  function maximizeAside() {
+    document.querySelectorAll('#min_item').forEach((min_item) => {
+      min_item.classList.remove('dis-none');
+    });
+    aside?.classList.remove('aside_min');
+    aside_min_inner?.classList.remove('aside_min_inner');
+    main?.classList.remove('main_min');
+  }
+});
+
 
 	const sidebar = document.getElementById('sidebar')
 	const newssidebar = document.getElementById('newssidebar')

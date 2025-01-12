@@ -48,12 +48,12 @@ const isGradesPage = currentPath === "/grades/";
 		</header>
 
 		<aside class="aside" id="aside">
-			<div class="aside_inner">
+			<div class="aside_inner" id="aside_inner">
 				<header class="aside_header">
-					<h1 class="aside_header_title">
-						<a href="/">CIT Portal</a>
+					<h1 class="aside_header_title" id="min_item">
+						<a href="/" id="min_item">CIT Portal</a>
 					</h1>
-					<a href="#" class="aside_header_btn">
+					<a href="#" class="aside_header_btn" id="aside_min_btn">
 						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<mask id="mask0_1191_1813" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
 							<path d="M0 0H18V18H0V0Z" fill="white"/>
@@ -66,7 +66,7 @@ const isGradesPage = currentPath === "/grades/";
 				</header>
 				<div class="aside_content">
 					<div class="aside_content_box">
-						<p class="aside_content_box_label">ヘルプ</p>
+						<p class="aside_content_box_label" id="min_item">ヘルプ</p>
 						<nav class="aside_nav">
 							<ul class="aside_nav_list">
 								<li class="aside_nav_item">
@@ -75,7 +75,7 @@ const isGradesPage = currentPath === "/grades/";
 											<path d="M3 6.57375C3.17083 6.04749 3.48386 5.57873 3.9045 5.21929C4.32513 4.85985 4.83697 4.62373 5.38342 4.53705C5.92988 4.45036 6.48966 4.51649 7.00088 4.72812C7.5121 4.93974 7.95484 5.28862 8.28014 5.73618C8.60544 6.18373 8.80064 6.71253 8.84414 7.26411C8.88765 7.81569 8.77777 8.36855 8.52665 8.86157C8.27554 9.35459 7.89297 9.76857 7.42125 10.0577C6.94954 10.3469 6.40704 10.4999 5.85375 10.5V11.25M5.89125 14.25V14.325H5.81625V14.25H5.89125Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
 											<path d="M11.344 15V14.464C13.088 12.928 13.976 11.784 13.976 10.816C13.976 10.184 13.64 9.744 12.984 9.744C12.52 9.744 12.136 10.032 11.824 10.392L11.296 9.888C11.808 9.336 12.328 9.008 13.096 9.008C14.176 9.008 14.872 9.704 14.872 10.776C14.872 11.904 13.96 13.08 12.712 14.28C13.016 14.248 13.392 14.216 13.68 14.216H15.152V15H11.344Z" fill="#252528"/>
 										</svg>		
-										<p class="aside_nav_label">課題提出の仕方</p>								
+										<p class="aside_nav_label" id="min_item">課題提出の仕方</p>								
 									</a>
 								</li>
 								<li class="aside_nav_item">
@@ -84,7 +84,7 @@ const isGradesPage = currentPath === "/grades/";
 											<path d="M3 6.57375C3.17083 6.04749 3.48386 5.57873 3.9045 5.21929C4.32513 4.85985 4.83697 4.62373 5.38342 4.53705C5.92988 4.45036 6.48966 4.51649 7.00088 4.72812C7.5121 4.93974 7.95484 5.28862 8.28014 5.73618C8.60544 6.18373 8.80064 6.71253 8.84414 7.26411C8.88765 7.81569 8.77777 8.36855 8.52665 8.86157C8.27554 9.35459 7.89297 9.76857 7.42125 10.0577C6.94954 10.3469 6.40704 10.4999 5.85375 10.5V11.25M5.89125 14.25V14.325H5.81625V14.25H5.89125Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
 											<path d="M11.344 15V14.464C13.088 12.928 13.976 11.784 13.976 10.816C13.976 10.184 13.64 9.744 12.984 9.744C12.52 9.744 12.136 10.032 11.824 10.392L11.296 9.888C11.808 9.336 12.328 9.008 13.096 9.008C14.176 9.008 14.872 9.704 14.872 10.776C14.872 11.904 13.96 13.08 12.712 14.28C13.016 14.248 13.392 14.216 13.68 14.216H15.152V15H11.344Z" fill="#252528"/>
 										</svg>		
-										<p class="aside_nav_label">課題提出の仕方</p>								
+										<p class="aside_nav_label" id="min_item">課題提出の仕方</p>								
 									</a>
 								</li>
 								<li class="aside_nav_item chat">
@@ -92,14 +92,14 @@ const isGradesPage = currentPath === "/grades/";
 										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M2.46525 6.09599L2.64975 6.52049C2.67859 6.58961 2.72723 6.64866 2.78955 6.69019C2.85188 6.73172 2.9251 6.75389 3 6.75389C3.0749 6.75389 3.14812 6.73172 3.21045 6.69019C3.27277 6.64866 3.32141 6.58961 3.35025 6.52049L3.53475 6.09599C3.85914 5.34503 4.45321 4.74293 5.19975 4.40849L5.769 4.15424C5.83806 4.12247 5.89656 4.07156 5.93758 4.00756C5.97859 3.94355 6.00038 3.86913 6.00038 3.79311C6.00038 3.71709 5.97859 3.64267 5.93758 3.57867C5.89656 3.51466 5.83806 3.46375 5.769 3.43199L5.23125 3.19274C4.46595 2.84877 3.86171 2.2244 3.543 1.44824L3.35325 0.989987C3.32538 0.919002 3.27677 0.85806 3.21376 0.815106C3.15075 0.772151 3.07626 0.749176 3 0.749176C2.92374 0.749176 2.84925 0.772151 2.78624 0.815106C2.72323 0.85806 2.67462 0.919002 2.64675 0.989987L2.457 1.44749C2.13863 2.22379 1.53466 2.84844 0.769499 3.19274L0.231001 3.43274C0.162149 3.4646 0.103853 3.51549 0.0629959 3.57942C0.0221405 3.64334 0.000431061 3.71762 0.000431061 3.79349C0.000431061 3.86935 0.0221405 3.94363 0.0629959 4.00756C0.103853 4.07148 0.162149 4.12238 0.231001 4.15424L0.801001 4.40774C1.54739 4.74251 2.1412 5.34488 2.46525 6.09599ZM10.5 2.24999H7.5V3.74999H10.5C11.6935 3.74999 12.8381 4.22409 13.682 5.06801C14.5259 5.91192 15 7.05651 15 8.24999C15 10.9575 13.1535 12.7245 9 14.61V12.75H7.5C6.30653 12.75 5.16193 12.2759 4.31802 11.432C3.4741 10.5881 3 9.44346 3 8.24999H1.5C1.5 9.84129 2.13214 11.3674 3.25736 12.4926C4.38258 13.6178 5.9087 14.25 7.5 14.25V16.875C11.25 15.375 16.5 13.125 16.5 8.24999C16.5 6.65869 15.8679 5.13256 14.7426 4.00735C13.6174 2.88213 12.0913 2.24999 10.5 2.24999Z" fill="#252528"/>
 										</svg>											
-										<p class="aside_nav_label chat">課題提出の仕方</p>								
+										<p class="aside_nav_label chat" id="min_item">課題提出の仕方</p>								
 									</a>
 								</li>
 							</ul>
 						</nav>
 					</div>
 					<div class="aside_content_box">
-						<p class="aside_content_box_label">ナビゲーション</p>
+						<p class="aside_content_box_label" id="min_item">ナビゲーション</p>
 						<nav class="aside_nav">
 							<ul class="aside_nav_list">
 								<li class={`aside_nav_item ${currentPath === "/" ? "active" : ""}`}>
@@ -108,7 +108,7 @@ const isGradesPage = currentPath === "/grades/";
 											<path d="M4.59975 15.75C3.71625 15.75 3 15.015 3 14.1075V7.50596C3 7.00721 3.22125 6.53471 3.6 6.22346L8.00025 2.60996C8.28139 2.37715 8.63497 2.24976 9 2.24976C9.36503 2.24976 9.71861 2.37715 9.99975 2.60996L14.3992 6.22346C14.7787 6.53471 15 7.00721 15 7.50596V14.1075C15 15.015 14.2837 15.75 13.4002 15.75H4.59975Z" stroke="#252528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 											<path d="M7.125 15.75V11.625C7.125 11.2272 7.28304 10.8456 7.56434 10.5643C7.84564 10.283 8.22718 10.125 8.625 10.125H9.375C9.77282 10.125 10.1544 10.283 10.4357 10.5643C10.717 10.8456 10.875 11.2272 10.875 11.625V15.75" stroke="#252528" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>											
-										<p class="aside_nav_label">トップ</p>								
+										<p class="aside_nav_label" id="min_item">トップ</p>								
 									</a>
 								</li>
 								<li class={`aside_nav_item ${currentPath === "/course" ? "active" : ""}`}>
@@ -117,7 +117,7 @@ const isGradesPage = currentPath === "/grades/";
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M13.125 17.25C14.219 17.25 15.2682 16.8154 16.0418 16.0418C16.8154 15.2682 17.25 14.219 17.25 13.125C17.25 12.031 16.8154 10.9818 16.0418 10.2082C15.2682 9.4346 14.219 9 13.125 9C12.031 9 10.9818 9.4346 10.2082 10.2082C9.4346 10.9818 9 12.031 9 13.125C9 14.219 9.4346 15.2682 10.2082 16.0418C10.9818 16.8154 12.031 17.25 13.125 17.25ZM13.125 10.5052C13.2245 10.5052 13.3198 10.5448 13.3902 10.6151C13.4605 10.6854 13.5 10.7808 13.5 10.8802V12.75H15.3698C15.4692 12.75 15.5646 12.7895 15.6349 12.8598C15.7052 12.9302 15.7448 13.0255 15.7448 13.125C15.7448 13.2245 15.7052 13.3198 15.6349 13.3902C15.5646 13.4605 15.4692 13.5 15.3698 13.5H13.5V15.3698C13.5 15.4692 13.4605 15.5646 13.3902 15.6349C13.3198 15.7052 13.2245 15.7448 13.125 15.7448C13.0255 15.7448 12.9302 15.7052 12.8598 15.6349C12.7895 15.5646 12.75 15.4692 12.75 15.3698V13.5H10.8802C10.7808 13.5 10.6854 13.4605 10.6151 13.3902C10.5448 13.3198 10.5052 13.2245 10.5052 13.125C10.5052 13.0255 10.5448 12.9302 10.6151 12.8598C10.6854 12.7895 10.7808 12.75 10.8802 12.75H12.75V10.8802C12.75 10.7808 12.7895 10.6854 12.8598 10.6151C12.9302 10.5448 13.0255 10.5052 13.125 10.5052Z" fill="black"/>
 											<path d="M3.375 14.3438C3.375 14.841 3.57254 15.3179 3.92417 15.6696C4.27581 16.0212 4.75272 16.2188 5.25 16.2188H8.7075M3.375 14.3438C3.375 13.8465 3.57254 13.3696 3.92417 13.0179C4.27581 12.6663 4.75272 12.4688 5.25 12.4688H7.74M3.375 14.3438V4.59375C3.375 3.99701 3.61205 3.42472 4.03401 3.00276C4.45597 2.5808 5.02826 2.34375 5.625 2.34375H13.875C14.0739 2.34375 14.2647 2.42277 14.4053 2.56342C14.546 2.70407 14.625 2.89484 14.625 3.09375V7.965" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>											
-										<p class="aside_nav_label">履修</p>								
+										<p class="aside_nav_label" id="min_item">履修</p>								
 									</a>
 								</li>
 								<li class={`aside_nav_item ${currentPath === "/news" ? "active" : ""}`}>
@@ -125,7 +125,7 @@ const isGradesPage = currentPath === "/grades/";
 										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M10.2975 15.75C10.1656 15.9773 9.97638 16.166 9.74867 16.2971C9.52096 16.4283 9.26278 16.4973 9 16.4973C8.73722 16.4973 8.47904 16.4283 8.25133 16.2971C8.02362 16.166 7.83436 15.9773 7.7025 15.75M13.5 6.3C13.5 5.02725 13.026 3.80625 12.1823 2.90625C11.3385 2.00625 10.1925 1.5 9 1.5C7.8075 1.5 6.66225 2.0055 5.81775 2.90625C4.974 3.80625 4.5 5.02725 4.5 6.3C4.5 11.9002 2.25 13.5 2.25 13.5H15.75C15.75 13.5 13.5 11.9002 13.5 6.3Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>													
-										<p class="aside_nav_label chat">お知らせ</p>								
+										<p class="aside_nav_label chat" id="min_item">お知らせ</p>								
 									</a>
 								</li>
 								<li class={`aside_nav_item chat ${currentPath === "/class" ? "active" : ""}`}>
@@ -140,7 +140,7 @@ const isGradesPage = currentPath === "/grades/";
 											</clipPath>
 											</defs>
 										</svg>																						
-										<p class="aside_nav_label chat">授業</p>								
+										<p class="aside_nav_label chat" id="min_item">授業</p>								
 									</a>
 								</li>
 								<li class={`aside_nav_item ${currentPath === "/grades" ? "active" : ""}`}>
@@ -156,7 +156,7 @@ const isGradesPage = currentPath === "/grades/";
 											</clipPath>
 											</defs>
 										</svg>																						
-										<p class="aside_nav_label chat">成績</p>								
+										<p class="aside_nav_label chat" id="min_item">成績</p>								
 									</a>
 								</li>
 								<li class={`aside_nav_item ${currentPath === "/employment" ? "active" : ""}`}>
@@ -164,7 +164,7 @@ const isGradesPage = currentPath === "/grades/";
 										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M6.13868 2.898C6.09719 2.73214 6.09405 2.55901 6.12949 2.39176C6.16494 2.22451 6.23804 2.06754 6.34323 1.93277C6.44843 1.798 6.58296 1.68898 6.73661 1.61399C6.89025 1.539 7.05896 1.50002 7.22993 1.5H10.7699C10.9409 1.50002 11.1096 1.539 11.2632 1.61399C11.4169 1.68898 11.5514 1.798 11.6566 1.93277C11.7618 2.06754 11.8349 2.22451 11.8704 2.39176C11.9058 2.55901 11.9027 2.73214 11.8612 2.898L11.2777 5.232L13.3229 12.0495C13.409 12.336 13.4074 12.6417 13.3184 12.9273C13.2294 13.2129 13.057 13.4654 12.8234 13.6522L9.46868 16.3358C9.33566 16.4423 9.17033 16.5003 8.99993 16.5003C8.82952 16.5003 8.6642 16.4423 8.53118 16.3358L5.17643 13.6522C4.94284 13.4654 4.77047 13.2129 4.68146 12.9273C4.59245 12.6417 4.59087 12.336 4.67693 12.0495L6.72218 5.232L6.13868 2.898ZM8.05793 6H9.94193L10.6169 8.25H9.74993C9.55101 8.25 9.36025 8.32902 9.2196 8.46967C9.07894 8.61032 8.99993 8.80109 8.99993 9C8.99993 9.19891 9.07894 9.38968 9.2196 9.53033C9.36025 9.67098 9.55101 9.75 9.74993 9.75H11.0669L11.8859 12.48L8.99993 14.79L6.11393 12.48L8.05793 6ZM10.2892 3L9.91418 4.5H8.08568L7.71068 3H10.2892Z" fill="black"/>
 										</svg>																							
-										<p class="aside_nav_label chat">就職システム</p>								
+										<p class="aside_nav_label chat" id="min_item">就職システム</p>								
 									</a>
 								</li>
 								<li class={`aside_nav_item ${currentPath === "/service" ? "active" : ""}`}>
@@ -172,7 +172,7 @@ const isGradesPage = currentPath === "/grades/";
 										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M7.21575 5.625H5.4375C4.54239 5.625 3.68395 5.98058 3.05101 6.61351C2.41808 7.24645 2.0625 8.10489 2.0625 9C2.0625 9.89511 2.41808 10.7535 3.05101 11.3865C3.68395 12.0194 4.54239 12.375 5.4375 12.375H7.21575M10.7842 5.625H12.5625C13.0057 5.625 13.4446 5.7123 13.8541 5.88191C14.2635 6.05152 14.6356 6.30012 14.949 6.61351C15.2624 6.92691 15.511 7.29897 15.6806 7.70844C15.8502 8.11792 15.9375 8.55679 15.9375 9C15.9375 9.44321 15.8502 9.88208 15.6806 10.2916C15.511 10.701 15.2624 11.0731 14.949 11.3865C14.6356 11.6999 14.2635 11.9485 13.8541 12.1181C13.4446 12.2877 13.0057 12.375 12.5625 12.375H10.7842M5.43225 9H12.5677" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>																							
-										<p class="aside_nav_label chat">外部サービス</p>								
+										<p class="aside_nav_label chat" id="min_item">外部サービス</p>								
 									</a>
 								</li>
 								<li class={`aside_nav_item ${currentPath === "/help" ? "active" : ""}`}>
@@ -180,7 +180,7 @@ const isGradesPage = currentPath === "/grades/";
 										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M9.84375 12.6562C9.84375 12.8231 9.79427 12.9863 9.70156 13.125C9.60884 13.2638 9.47707 13.3719 9.32289 13.4358C9.16872 13.4996 8.99907 13.5163 8.8354 13.4838C8.67172 13.4512 8.52138 13.3709 8.40338 13.2529C8.28538 13.1349 8.20502 12.9845 8.17247 12.8209C8.13991 12.6572 8.15662 12.4875 8.22048 12.3334C8.28434 12.1792 8.39249 12.0474 8.53124 11.9547C8.66999 11.862 8.83313 11.8125 9 11.8125C9.22378 11.8125 9.43839 11.9014 9.59662 12.0596C9.75486 12.2179 9.84375 12.4325 9.84375 12.6562ZM9 5.0625C7.44891 5.0625 6.1875 6.19805 6.1875 7.59375V7.875C6.1875 8.02418 6.24677 8.16726 6.35226 8.27275C6.45775 8.37824 6.60082 8.4375 6.75 8.4375C6.89919 8.4375 7.04226 8.37824 7.14775 8.27275C7.25324 8.16726 7.3125 8.02418 7.3125 7.875V7.59375C7.3125 6.82031 8.06977 6.1875 9 6.1875C9.93024 6.1875 10.6875 6.82031 10.6875 7.59375C10.6875 8.36719 9.93024 9 9 9C8.85082 9 8.70775 9.05926 8.60226 9.16475C8.49677 9.27024 8.4375 9.41332 8.4375 9.5625V10.125C8.4375 10.2742 8.49677 10.4173 8.60226 10.5227C8.70775 10.6282 8.85082 10.6875 9 10.6875C9.14919 10.6875 9.29226 10.6282 9.39775 10.5227C9.50324 10.4173 9.5625 10.2742 9.5625 10.125V10.0744C10.845 9.83883 11.8125 8.81578 11.8125 7.59375C11.8125 6.19805 10.5511 5.0625 9 5.0625ZM16.3125 9C16.3125 10.4463 15.8836 11.8601 15.0801 13.0626C14.2766 14.2651 13.1346 15.2024 11.7984 15.7559C10.4622 16.3093 8.99189 16.4541 7.57341 16.172C6.15492 15.8898 4.85196 15.1934 3.82928 14.1707C2.80661 13.148 2.11017 11.8451 1.82801 10.4266C1.54586 9.00811 1.69067 7.53781 2.24413 6.20163C2.7976 4.86544 3.73486 3.72339 4.9374 2.91988C6.13993 2.11637 7.55373 1.6875 9 1.6875C10.9388 1.68955 12.7975 2.46063 14.1685 3.83154C15.5394 5.20246 16.3105 7.06123 16.3125 9ZM15.1875 9C15.1875 7.77623 14.8246 6.57994 14.1447 5.56241C13.4648 4.54488 12.4985 3.75181 11.3679 3.2835C10.2372 2.81518 8.99314 2.69264 7.79288 2.93139C6.59262 3.17014 5.49012 3.75944 4.62478 4.62478C3.75944 5.49011 3.17014 6.59262 2.93139 7.79288C2.69265 8.99314 2.81518 10.2372 3.2835 11.3679C3.75182 12.4985 4.54488 13.4648 5.56241 14.1447C6.57994 14.8246 7.77623 15.1875 9 15.1875C10.6405 15.1856 12.2132 14.5331 13.3732 13.3732C14.5331 12.2132 15.1856 10.6405 15.1875 9Z" fill="black"/>
 										</svg>																							
-										<p class="aside_nav_label chat">ヘルプ</p>								
+										<p class="aside_nav_label chat" id="min_item">ヘルプ</p>								
 									</a>
 								</li>
 							</ul>
@@ -199,7 +199,7 @@ const isGradesPage = currentPath === "/grades/";
 							</clipPath>
 							</defs>
 						</svg>							
-						<p class="mypage_label">マイページ</p>
+						<p class="mypage_label" id="min_item">マイページ</p>
 					</a>
 				</div>
 			</div>
@@ -951,6 +951,7 @@ const isGradesPage = currentPath === "/grades/";
 		height: 100dvh;
 		background-color: #FFFFFF;
 		border-right: 1px solid #dadae3;
+		overflow: hidden;
 
 		&_inner{
 			position: relative;
@@ -961,10 +962,11 @@ const isGradesPage = currentPath === "/grades/";
 
 		&_header{
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
 			align-items: center;
 
 			&_title{
+				flex: 1;
 				font-size: 24px;
 				font-weight: 600;
 				color: #252528;
@@ -1038,8 +1040,12 @@ const isGradesPage = currentPath === "/grades/";
 
 	.mypage_btn{
 		width: calc(100% - 32px);
+		height: 96px;
 		position: absolute;
-		bottom: 40px;
+		bottom: 0px;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
 	}
 
 	.mypage_link{
@@ -1095,9 +1101,48 @@ const isGradesPage = currentPath === "/grades/";
 	.dis-none{
 		display: none;
 	}
+
+	.aside_min{
+		width: auto;
+		height: calc(100dvh - 32px);
+		min-width: 0px;
+		margin: 16px 16px;
+		border: 1px solid #dadae3;
+		border-radius: 32px;
+
+		&_inner{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 8px 8px 8px;
+		}
+	}
+	
+	.main_min{
+		width: 100%;
+		padding-left: 88px;
+	}
 </style>
 
 <script>
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const aside_min_btn = document.getElementById('aside_min_btn')
+		const aside = document.getElementById('aside')
+		const aside_min_inner = document.getElementById('aside_min_inner')
+		const main = document.getElementById('main')
+		aside_min_btn?.addEventListener('click', () => {
+			document.querySelectorAll('#min_item').forEach((min_item) => {
+			  console.log(min_item)
+				min_item.classList.add('dis-none')
+				aside?.classList.add('aside_min')
+				aside_min_inner?.classList.add('aside_min_inner')
+				main?.classList.add('main_min')
+		  })
+		})
+		console.log(aside_min_btn)
+  });
 
 	const sidebar = document.getElementById('sidebar')
 	const newssidebar = document.getElementById('newssidebar')

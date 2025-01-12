@@ -440,8 +440,8 @@ const isGradesPage = currentPath === "/grades/";
 					<div class="slash"></div>
 					<div class="sidebar_textbox">
 						<p class="sidebar_textbox_label">本文</p>
-						<p class="sidebar_textbox_text" id="sidebar_news_text">
-						</p>
+						<div class="sidebar_textbox_text" id="sidebar_news_text">
+						</div>
 					</div>
 				</div>
 			</section>
@@ -475,7 +475,7 @@ const isGradesPage = currentPath === "/grades/";
 						<div class="gradesbar_box_graph_box">
 							<!-- <p class="gradesbar_box_graph_box_label">GPA推移</p> -->
 							<div class="gradesbar_box_graph_box_graph">
-								<img src="/src/assets/Frame 321.png" alt="">
+								<img src="../assets/Frame 321.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -667,13 +667,6 @@ const isGradesPage = currentPath === "/grades/";
 			text-align: center;
 		}
 
-		&_textbox_text{
-			line-height: 1.6;
-			margin-top: 24px;
-			font-size: 14px;
-			color: #252528;
-		}
-
 		&_details{
 			display: flex;
 			flex-direction: column;
@@ -771,18 +764,28 @@ const isGradesPage = currentPath === "/grades/";
 			}
 		}
 
-		&_textbox{
-
-			&_label{
-				text-align: center;
-				color: #66666d;
-				font-size: 12px;
-			}
-		}
-
 		&_publication{
 			margin-top: 8px;
 		}
+	}
+	
+	.sidebar_textbox{
+		&_label{
+	    text-align: center;
+	    color: #66666d;
+	    font-size: 12px;
+    }
+    
+    &_text{
+    	font-size: 14px;
+    	color: #252528;
+    	line-height: 1.6;
+    	margin-top: 16px;
+
+			> a{
+				font-size: 20px;
+			}
+    } 
 	}
 
 	.gradesbar{
@@ -1135,7 +1138,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			const sidebar_title = document.getElementById('newssidebar_title')
 			const sidebar_news_text = document.getElementById('sidebar_news_text')
 			const sidebar_text = newssidebar_item.querySelector('.news_title')?.textContent?.trim()
-			const news_text = newssidebar_item.querySelector('.news_text')?.textContent?.trim()
+			// const news_text = newssidebar_item.querySelector('.news_text')?.textContent?.trim()
+			const news_text = newssidebar_item.querySelector('.news_text')?.innerHTML?.trim();
 			const news_pub = newssidebar_item.querySelector('.news_pub')?.textContent?.trim()
 			const sidebar_news_pub = document.getElementById('sidebar_news_pub')
 			const news_end = newssidebar_item.querySelector('.news_end')?.textContent?.trim()
@@ -1162,7 +1166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 
 			if (sidebar_news_text && news_text) {
-				sidebar_news_text.textContent = news_text;
+				sidebar_news_text.innerHTML = news_text; // HTML をそのまま挿入
 			}
 
 			if (sidebar_news_pub && news_pub) {

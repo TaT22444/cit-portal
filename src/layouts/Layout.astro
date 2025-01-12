@@ -18,7 +18,7 @@ const { title, URL, ogptitle, type, description, sns_img, paths } = Astro.props;
 // 現在のパスを取得
 const currentPath = Astro.url.pathname;
 
-const isGradesPage = currentPath === "/grades/";
+const isGradesPage = currentPath === "/grades";
 ---
 
 <!DOCTYPE html>
@@ -475,7 +475,7 @@ const isGradesPage = currentPath === "/grades/";
 						<div class="gradesbar_box_graph_box">
 							<!-- <p class="gradesbar_box_graph_box_label">GPA推移</p> -->
 							<div class="gradesbar_box_graph_box_graph">
-								<img src="../assets/Frame 321.png" alt="">
+								<img src="/src/assets/graph.png" alt="">
 							</div>
 						</div>
 					</div>

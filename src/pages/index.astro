@@ -149,12 +149,20 @@ import NewsList from '../components/NewsList.astro';
 	
 	.box{
 		margin-top: 40px;
+
+		@media (width < 1080px) {
+			margin-top: 32px;
+		}
 	}
 
   .section_title{
 		font-size: 20px;
 		font-weight: 600;
 		color: #252528;
+
+		@media (width < 1080px) {
+			font-weight: 500;
+		}
 	}
 
 	.section_btn_wrapper{
@@ -245,6 +253,11 @@ import NewsList from '../components/NewsList.astro';
 			width: 56px;
 			height: 36px;
 			border-radius: 100px;
+
+			@media (width < 1080px) {
+				width: 44px;
+				height: 32px;
+		  }
 		}
 	}
 

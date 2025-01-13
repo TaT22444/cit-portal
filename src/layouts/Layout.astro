@@ -44,7 +44,13 @@ const isGradesPage = currentPath === "/grades/";
 		<title>{title}</title>
 	</head>
 	<body>
-		<header class="sp_header" id="sp_header" style="display: none;">
+		<header class="sp_header" id="sp_header">
+			<h1 class="sp_header_title">CIT Portal</h1>
+			<span class="ham">
+				<span class="ham_elem elem1"></span>
+				<span class="ham_elem elem1"></span>
+				<span class="ham_elem elem1"></span>
+			</span>
 		</header>
 
 		<aside class="aside" id="aside">
@@ -591,8 +597,151 @@ const isGradesPage = currentPath === "/grades/";
 				</div>
 			</section>
 		)}
-		</body>
+	</main>
+
+	  <main class="sp_main">
+			<div class="sp_main_inner"></div>
 		</main>
+
+		<section class="sp_classmodal dis-none" id="sp_modal">
+			<div class="sp_classmodal_back"></div>
+			<div class="sp_classmodal_inner">
+				<div class="sp_classmodal_header">
+					<button class="sp_classmodal_close">
+						<p class="sp_classmodal_close_label">閉じる</p>
+					</button>
+					<div class="sp_classmodal_namewrapper">
+						<h4 class="sp_classmodal_name">創造工学デザイン論及び演習</h4>
+						<p class="sp_classmodal_time">月曜 / 1-4限</p>
+					</div>
+				</div>
+				<div class="sp_classmodal_body">
+					<nav class="sp_classmodal_nav">
+					<ul class="sp_classmodal_nav_list">
+						<li class="sp_classmodal_nav_item">
+							<a href="" class="sp_classmodal_nav_link">
+								<div class="sp_classmodal_nav_link_labelwrapper">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.04163 7.08337L5.83329 5.87504C6.40274 5.33337 7.04524 4.9131 7.76079 4.61421C8.47635 4.31532 9.22274 4.16615 9.99996 4.16671C10.7772 4.16726 11.5238 4.31671 12.24 4.61504C12.9561 4.91337 13.5983 5.33337 14.1666 5.87504L12.9583 7.08337C12.5555 6.6806 12.1041 6.37171 11.6041 6.15671C11.1041 5.94171 10.5694 5.83393 9.99996 5.83337C9.43051 5.83282 8.89579 5.9406 8.39579 6.15671C7.89579 6.37282 7.4444 6.68171 7.04163 7.08337ZM4.70829 4.66671L3.54163 3.50004C4.41663 2.63893 5.40635 1.97921 6.51079 1.52087C7.61524 1.06254 8.77829 0.833374 9.99996 0.833374C11.2216 0.833374 12.385 1.06254 13.49 1.52087C14.595 1.97921 15.5844 2.63893 16.4583 3.50004L15.2916 4.66671C14.5833 3.97226 13.7708 3.43754 12.8541 3.06254C11.9375 2.68754 10.9861 2.50004 9.99996 2.50004C9.01385 2.50004 8.06246 2.68754 7.14579 3.06254C6.22913 3.43754 5.41663 3.97226 4.70829 4.66671ZM8.33329 18.3334C7.87496 18.3334 7.48274 18.1703 7.15663 17.8442C6.83052 17.5181 6.66718 17.1256 6.66663 16.6667V10C6.66663 9.54171 6.82996 9.14949 7.15663 8.82337C7.48329 8.49726 7.87551 8.33393 8.33329 8.33337H11.6666C12.125 8.33337 12.5175 8.49671 12.8441 8.82337C13.1708 9.15004 13.3338 9.54226 13.3333 10V16.6667C13.3333 17.125 13.1702 17.5175 12.8441 17.8442C12.518 18.1709 12.1255 18.3339 11.6666 18.3334H8.33329ZM11.6666 16.6667V10H8.33329V16.6667H11.6666Z" fill="#252528"/>
+									</svg>
+									<p class="sp_classmodal_nav_link_label">お知らせ</p>
+								</div>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+								</svg>										
+							</a>
+						</li>
+						<li class="sp_classmodal_nav_item">
+							<a href="" class="sp_classmodal_nav_link">
+								<div class="sp_classmodal_nav_link_labelwrapper">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.04163 7.08337L5.83329 5.87504C6.40274 5.33337 7.04524 4.9131 7.76079 4.61421C8.47635 4.31532 9.22274 4.16615 9.99996 4.16671C10.7772 4.16726 11.5238 4.31671 12.24 4.61504C12.9561 4.91337 13.5983 5.33337 14.1666 5.87504L12.9583 7.08337C12.5555 6.6806 12.1041 6.37171 11.6041 6.15671C11.1041 5.94171 10.5694 5.83393 9.99996 5.83337C9.43051 5.83282 8.89579 5.9406 8.39579 6.15671C7.89579 6.37282 7.4444 6.68171 7.04163 7.08337ZM4.70829 4.66671L3.54163 3.50004C4.41663 2.63893 5.40635 1.97921 6.51079 1.52087C7.61524 1.06254 8.77829 0.833374 9.99996 0.833374C11.2216 0.833374 12.385 1.06254 13.49 1.52087C14.595 1.97921 15.5844 2.63893 16.4583 3.50004L15.2916 4.66671C14.5833 3.97226 13.7708 3.43754 12.8541 3.06254C11.9375 2.68754 10.9861 2.50004 9.99996 2.50004C9.01385 2.50004 8.06246 2.68754 7.14579 3.06254C6.22913 3.43754 5.41663 3.97226 4.70829 4.66671ZM8.33329 18.3334C7.87496 18.3334 7.48274 18.1703 7.15663 17.8442C6.83052 17.5181 6.66718 17.1256 6.66663 16.6667V10C6.66663 9.54171 6.82996 9.14949 7.15663 8.82337C7.48329 8.49726 7.87551 8.33393 8.33329 8.33337H11.6666C12.125 8.33337 12.5175 8.49671 12.8441 8.82337C13.1708 9.15004 13.3338 9.54226 13.3333 10V16.6667C13.3333 17.125 13.1702 17.5175 12.8441 17.8442C12.518 18.1709 12.1255 18.3339 11.6666 18.3334H8.33329ZM11.6666 16.6667V10H8.33329V16.6667H11.6666Z" fill="#252528"/>
+									</svg>
+									<p class="sp_classmodal_nav_link_label">お知らせ</p>
+								</div>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+								</svg>										
+							</a>
+						</li>
+						<li class="sp_classmodal_nav_item">
+							<a href="" class="sp_classmodal_nav_link">
+								<div class="sp_classmodal_nav_link_labelwrapper">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.04163 7.08337L5.83329 5.87504C6.40274 5.33337 7.04524 4.9131 7.76079 4.61421C8.47635 4.31532 9.22274 4.16615 9.99996 4.16671C10.7772 4.16726 11.5238 4.31671 12.24 4.61504C12.9561 4.91337 13.5983 5.33337 14.1666 5.87504L12.9583 7.08337C12.5555 6.6806 12.1041 6.37171 11.6041 6.15671C11.1041 5.94171 10.5694 5.83393 9.99996 5.83337C9.43051 5.83282 8.89579 5.9406 8.39579 6.15671C7.89579 6.37282 7.4444 6.68171 7.04163 7.08337ZM4.70829 4.66671L3.54163 3.50004C4.41663 2.63893 5.40635 1.97921 6.51079 1.52087C7.61524 1.06254 8.77829 0.833374 9.99996 0.833374C11.2216 0.833374 12.385 1.06254 13.49 1.52087C14.595 1.97921 15.5844 2.63893 16.4583 3.50004L15.2916 4.66671C14.5833 3.97226 13.7708 3.43754 12.8541 3.06254C11.9375 2.68754 10.9861 2.50004 9.99996 2.50004C9.01385 2.50004 8.06246 2.68754 7.14579 3.06254C6.22913 3.43754 5.41663 3.97226 4.70829 4.66671ZM8.33329 18.3334C7.87496 18.3334 7.48274 18.1703 7.15663 17.8442C6.83052 17.5181 6.66718 17.1256 6.66663 16.6667V10C6.66663 9.54171 6.82996 9.14949 7.15663 8.82337C7.48329 8.49726 7.87551 8.33393 8.33329 8.33337H11.6666C12.125 8.33337 12.5175 8.49671 12.8441 8.82337C13.1708 9.15004 13.3338 9.54226 13.3333 10V16.6667C13.3333 17.125 13.1702 17.5175 12.8441 17.8442C12.518 18.1709 12.1255 18.3339 11.6666 18.3334H8.33329ZM11.6666 16.6667V10H8.33329V16.6667H11.6666Z" fill="#252528"/>
+									</svg>
+									<p class="sp_classmodal_nav_link_label">お知らせ</p>
+								</div>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+								</svg>										
+							</a>
+						</li>
+						<li class="sp_classmodal_nav_item">
+							<a href="" class="sp_classmodal_nav_link">
+								<div class="sp_classmodal_nav_link_labelwrapper">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.04163 7.08337L5.83329 5.87504C6.40274 5.33337 7.04524 4.9131 7.76079 4.61421C8.47635 4.31532 9.22274 4.16615 9.99996 4.16671C10.7772 4.16726 11.5238 4.31671 12.24 4.61504C12.9561 4.91337 13.5983 5.33337 14.1666 5.87504L12.9583 7.08337C12.5555 6.6806 12.1041 6.37171 11.6041 6.15671C11.1041 5.94171 10.5694 5.83393 9.99996 5.83337C9.43051 5.83282 8.89579 5.9406 8.39579 6.15671C7.89579 6.37282 7.4444 6.68171 7.04163 7.08337ZM4.70829 4.66671L3.54163 3.50004C4.41663 2.63893 5.40635 1.97921 6.51079 1.52087C7.61524 1.06254 8.77829 0.833374 9.99996 0.833374C11.2216 0.833374 12.385 1.06254 13.49 1.52087C14.595 1.97921 15.5844 2.63893 16.4583 3.50004L15.2916 4.66671C14.5833 3.97226 13.7708 3.43754 12.8541 3.06254C11.9375 2.68754 10.9861 2.50004 9.99996 2.50004C9.01385 2.50004 8.06246 2.68754 7.14579 3.06254C6.22913 3.43754 5.41663 3.97226 4.70829 4.66671ZM8.33329 18.3334C7.87496 18.3334 7.48274 18.1703 7.15663 17.8442C6.83052 17.5181 6.66718 17.1256 6.66663 16.6667V10C6.66663 9.54171 6.82996 9.14949 7.15663 8.82337C7.48329 8.49726 7.87551 8.33393 8.33329 8.33337H11.6666C12.125 8.33337 12.5175 8.49671 12.8441 8.82337C13.1708 9.15004 13.3338 9.54226 13.3333 10V16.6667C13.3333 17.125 13.1702 17.5175 12.8441 17.8442C12.518 18.1709 12.1255 18.3339 11.6666 18.3334H8.33329ZM11.6666 16.6667V10H8.33329V16.6667H11.6666Z" fill="#252528"/>
+									</svg>
+									<p class="sp_classmodal_nav_link_label">お知らせ</p>
+								</div>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+								</svg>										
+							</a>
+						</li>
+						<li class="sp_classmodal_nav_item">
+							<a href="" class="sp_classmodal_nav_link">
+								<div class="sp_classmodal_nav_link_labelwrapper">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.04163 7.08337L5.83329 5.87504C6.40274 5.33337 7.04524 4.9131 7.76079 4.61421C8.47635 4.31532 9.22274 4.16615 9.99996 4.16671C10.7772 4.16726 11.5238 4.31671 12.24 4.61504C12.9561 4.91337 13.5983 5.33337 14.1666 5.87504L12.9583 7.08337C12.5555 6.6806 12.1041 6.37171 11.6041 6.15671C11.1041 5.94171 10.5694 5.83393 9.99996 5.83337C9.43051 5.83282 8.89579 5.9406 8.39579 6.15671C7.89579 6.37282 7.4444 6.68171 7.04163 7.08337ZM4.70829 4.66671L3.54163 3.50004C4.41663 2.63893 5.40635 1.97921 6.51079 1.52087C7.61524 1.06254 8.77829 0.833374 9.99996 0.833374C11.2216 0.833374 12.385 1.06254 13.49 1.52087C14.595 1.97921 15.5844 2.63893 16.4583 3.50004L15.2916 4.66671C14.5833 3.97226 13.7708 3.43754 12.8541 3.06254C11.9375 2.68754 10.9861 2.50004 9.99996 2.50004C9.01385 2.50004 8.06246 2.68754 7.14579 3.06254C6.22913 3.43754 5.41663 3.97226 4.70829 4.66671ZM8.33329 18.3334C7.87496 18.3334 7.48274 18.1703 7.15663 17.8442C6.83052 17.5181 6.66718 17.1256 6.66663 16.6667V10C6.66663 9.54171 6.82996 9.14949 7.15663 8.82337C7.48329 8.49726 7.87551 8.33393 8.33329 8.33337H11.6666C12.125 8.33337 12.5175 8.49671 12.8441 8.82337C13.1708 9.15004 13.3338 9.54226 13.3333 10V16.6667C13.3333 17.125 13.1702 17.5175 12.8441 17.8442C12.518 18.1709 12.1255 18.3339 11.6666 18.3334H8.33329ZM11.6666 16.6667V10H8.33329V16.6667H11.6666Z" fill="#252528"/>
+									</svg>
+									<p class="sp_classmodal_nav_link_label">お知らせ</p>
+								</div>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+								</svg>										
+							</a>
+						</li>
+						<li class="sp_classmodal_nav_item">
+							<a href="" class="sp_classmodal_nav_link">
+								<div class="sp_classmodal_nav_link_labelwrapper">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.04163 7.08337L5.83329 5.87504C6.40274 5.33337 7.04524 4.9131 7.76079 4.61421C8.47635 4.31532 9.22274 4.16615 9.99996 4.16671C10.7772 4.16726 11.5238 4.31671 12.24 4.61504C12.9561 4.91337 13.5983 5.33337 14.1666 5.87504L12.9583 7.08337C12.5555 6.6806 12.1041 6.37171 11.6041 6.15671C11.1041 5.94171 10.5694 5.83393 9.99996 5.83337C9.43051 5.83282 8.89579 5.9406 8.39579 6.15671C7.89579 6.37282 7.4444 6.68171 7.04163 7.08337ZM4.70829 4.66671L3.54163 3.50004C4.41663 2.63893 5.40635 1.97921 6.51079 1.52087C7.61524 1.06254 8.77829 0.833374 9.99996 0.833374C11.2216 0.833374 12.385 1.06254 13.49 1.52087C14.595 1.97921 15.5844 2.63893 16.4583 3.50004L15.2916 4.66671C14.5833 3.97226 13.7708 3.43754 12.8541 3.06254C11.9375 2.68754 10.9861 2.50004 9.99996 2.50004C9.01385 2.50004 8.06246 2.68754 7.14579 3.06254C6.22913 3.43754 5.41663 3.97226 4.70829 4.66671ZM8.33329 18.3334C7.87496 18.3334 7.48274 18.1703 7.15663 17.8442C6.83052 17.5181 6.66718 17.1256 6.66663 16.6667V10C6.66663 9.54171 6.82996 9.14949 7.15663 8.82337C7.48329 8.49726 7.87551 8.33393 8.33329 8.33337H11.6666C12.125 8.33337 12.5175 8.49671 12.8441 8.82337C13.1708 9.15004 13.3338 9.54226 13.3333 10V16.6667C13.3333 17.125 13.1702 17.5175 12.8441 17.8442C12.518 18.1709 12.1255 18.3339 11.6666 18.3334H8.33329ZM11.6666 16.6667V10H8.33329V16.6667H11.6666Z" fill="#252528"/>
+									</svg>
+									<p class="sp_classmodal_nav_link_label">お知らせ</p>
+								</div>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+								</svg>										
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="sp_classmodal_pickup">
+					<h5 class="sp_classmodal_pickup_title">Pick Up</h5>
+					<ul class="sp_classmodal_pickup_list">
+						<li class="sp_classmodal_pickup_item">
+							<p class="sp_classmodal_pickup_label">
+								<span class="sp_classmodal_pickup_tag">お知らせ</span>
+								<span class="sp_classmodal_pickup_pub">2024-11-11</span>
+							</p>
+							<a href="#" class="sp_classmodal_pickup_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+						</li>
+						<li class="sp_classmodal_pickup_item">
+							<p class="sp_classmodal_pickup_label">
+								<span class="sp_classmodal_pickup_tag">お知らせ</span>
+								<span class="sp_classmodal_pickup_pub">2024-11-11</span>
+							</p>
+							<a href="#" class="sp_classmodal_pickup_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+						</li>
+						<li class="sp_classmodal_pickup_item">
+							<p class="sp_classmodal_pickup_label">
+								<span class="sp_classmodal_pickup_tag">お知らせ</span>
+								<span class="sp_classmodal_pickup_pub">2024-11-11</span>
+							</p>
+							<a href="#" class="sp_classmodal_pickup_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+						</li>
+						<li class="sp_classmodal_pickup_item">
+							<p class="sp_classmodal_pickup_label">
+								<span class="sp_classmodal_pickup_tag">お知らせ</span>
+								<span class="sp_classmodal_pickup_pub">2024-11-11</span>
+							</p>
+							<a href="#" class="sp_classmodal_pickup_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+						</li>
+						<li class="sp_classmodal_pickup_item">
+							<p class="sp_classmodal_pickup_label">
+								<span class="sp_classmodal_pickup_tag">お知らせ</span>
+								<span class="sp_classmodal_pickup_pub">2024-11-11</span>
+							</p>
+							<a href="#" class="sp_classmodal_pickup_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+						</li>
+					</ul>
+				</div>
+				</div>
+			</div>
+		</section>
+		</body>
 </html>
 
 <style lang="scss">
@@ -602,6 +751,7 @@ const isGradesPage = currentPath === "/grades/";
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		background-color: #F9F9F9;
 	}
 	.slash{
 		width: 100%;
@@ -613,6 +763,7 @@ const isGradesPage = currentPath === "/grades/";
 		position: sticky;
 		top: 24px;
 		width: 48%;
+		min-width: 320px;
 		height: calc(100dvh - 48px);
 		margin: 24px 24px 24px 0;
 		border: 1px solid #dadae3;
@@ -959,11 +1110,16 @@ const isGradesPage = currentPath === "/grades/";
 		border-right: 1px solid #dadae3;
 		overflow: hidden;
 
+		@media (width < 1080px) {
+			display: none;
+		}
+
 		&_inner{
 			position: relative;
 			width: 100%;
 			height: 100%;
 			padding: 32px 16px 24px;
+			overflow-y: scroll;
 		}
 
 		&_header{
@@ -991,6 +1147,7 @@ const isGradesPage = currentPath === "/grades/";
 			flex-direction: column;
 			margin-top: 32px;
 			gap: 24px;
+			overflow-y: scroll;
 			
 			&_box{
 				display: flex;
@@ -1046,7 +1203,7 @@ const isGradesPage = currentPath === "/grades/";
 
 	.mypage_btn{
 		width: calc(100% - 32px);
-		height: 96px;
+		height: 80px;
 		position: absolute;
 		bottom: 0px;
 		background-color: #fff;
@@ -1070,6 +1227,42 @@ const isGradesPage = currentPath === "/grades/";
 		color: #252528;
 	}
 
+	.sp_header{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 32px 16px 16px;
+		border-bottom: 1px solid #dadae3;
+		background-color: #fff;
+		z-index: 99;
+
+		@media (width >= 1080px) {
+			  display: none;
+		  }
+
+		&_title{
+			font-size: 20px;
+			font-weight: 500;
+			color: #252528;
+		}
+	}
+  .ham{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+
+		&_elem{
+			width: 28px;
+			height: 2px;
+			background-color: #252528;
+			border-radius: 100px;
+		}
+	}
+
 	.main{
 		display: flex;
 		grid-area: 24px;
@@ -1079,29 +1272,195 @@ const isGradesPage = currentPath === "/grades/";
 		background-color: #F9F9F9;
 		margin-left: auto;
 
+		@media (width < 1080px) {
+			width: 100%;
+			margin-top: 96px;
+		}
+
 		&_inner{
 			width: 100%;
 			margin-inline: auto;
 			padding: 24px 24px 0;
+
+			@media (width < 1080px) {
+			  padding: 0 16px;
+		  }
 		}
 
 		&_header{
 			width: 100%;
 			padding: 20px 24px;
 			background-color: #6161DA;
-			border-radius: 8px;
-			// margin-bottom: 32px;
+			border-radius: 16px;
+			
+			@media (width < 1080px) {
+			  width: auto;
+				display: inline-block;
+				padding: 12px 16px;
+				border-radius: 12px;
+		  }
 
 			&_title{
 				font-size: 20px;
 				color: #fff;
 				font-weight: 500;
+
+				@media (width < 1080px) {
+			    font-size: 14px;
+		    }
 			}
 		}
 	}
 
+	.sp_classmodal{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 100dvh;
+		z-index: 99;
+		align-items: flex-end;
+
+		&_back{
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #252528;
+			opacity: 0.2;
+			z-index: -1;
+		}
+
+		&_inner{
+			width: 100%;
+			height: 80%;
+			display: flex;
+			flex-direction: column;
+			margin-inline: auto;
+			background-color: #fff;
+			border-radius: 32px 32px 0 0;
+		}
+
+		&_body{
+			overflow-y: scroll;
+			padding-bottom: 40px;
+		}
+
+		&_header{
+			margin: 16px 16px;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&_close{
+			position: absolute;
+			left: 0;
+
+			&_label{
+				font-size: 12px;
+				color: #66666d;
+				text-decoration: underline;
+			}
+		}
+
+		&_namewrapper{
+			text-align: center;
+		}
+
+		&_name{
+			font-size: 14px;
+			color: #252528;
+			font-weight: 500;
+		}
+
+		&_time{
+			font-size: 12px;
+			color: #66666d;
+			margin-top: 8px;
+		}
+
+		&_nav{
+			padding: 0 8px;
+			margin-top: 16px;
+
+      &_list{
+      	display: grid;
+      	grid-template-columns: repeat(2, 1fr);
+      	gap: 8px;
+      }
+
+      &_item{
+      }
+
+      &_link{
+      	display: flex;
+      	justify-content: space-between;
+      	align-items: center;
+      	padding: 16px 8px;
+      	border-radius: 16px;
+      	border: 1px solid #dadae3;
+    
+      	&_labelwrapper{
+      		display: flex;
+      		align-items: center;
+      		gap: 8px;
+      	}
+    
+      	&_label{
+      		font-size: 12px;
+      		font-weight: 400;
+      	}
+      }
+    }
+
+		&_pickup{
+			padding: 0 16px;
+			margin-top: 32px;
+
+      &_title{
+      	font-size: 14px;
+      	font-weight: 500;
+      	color: #252528;
+      }
+
+      &_list{
+      	display: flex;
+      	flex-direction: column;
+      	gap: 24px;
+      	margin-top: 24px;
+      }
+
+      &_item{
+      }
+
+      &_label{
+      	font-size: 12px;
+      	font-weight: 400;
+      	color: #66666d;
+      }
+
+      &_pub{
+      	margin-left: 8px;
+      }
+
+      &_text{
+      	display: block;
+      	margin-top: 12px;
+      	font-size: 12px;
+      	font-weight: 400;
+      	color: #252528;
+      	text-decoration: underline;
+      }
+    }
+	}
+
 	.dis-block{
 		display: block;
+	}
+
+.dis-flex{
+		display: flex;
 	}
 	
 	.dis-none{
@@ -1179,6 +1538,7 @@ const isGradesPage = currentPath === "/grades/";
 
 	const sidebar = document.getElementById('sidebar')
 	const newssidebar = document.getElementById('newssidebar')
+	const sp_modal = document.getElementById('sp_modal')
 
 	document.querySelectorAll('.sidebar_item').forEach((sidebar_item) => {
 		const close_btn = document.getElementById('handle_sidebar_close')
@@ -1188,19 +1548,31 @@ const isGradesPage = currentPath === "/grades/";
 			console.log(sidebar_title)
 			console.log(sidebar_text)
 
-			if (newssidebar?.classList.contains('dis-block')) {
-				newssidebar?.classList.remove('dis-block')
-				newssidebar?.classList.add('dis-none')
-			}
+			if (window.innerWidth <= 780) {
+      // 画面サイズが780px以下の場合
+        if (sp_modal?.classList.contains('dis-none')) {
+          sp_modal?.classList.remove('dis-none');
+          sp_modal?.classList.add('dis-flex');
+        } else {
+					sp_modal?.classList.add('dis-none');
+          sp_modal?.classList.remove('dis-flex');
+				}
+      } else {
+        // 画面サイズが780pxより大きい場合
+        if (newssidebar?.classList.contains('dis-block')) {
+          newssidebar?.classList.remove('dis-block');
+          newssidebar?.classList.add('dis-none');
+        }
 
-			if (sidebar?.classList.contains('dis-none')) {
-				sidebar?.classList.add('dis-block')
-				sidebar?.classList.remove('dis-none')
-			}
+        if (sidebar?.classList.contains('dis-none')) {
+          sidebar?.classList.add('dis-block');
+          sidebar?.classList.remove('dis-none');
+        }
 
-			if (sidebar_title && sidebar_text) {
-				sidebar_title.textContent = sidebar_text;
-			}
+        if (sidebar_title && sidebar_text) {
+          sidebar_title.textContent = sidebar_text;
+        }
+      }
 		})
 
 		close_btn?.addEventListener('click', () =>{

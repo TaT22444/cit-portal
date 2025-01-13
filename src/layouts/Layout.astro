@@ -604,10 +604,10 @@ const isGradesPage = currentPath === "/grades/";
 		</main>
 
 		<section class="sp_classmodal dis-none" id="sp_modal">
-			<div class="sp_classmodal_back"></div>
+			<div class="sp_classmodal_back" id="sp_classmodal_back"></div>
 			<div class="sp_classmodal_inner">
 				<div class="sp_classmodal_header">
-					<button class="sp_classmodal_close">
+					<button class="sp_classmodal_close" id="sp_classmodal_close">
 						<p class="sp_classmodal_close_label">閉じる</p>
 					</button>
 					<div class="sp_classmodal_namewrapper">
@@ -1539,6 +1539,8 @@ const isGradesPage = currentPath === "/grades/";
 	const sidebar = document.getElementById('sidebar')
 	const newssidebar = document.getElementById('newssidebar')
 	const sp_modal = document.getElementById('sp_modal')
+	const sp_classmodal_close = document.getElementById('sp_classmodal_close')
+	const sp_classmodal_back = document.getElementById('sp_classmodal_back')
 
 	document.querySelectorAll('.sidebar_item').forEach((sidebar_item) => {
 		const close_btn = document.getElementById('handle_sidebar_close')
@@ -1553,10 +1555,8 @@ const isGradesPage = currentPath === "/grades/";
         if (sp_modal?.classList.contains('dis-none')) {
           sp_modal?.classList.remove('dis-none');
           sp_modal?.classList.add('dis-flex');
-        } else {
-					sp_modal?.classList.add('dis-none');
-          sp_modal?.classList.remove('dis-flex');
-				}
+        } 
+
       } else {
         // 画面サイズが780pxより大きい場合
         if (newssidebar?.classList.contains('dis-block')) {
@@ -1573,6 +1573,16 @@ const isGradesPage = currentPath === "/grades/";
           sidebar_title.textContent = sidebar_text;
         }
       }
+		})
+
+		sp_classmodal_close?.addEventListener('click', () => {
+			sp_modal?.classList.add('dis-none');
+			sp_modal?.classList.remove('dis-flex');
+		})
+
+		sp_classmodal_back?.addEventListener('click', () => {
+			sp_modal?.classList.add('dis-none');
+			sp_modal?.classList.remove('dis-flex');
 		})
 
 		close_btn?.addEventListener('click', () =>{

@@ -741,6 +741,45 @@ const isGradesPage = currentPath === "/grades/";
 				</div>
 			</div>
 		</section>
+
+    <section class="sp_newsmodal dis-none" id="sp_news_modal">
+			<div class="sp_newsmodal_back" id="sp_newsmodal_back"></div>
+			<div class="sp_newsmodal_inner">
+				<div class="sp_newsmodal_header">
+					<button class="sp_newsmodal_close" id="sp_newsmodal_close">
+						<p class="sp_newsmodal_close_label">閉じる</p>
+					</button>
+					<div class="sp_newsmodal_rightwrapper">
+						<button class="sp_newsmodal_rightwrapper_btn">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M6 19.5V5.616C6 5.15533 6.15433 4.771 6.463 4.463C6.77167 4.155 7.156 4.00067 7.616 4H16.385C16.845 4 17.2293 4.15433 17.538 4.463C17.8467 4.77167 18.0007 5.156 18 5.616V19.5L12 16.923L6 19.5ZM7 17.95L12 15.8L17 17.95V5.616C17 5.462 16.936 5.32067 16.808 5.192C16.68 5.06333 16.5387 4.99933 16.384 5H7.616C7.462 5 7.32067 5.064 7.192 5.192C7.06333 5.32 6.99933 5.46133 7 5.616V17.95Z" fill="#252528"/>
+							</svg>								
+						</button>
+						<button class="sp_newsmodal_rightwrapper_btn">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.753 3C16.3497 3 16.922 3.23705 17.344 3.65901C17.7659 4.08097 18.003 4.65326 18.003 5.25L18.002 6.003H18.752C19.614 6.00353 20.4405 6.34605 21.0502 6.95537C21.6599 7.56469 22.0029 8.39103 22.004 9.253L22.007 15.25C22.007 15.8464 21.7702 16.4184 21.3487 16.8403C20.9272 17.2622 20.3554 17.4995 19.759 17.5H18V18.75C18 19.3467 17.7629 19.919 17.341 20.341C16.919 20.7629 16.3467 21 15.75 21H8.25C7.65326 21 7.08097 20.7629 6.65901 20.341C6.23705 19.919 6 19.3467 6 18.75V17.5H4.25C3.65326 17.5 3.08097 17.2629 2.65901 16.841C2.23705 16.419 2 15.8467 2 15.25V9.254C2 8.39205 2.34241 7.5654 2.9519 6.9559C3.5614 6.34641 4.38805 6.004 5.25 6.004L5.999 6.003L6 5.25C6 4.65326 6.23705 4.08097 6.65901 3.65901C7.08097 3.23705 7.65326 3 8.25 3H15.753ZM15.75 13.5H8.25C8.05109 13.5 7.86032 13.579 7.71967 13.7197C7.57902 13.8603 7.5 14.0511 7.5 14.25V18.75C7.5 19.164 7.836 19.5 8.25 19.5H15.75C15.9489 19.5 16.1397 19.421 16.2803 19.2803C16.421 19.1397 16.5 18.9489 16.5 18.75V14.25C16.5 14.0511 16.421 13.8603 16.2803 13.7197C16.1397 13.579 15.9489 13.5 15.75 13.5ZM18.752 7.504H5.25C4.78587 7.504 4.34075 7.68837 4.01256 8.01656C3.68437 8.34475 3.5 8.78987 3.5 9.254V15.25C3.5 15.664 3.836 16 4.25 16H6V14.25C6 13.6533 6.23705 13.081 6.65901 12.659C7.08097 12.2371 7.65326 12 8.25 12H15.75C16.3467 12 16.919 12.2371 17.341 12.659C17.7629 13.081 18 13.6533 18 14.25V16H19.783C19.9772 15.9933 20.1612 15.9114 20.2963 15.7717C20.4313 15.632 20.5069 15.4453 20.507 15.251L20.504 9.254C20.5029 8.78985 20.318 8.34504 19.9896 8.01702C19.6612 7.68901 19.2162 7.50453 18.752 7.504ZM15.752 4.5H8.25C8.05109 4.5 7.86032 4.57902 7.71967 4.71967C7.57902 4.86032 7.5 5.05109 7.5 5.25L7.499 6.003H16.502V5.25C16.502 5.05109 16.423 4.86032 16.2823 4.71967C16.1417 4.57902 15.9509 4.5 15.752 4.5Z" fill="#252528"/>
+							</svg>															
+						</button>
+					</div>
+				</div>
+				<h4 class="sp_newsmodal_title" id="sp_newsmodal_title"></h4>
+				<div class="sp_newsmodal_timebox">
+					<p class="sp_newsmodal_timebox_label">
+						掲載期間
+					</p>
+					<p class="sp_newsmodal_publication period">
+						<span class="sp_newsmodal_news_pub" id="sp_newsmodal_news_pub"></span>
+						<span> ~ </span>
+						<span class="sp_newsmodal_news_end" id="sp_newsmodal_news_end"></span>
+					</p>
+				</div>
+				<div class="sp_newsmodal_textbox">
+					<p class="sp_newsmodal_textbox_label">本文</p>
+					<div class="sp_newsmodal_textbox_text" id="sp_newsmodal_news_text">
+					</div>
+				</div>
+			</div>
+		</section>
 		</body>
 </html>
 
@@ -1381,8 +1420,8 @@ const isGradesPage = currentPath === "/grades/";
 		}
 
 		&_nav{
-			padding: 0 8px;
-			margin-top: 16px;
+			padding: 12px 16px 0;
+			margin-top: 12px;
 
       &_list{
       	display: grid;
@@ -1453,6 +1492,107 @@ const isGradesPage = currentPath === "/grades/";
       	text-decoration: underline;
       }
     }
+	}
+
+.sp_newsmodal{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 100dvh;
+		z-index: 99;
+		align-items: flex-end;
+
+		&_back{
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #252528;
+			opacity: 0.2;
+			z-index: -1;
+		}
+
+		&_inner{
+			width: 100%;
+			height: 80%;
+			display: flex;
+			flex-direction: column;
+			margin-inline: auto;
+			background-color: #fff;
+			border-radius: 32px 32px 0 0;
+		}
+
+		&_header{
+			margin: 16px 16px 8px;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		&_close{
+
+			&_label{
+				font-size: 12px;
+				color: #66666d;
+				text-decoration: underline;
+			}
+		}
+
+		&_rightwrapper{
+			display: flex;
+			align-items: center;
+			gap: 8px;
+
+			&_btn{
+				width: 44px;
+				height: 44px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 16px;
+				border: 1px solid #dadae3;
+			}
+		}
+
+		&_timebox{
+			margin: 8px 16px 0;
+			padding: 16px 0;
+			text-align: center;
+			color: #66666d;
+			border-top: 1px solid #dadae3;
+			border-bottom: 1px solid #dadae3;
+
+			&_label{
+				font-size: 12px;
+			}
+		}
+
+		&_publication{
+			margin-top: 8px;
+		}
+
+		&_textbox{
+
+			margin-top: 16px;
+
+		  &_label{
+	      text-align: center;
+	      color: #66666d;
+	      font-size: 12px;
+      }
+      
+      &_text{
+      	font-size: 14px;
+      	color: #252528;
+      	line-height: 1.6;
+      	margin-top: 16px;
+  
+		  	> a{
+		  		font-size: 20px;
+		  	}
+      } 
+	  }
 	}
 
 	.dis-block{
@@ -1539,6 +1679,7 @@ const isGradesPage = currentPath === "/grades/";
 	const sidebar = document.getElementById('sidebar')
 	const newssidebar = document.getElementById('newssidebar')
 	const sp_modal = document.getElementById('sp_modal')
+	const sp_news_modal = document.getElementById('sp_news_modal')
 	const sp_classmodal_close = document.getElementById('sp_classmodal_close')
 	const sp_classmodal_back = document.getElementById('sp_classmodal_back')
 
@@ -1593,7 +1734,11 @@ const isGradesPage = currentPath === "/grades/";
 
 document.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('.newssidebar_item').forEach((newssidebar_item) => {
+
 		const close_btn = document.getElementById('handle_newssidebar_close')
+		const news_modal_back = document.getElementById('sp_newsmodal_back')
+		const news_modal_close = document.getElementById('sp_newsmodal_close')
+
 		newssidebar_item.addEventListener('click', () => {
 			const sidebar_title = document.getElementById('newssidebar_title')
 			const sidebar_news_text = document.getElementById('sidebar_news_text')
@@ -1604,6 +1749,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			const sidebar_news_pub = document.getElementById('sidebar_news_pub')
 			const news_end = newssidebar_item.querySelector('.news_end')?.textContent?.trim()
 			const sidebar_news_end = document.getElementById('sidebar_news_end')
+			const news_modal_news = document.getElementById('sp_newsmodal_title')
+			const news_modal_news_text = document.getElementById('sp_newsmodal_news_text')
+			const news_modal_news_end = document.getElementById('sp_newsmodal_news_end')
+			const news_modal_news_pub = document.getElementById('sp_newsmodal_news_pub')
 			// const newsId = newssidebar_item.getAttribute('data-news-id');
 			// console.log(`Clicked News ID: ${newsId}`);
 			console.log(sidebar_title)
@@ -1611,31 +1760,51 @@ document.addEventListener('DOMContentLoaded', () => {
 			console.log(sidebar_news_text)
 			console.log(news_text)
 
-			if (sidebar?.classList.contains('dis-block')) {
-				sidebar?.classList.remove('dis-block')
-				sidebar?.classList.add('dis-none')
-			}
+			if (window.innerWidth <= 780) {
+      // 画面サイズが780px以下の場合
+        if (sp_news_modal?.classList.contains('dis-none')) {
+          sp_news_modal?.classList.remove('dis-none');
+          sp_news_modal?.classList.add('dis-flex');
+        } 
 
-			if (newssidebar?.classList.contains('dis-none')) {
-				newssidebar?.classList.add('dis-block')
-				newssidebar?.classList.remove('dis-none')
-			}
+      } else {
 
-			if (sidebar_title && sidebar_text) {
-				sidebar_title.textContent = sidebar_text;
-			}
+				if (sidebar?.classList.contains('dis-block')) {
+				  sidebar?.classList.remove('dis-block')
+				  sidebar?.classList.add('dis-none')
+			  }
 
-			if (sidebar_news_text && news_text) {
-				sidebar_news_text.innerHTML = news_text; // HTML をそのまま挿入
-			}
+			  if (newssidebar?.classList.contains('dis-none')) {
+			  	newssidebar?.classList.add('dis-block')
+			  	newssidebar?.classList.remove('dis-none')
+			  }
 
-			if (sidebar_news_pub && news_pub) {
-				sidebar_news_pub.textContent = news_pub;
-			}
+			  if (sidebar_title && sidebar_text) {
+			  	sidebar_title.textContent = sidebar_text;
+			  }
 
-			if (sidebar_news_end && news_end) {
-				sidebar_news_end.textContent = news_end;
+			  if (sidebar_news_text && news_text) {
+			  	sidebar_news_text.innerHTML = news_text; // HTML をそのまま挿入
+			  }
+
+			  if (sidebar_news_pub && news_pub) {
+			  	sidebar_news_pub.textContent = news_pub;
+			  }
+
+			  if (sidebar_news_end && news_end) {
+			  	sidebar_news_end.textContent = news_end;
+			  }
 			}
+		})
+
+		news_modal_close?.addEventListener('click', () => {
+			sp_news_modal?.classList.add('dis-none');
+			sp_news_modal?.classList.remove('dis-flex');
+		})
+
+		news_modal_back?.addEventListener('click', () => {
+			sp_news_modal?.classList.add('dis-none');
+			sp_news_modal?.classList.remove('dis-flex');
 		})
 
 		close_btn?.addEventListener('click', () =>{

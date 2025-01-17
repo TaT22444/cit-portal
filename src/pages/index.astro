@@ -620,7 +620,7 @@ const answer = document.getElementById("answer");
 submit?.addEventListener("click", async () => {
   if (qu instanceof HTMLInputElement) {
     const userQuestion = qu.value; // 入力値を取得
-		
+
 
     // JSONデータから大学情報をプロンプトに追加
     const universityContext = `
@@ -652,6 +652,7 @@ submit?.addEventListener("click", async () => {
       以下は大学ポータルサイトに関する情報です。この情報に基づいて、以下の質問に答えてください:
       情報:
       ${universityContext}
+			${ai_setting}
 
       過去の会話:
       ${conversationContext}

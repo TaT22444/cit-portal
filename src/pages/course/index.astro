@@ -327,7 +327,7 @@ import Layout from '../../layouts/Layout.astro';
         <!-- <div class="detail_box_slash"></div> -->
         <div class="detail_box">
           <div class="detail_box_total">
-            <p class="detail_box_total_label">これまでの総取得単位</p>
+            <p class="detail_box_total_label">見込み総取得単位</p>
             <p class="detail_box_total_numberwrapper">
               <span class="detail_box_total_number">22</span>
               <span>/</span>
@@ -642,10 +642,18 @@ import Layout from '../../layouts/Layout.astro';
       border-radius: 16px;
       border: 1px solid #dadae3;
 
+      @media (width < 414px) {
+        padding: 16px 16px;
+		  }
+
       &_label{
         font-size: 14px;
         font-weight: 400;
         color: #66666d;
+
+        @media (width < 414px) {
+          font-size: 12px;
+		    }
       }
 
       &_numberwrapper{
@@ -667,9 +675,10 @@ import Layout from '../../layouts/Layout.astro';
       display: flex;
       flex-direction: column;
       gap: 12px;
+      margin: 16px 8px 0;
 
       @media (width < 768px) {
-        margin: 24px 16px 0;
+        margin: 24px 8px 0;
 		  }
     }
 
@@ -680,13 +689,13 @@ import Layout from '../../layouts/Layout.astro';
 
       &_label{
         width: 72px;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 400;
         color: #66666d;
       }
 
       &_Label{
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 400;
         color: #66666d;
       }

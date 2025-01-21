@@ -202,6 +202,11 @@ import Layout from '../../layouts/Layout.astro';
 		display: flex;
 		gap: 8;
 		align-items: center;
+    overflow-x: scroll;
+  
+    &::-webkit-scrollbar{
+      display: none;
+    }
 
 		&_list{
 			display: flex;
@@ -387,6 +392,7 @@ thead th{
   color: #66666d;
 }
 
+
 tbody{
   width: 100%;
   display: flex;
@@ -413,6 +419,7 @@ thead th:nth-child(1),
 tbody td:nth-child(1) {
   flex: 1;
   width: 100%;
+  min-width: 260px;
 }
 
 tbody td:nth-child(1){

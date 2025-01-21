@@ -83,10 +83,18 @@ import NewsList from '../../components/NewsList.astro';
 		display: flex;
 		gap: 8;
 		align-items: center;
+    overflow-x: scroll;
+  
+    &::-webkit-scrollbar{
+      display: none;
+    }
 
 		&_list{
 			display: flex;
+      min-width: 440px;
 			align-items: center;
+      // flex-wrap: wrap;
+      overflow-x: scroll;
 			gap: 8px;
 		}
 
@@ -107,6 +115,9 @@ import NewsList from '../../components/NewsList.astro';
 			align-items: center;
       padding: 12px 16px;
 			border-radius: 100px;
+
+      @media (width < 414px) {
+      }
 		}
 	}
 
@@ -115,10 +126,17 @@ import NewsList from '../../components/NewsList.astro';
     align-items: center;
     gap: 24px;
     margin-top: 16px;
+
+    @media (width < 414px) {
+      margin-top: 24px;
+      flex-direction: column;
+      align-items: baseline;
+      gap: 16px;
+    }
   }
 
   .input{
-    width: 100%;
+    // width: 100%;
     font-size: 12px;
     color: #66666d;
   }
@@ -127,6 +145,10 @@ import NewsList from '../../components/NewsList.astro';
     display: flex;
     align-items: center;
     gap: 8px;
+
+    @media (width < 414px) {
+      width: 100%;
+    }
   }
 
   .search_btn{
@@ -144,6 +166,11 @@ import NewsList from '../../components/NewsList.astro';
     padding: 12px 16px;
     border: 1px solid #66666d;
     border-radius: 100px;
+
+    @media (width < 414px) {
+      flex: 1; 
+      width: 100%;
+    }
   }
 
   .order_box{

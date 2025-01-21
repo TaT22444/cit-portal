@@ -10,7 +10,7 @@ import Layout from '../../layouts/Layout.astro';
     <div class="inner">
       <nav class="nav">
         <ul class="nav_list">
-          <li class="nav_item active">
+          <li class="nav_item active" id="tag_item">
             <button class="nav_btn">
               <p class="nav_btn_label">学籍情報</p>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,7 +18,7 @@ import Layout from '../../layouts/Layout.astro';
               </svg>              
             </button>
           </li>
-          <li class="nav_item">
+          <li class="nav_item" id="tag_item">
             <button class="nav_btn">
               <p class="nav_btn_label">学習データ</p>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@ import Layout from '../../layouts/Layout.astro';
               </svg>              
             </button>
           </li>
-          <li class="nav_item">
+          <li class="nav_item" id="tag_item">
             <button class="nav_btn">
               <p class="nav_btn_label">試験・資格</p>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,7 @@ import Layout from '../../layouts/Layout.astro';
               </svg>              
             </button>
           </li>
-          <li class="nav_item">
+          <li class="nav_item" id="tag_item">
             <button class="nav_btn">
               <p class="nav_btn_label">健康診断結果</p>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@ import Layout from '../../layouts/Layout.astro';
               </svg>              
             </button>
           </li>
-          <li class="nav_item">
+          <li class="nav_item" id="tag_item">
             <button class="nav_btn">
               <p class="nav_btn_label">安否確認</p>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@ import Layout from '../../layouts/Layout.astro';
               </svg>              
             </button>
           </li>
-          <li class="nav_item">
+          <li class="nav_item" id="tag_item">
             <button class="nav_btn">
               <p class="nav_btn_label">テーマ</p>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -575,3 +575,29 @@ import Layout from '../../layouts/Layout.astro';
     }
   }
 </style>
+
+<script>
+    const tag_btns = document.querySelectorAll('#tag_item')
+	  tag_btns.forEach((tag_btn_target) => {
+		tag_btn_target.addEventListener('click', () => {
+			tag_btns.forEach((tag_btn_all) => {
+				tag_btn_all.classList.remove('active')
+			})
+      const target_label = tag_btn_target.textContent?.trim()
+      const box_label = document.getElementById('box_label')
+      if (box_label && target_label) {
+        box_label.textContent = target_label
+      }
+      
+			tag_btn_target.classList.add('active')
+		})
+		tag_btn_target.addEventListener('mouseover', () => {
+			tag_btn_target.classList.add('tag_item_mouseover')
+			tag_btn_target.classList.remove('tag_item_mouseleave')
+		})
+		tag_btn_target.addEventListener('mouseleave', () => {
+			tag_btn_target.classList.remove('tag_item_mouseover')
+			tag_btn_target.classList.add('tag_item_mouseleave')
+		})
+	})
+</script>

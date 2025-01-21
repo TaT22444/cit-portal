@@ -253,7 +253,7 @@ import Layout from '../../layouts/Layout.astro';
       <div class="box_header">
         <p class="box_label">履修登録</p>
         <div class="box_btns">
-          <button class="box_btn">選択をリセット</button>
+          <button class="box_btn reset" id="reset_btn">選択をリセット</button>
           <button class="box_btn judge">見込み判定</button>
         </div>
       </div>
@@ -381,7 +381,9 @@ import Layout from '../../layouts/Layout.astro';
           </div>
         </div>
         <div class="register_modal dis-none" id="register_modal">
-          <p class="register_modal_label">月曜1限</p>
+          <div class="register_modal_back" id="register_modal_back"></div>
+          <div class="register_modal_contents">
+            <p class="register_modal_label">月曜1限</p>
           <ul class="register_modal_list">
             <li class="register_modal_item">
               <button class="register_modal_btn" id="register_modal_item">
@@ -420,6 +422,7 @@ import Layout from '../../layouts/Layout.astro';
               </button>
             </li>
           </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -434,10 +437,17 @@ import Layout from '../../layouts/Layout.astro';
   .box{
     margin-top: 32px;
 
+    @media (width < 1080px) {
+
+		}
+
     &_register{
       margin-top: 40px;
       padding-top: 40px;
       border-top: 1px solid #dadae3;
+      @media (width < 1080px) {
+        
+		  }
     }
 
     &_header{
@@ -446,12 +456,34 @@ import Layout from '../../layouts/Layout.astro';
       display: flex;
       align-items: center;
       z-index: 2;
+
+      @media (width < 768px) {
+        top: 88px;
+		  }
+
+      @media (width < 414px) {
+        flex-direction: column;
+        align-items: baseline;
+        gap: 16px;
+		  }
+    }
+
+    &_label{
+      font-size: 14px;
+      color: #66666d;
+      font-weight: 400;
+      flex: 1;
     }
 
     &_btns{
       display: flex;
       align-items: center;
+      align-self: flex-end;
       gap: 8px;
+
+      >.reset{
+        background-color: #6161DA;
+      }
 
       >.judge{
         background-color: #F88B17;
@@ -464,6 +496,10 @@ import Layout from '../../layouts/Layout.astro';
       border-radius: 100px;
       color: #fff;
       font-size: 12px;
+
+      @media (width < 414px) {
+        padding: 16px 24px;
+		  }
     }
   }
 
@@ -476,6 +512,7 @@ import Layout from '../../layouts/Layout.astro';
 		&_list{
 			display: flex;
 			align-items: center;
+      flex-wrap: wrap;
 			gap: 8px;
 		}
 
@@ -506,15 +543,12 @@ import Layout from '../../layouts/Layout.astro';
 		color: #252528;
 	}
 
-  .box_label{
-    font-size: 14px;
-    color: #66666d;
-    font-weight: 400;
-    flex: 1;
-  }
-
   .help_box{
     margin-top: 32px;
+    
+    @media (width < 768px) {
+      display: none;
+		}
 
     &_list{
       margin-top: 16px;
@@ -559,6 +593,11 @@ import Layout from '../../layouts/Layout.astro';
     align-items: center;
     gap: 48px;
 
+    @media (width < 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 64px;
+		}
+
     &::after{
       content: "";
       position: absolute;
@@ -567,6 +606,14 @@ import Layout from '../../layouts/Layout.astro';
       width: 1px;
       height: 100%;
       background-color: #dadae3;
+
+      @media (width < 768px) {
+        width: 80%;
+        left: 50%;
+        height: 1px;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+		  }
     }
   }
 
@@ -604,6 +651,10 @@ import Layout from '../../layouts/Layout.astro';
       display: flex;
       flex-direction: column;
       gap: 12px;
+
+      @media (width < 768px) {
+        margin: 24px 16px 0;
+		  }
     }
 
     &_item{
@@ -657,6 +708,9 @@ import Layout from '../../layouts/Layout.astro';
     display: flex;
     gap: 16px;
     margin-top: 16px;
+    
+    @media (width < 768px) {
+		}
   }
 
   .register_box{
@@ -672,6 +726,48 @@ import Layout from '../../layouts/Layout.astro';
     min-width: 300px;
     height: 100%;
 
+    @media (width < 768px) {
+      display: flex;
+      align-items: flex-end;
+      position: fixed;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      min-width: none;
+      height: 100%;
+      z-index: 100;
+		}
+
+    &_back{
+      display: none;
+      
+      @media (width < 768px) {
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #252528;
+        opacity: 0.2;
+        z-index: -1;
+      }
+    }
+
+    &_contents{
+
+      @media (width < 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 60%;
+        padding: 24px 16px;
+        border-radius: 32px 32px 0 0 ;
+        background-color: #f9f9f9;
+      }
+    }
+
     &_label{
       font-size: 14px;
       font-weight: 400;
@@ -679,6 +775,7 @@ import Layout from '../../layouts/Layout.astro';
     }
 
     &_list{
+      width: 100%;
       margin-top: 16px;
       display: flex;
       flex-direction: column;
@@ -754,6 +851,13 @@ import Layout from '../../layouts/Layout.astro';
     padding: 16px;
     font-size: 14px;
     color: #66666d;
+
+    @media (width < 414px) {
+      font-size: 12px;
+      padding: 16px 0;
+      margin-right: 8px;
+      align-items: baseline;
+    }
   }
 
   .class_item{
@@ -799,6 +903,17 @@ import Layout from '../../layouts/Layout.astro';
 <script>
   const register_modal = document.getElementById('register_modal')
   document.querySelectorAll('.class_item').forEach((class_item)=>{
+
+    const reset_btn = document.getElementById('reset_btn')
+    reset_btn?.addEventListener('click', () => {
+      class_item.textContent = ""
+    })
+
+    const register_modal_back = document.getElementById('register_modal_back')
+    register_modal_back?.addEventListener('click', () => {
+      register_modal?.classList.add('dis-none')
+    })
+
     class_item.addEventListener('click', () => {
       if (register_modal?.classList.contains('dis-none')) {
         register_modal.classList.remove('dis-none')
@@ -819,6 +934,7 @@ import Layout from '../../layouts/Layout.astro';
         if (class_item && register_class_name) {
           class_item.textContent = register_class_name
         }
+        register_modal?.classList.add('dis-none')
       })
     })
   })

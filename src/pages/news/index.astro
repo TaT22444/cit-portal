@@ -16,19 +16,19 @@ import NewsList from '../../components/NewsList.astro';
         <nav class="tag">
           <ul class="tag_list">
             <li class="tag_item active">
-              <button class="tag_btn active">全て</button>
+              <button class="tag_btn active" id="tag_item">全て</button>
             </li>
             <li class="tag_item">
-              <button class="tag_btn">未読</button>
+              <button class="tag_btn" id="tag_item">未読</button>
             </li>
             <li class="tag_item">
-              <button class="tag_btn">重要</button>
+              <button class="tag_btn" id="tag_item">重要</button>
             </li>
             <li class="tag_item">
-              <button class="tag_btn">ブックマーク</button>
+              <button class="tag_btn" id="tag_item">ブックマーク</button>
             </li>
             <li class="tag_item">
-              <button class="tag_btn">既読</button>
+              <button class="tag_btn" id="tag_item">既読</button>
             </li>
           </ul>
         </nav>
@@ -263,3 +263,23 @@ import NewsList from '../../components/NewsList.astro';
 		line-height: 1.6;
 	}
 </style>
+
+<script>
+    const tag_btns = document.querySelectorAll('#tag_item')
+	tag_btns.forEach((tag_btn_target) => {
+		tag_btn_target.addEventListener('click', () => {
+			tag_btns.forEach((tag_btn_all) => {
+				tag_btn_all.classList.remove('active')
+			})
+			tag_btn_target.classList.add('active')
+		})
+		tag_btn_target.addEventListener('mouseover', () => {
+			tag_btn_target.classList.add('tag_item_mouseover')
+			tag_btn_target.classList.remove('tag_item_mouseleave')
+		})
+		tag_btn_target.addEventListener('mouseleave', () => {
+			tag_btn_target.classList.remove('tag_item_mouseover')
+			tag_btn_target.classList.add('tag_item_mouseleave')
+		})
+	})
+</script>

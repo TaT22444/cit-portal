@@ -29,22 +29,22 @@ import Layout from '../../layouts/Layout.astro';
       <nav class="tag">
         <ul class="tag_list">
           <li class="tag_item active">
-            <button class="tag_btn active">月曜</button>
+            <button class="tag_btn active" id="tag_item">月曜</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">火曜</button>
+            <button class="tag_btn" id="tag_item">火曜</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">水曜</button>
+            <button class="tag_btn" id="tag_item">水曜</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">木曜</button>
+            <button class="tag_btn" id="tag_item">木曜</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">金曜</button>
+            <button class="tag_btn" id="tag_item">金曜</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">土曜</button>
+            <button class="tag_btn" id="tag_item">土曜</button>
           </li>
         </ul>
       </nav>
@@ -293,3 +293,24 @@ import Layout from '../../layouts/Layout.astro';
     }
   }
 </style>
+
+
+<script>
+    const tag_btns = document.querySelectorAll('#tag_item')
+	tag_btns.forEach((tag_btn_target) => {
+		tag_btn_target.addEventListener('click', () => {
+			tag_btns.forEach((tag_btn_all) => {
+				tag_btn_all.classList.remove('active')
+			})
+			tag_btn_target.classList.add('active')
+		})
+		tag_btn_target.addEventListener('mouseover', () => {
+			tag_btn_target.classList.add('tag_item_mouseover')
+			tag_btn_target.classList.remove('tag_item_mouseleave')
+		})
+		tag_btn_target.addEventListener('mouseleave', () => {
+			tag_btn_target.classList.remove('tag_item_mouseover')
+			tag_btn_target.classList.add('tag_item_mouseleave')
+		})
+	})
+</script>

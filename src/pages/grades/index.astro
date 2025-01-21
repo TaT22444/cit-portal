@@ -15,66 +15,36 @@ import Layout from '../../layouts/Layout.astro';
       <nav class="tag">
         <ul class="tag_list">
           <li class="tag_item active">
-            <button class="tag_btn active">全て</button>
+            <button class="tag_btn active" id="tag_item">全て</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">s-1</button>
+            <button class="tag_btn" id="tag_item">s-1</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">s-2</button>
+            <button class="tag_btn" id="tag_item">s-2</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">s-3</button>
+            <button class="tag_btn" id="tag_item">s-3</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">s-4</button>
+            <button class="tag_btn" id="tag_item">s-4</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">s-5</button>
+            <button class="tag_btn" id="tag_item">s-5</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">s-6</button>
+            <button class="tag_btn" id="tag_item">s-6</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">s-7</button>
+            <button class="tag_btn" id="tag_item">s-7</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn">s-8</button>
+            <button class="tag_btn" id="tag_item">s-8</button>
           </li>
         </ul>
       </nav>
-      <!-- <div class="detail_box">
-        <div class="detail_box_total">
-          <p class="detail_box_total_label">総合GPA</p>
-          <div class="detail_box_total_numberwrapper">
-            <p class="detail_box_total_number">2.2</p>
-            <div class="detail_box_total_upwrapper">
-              <svg class="up_icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#fff"/>
-              </svg>         
-              <p class="detail_box_total_up_number">+0.1</p>
-            </div>
-          </div>
-        </div>
-        <div class="detail_box_total">
-          <p class="detail_box_total_label">総合取得単位</p>
-          <div class="detail_box_total_numberwrapper">
-            <p>
-              <span class="detail_box_total_number">22</span>
-              <span>/</span>
-              <span>124</span>
-            </p>
-            <div class="detail_box_total_upwrapper">
-              <svg class="up_icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#fff"/>
-              </svg>         
-              <p class="detail_box_total_up_number">+0.1</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
       <div class="grades_box">
-        <p class="box_label">全て</p>
+        <p class="box_label" id="box_label">全て</p>
         <ul class="grades_list">
           <li class="grades_item">
             <p class="grades_period">s-1</p>
@@ -509,3 +479,29 @@ tbody td:nth-child(5){
   text-align: center;
 }
 </style>
+
+<script>
+  const tag_btns = document.querySelectorAll('#tag_item')
+	tag_btns.forEach((tag_btn_target) => {
+		tag_btn_target.addEventListener('click', () => {
+			tag_btns.forEach((tag_btn_all) => {
+				tag_btn_all.classList.remove('active')
+			})
+      const target_label = tag_btn_target.textContent?.trim()
+      const box_label = document.getElementById('box_label')
+      if (box_label && target_label) {
+        box_label.textContent = target_label
+      }
+      
+			tag_btn_target.classList.add('active')
+		})
+		tag_btn_target.addEventListener('mouseover', () => {
+			tag_btn_target.classList.add('tag_item_mouseover')
+			tag_btn_target.classList.remove('tag_item_mouseleave')
+		})
+		tag_btn_target.addEventListener('mouseleave', () => {
+			tag_btn_target.classList.remove('tag_item_mouseover')
+			tag_btn_target.classList.add('tag_item_mouseleave')
+		})
+	})
+</script>

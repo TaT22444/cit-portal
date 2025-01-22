@@ -1,0 +1,109 @@
+---
+---
+
+<section class="box dis-none" id="H_use">
+  <h3 class="help_section_title">2.サイトの使い方</h3>
+  <ul class="help_list">
+    <li class="help_item">
+      <h3 class="help_title">
+        <span>2-1.</span>
+        <span>サイトの使い方</span>
+      </h3>
+      <p class="help_text">
+        見込み判定についての説明文が入ります。見込み判定についての説明文が入ります。見込み判定についての説明文が入ります。
+      </p>
+    </li>
+    <li class="help_item">
+      <h3 class="help_title">
+        <span>2-2.</span>
+        <span>サイトの使い方</span>
+      </h3>
+      <p class="help_text">
+        見込み判定についての説明文が入ります。見込み判定についての説明文が入ります。見込み判定についての説明文が入ります。
+      </p>
+    </li>
+    <li class="help_item">
+      <h3 class="help_title">
+        <span>2-3.</span>
+        <span>サイトの使い方</span>
+      </h3>
+      <p class="help_text">
+        見込み判定についての説明文が入ります。見込み判定についての説明文が入ります。見込み判定についての説明文が入ります。
+      </p>
+    </li>
+  </ul>
+</section>
+
+<style lang="scss">
+  .box{
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid #dadae3;
+  }
+  
+  .help_list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    // padding-top: 16px;
+    // border-top: 1px solid #dadae3;
+    gap: 32px;
+    margin-inline: auto;
+  }
+
+  .help_item{
+    border-top: 1px dotted #dadae3;
+    padding-top: 32px;
+    margin-inline: 16px;
+
+    &:first-of-type{
+      border: none;
+    }
+  }
+
+  .help_title{
+    font-size: 16px;
+    color: #252528;
+    font-weight: 600;
+  }
+
+  .help_text{
+    font-size: 12px;
+    color: #252528;
+    font-weight: 500;
+    margin-top: 24px;
+  }
+
+  .help_section_title{
+    font-size: 16px;
+    color: #252528;
+    font-weight: 500;
+  }
+
+  .dis-none{
+    display: none;
+  }
+  .dis-flex{
+    display: flex;
+  }
+</style>
+
+<script>
+    document.querySelectorAll('#question').forEach((question) => {
+    console.log(question)
+    const answer = question.querySelector('#answer')
+    const elem2 = question.querySelector('#panel_icon_elem2')
+    console.log(answer)
+    question.addEventListener('click', () => {
+      if (answer?.classList.contains('dis-none')) {
+        answer.classList.remove('dis-none')
+        answer.classList.add('dis-flex')
+        elem2?.classList.add('dis-none')
+      } else {
+        answer?.classList.add('dis-none')
+        answer?.classList.remove('dis-flex')
+        elem2?.classList.remove('dis-none')
+      }
+    })
+  })
+</script>

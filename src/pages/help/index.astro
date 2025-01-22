@@ -2,6 +2,13 @@
 import Welcome from '../../components/Welcome.astro';
 import Layout from '../../layouts/Layout.astro';
 import QAitem from '../../components/QAitem.astro';
+import FAQ from '../../components/FAQ.astro';
+import HelpCourse from '../../components/HelpCourse.astro';
+import HelpClass from '../../components/HelpClass.astro';
+import HelpGrades from '../../components/HelpGrades.astro';
+import HelpUse from '../../components/HelpUse.astro';
+import HelpAccount from '../../components/HelpAccount.astro';
+import HelpService from '../../components/HelpService.astro';
 
 const questions = [
   {
@@ -29,68 +36,68 @@ const questions = [
     <section class="box">
       <nav class="help_nav">
         <ul class="help_nav_list">
-          <li class="help_nav_item">
-            <a href="" class="help_nav_link">
+          <li class="help_nav_item" id="FAQ_btn">
+            <button class="help_nav_link">
               <p class="help_nav_number">1.</p>
               <p class="help_nav_title">よくある質問</p>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
               </svg>                
-            </a>
+            </button>
           </li>
-          <li class="help_nav_item">
-            <a href="" class="help_nav_link">
+          <li class="help_nav_item" id="H_use_btn">
+            <button class="help_nav_link">
               <p class="help_nav_number">2.</p>
               <p class="help_nav_title">使い方</p>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
               </svg>                
-            </a>
+            </button>
           </li>
-          <li class="help_nav_item">
-            <a href="" class="help_nav_link">
+          <li class="help_nav_item" id="H_class_btn">
+            <button class="help_nav_link">
               <p class="help_nav_number">3.</p>
               <p class="help_nav_title">授業</p>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
               </svg>                
-            </a>
+            </button>
           </li>
-          <li class="help_nav_item">
-            <a href="" class="help_nav_link">
+          <li class="help_nav_item" id="H_grades_btn">
+            <button class="help_nav_link">
               <p class="help_nav_number">4.</p>
               <p class="help_nav_title">成績</p>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
               </svg>                
-            </a>
+            </button>
           </li>
-          <li class="help_nav_item">
-            <a href="" class="help_nav_link">
+          <li class="help_nav_item" id="H_course_btn">
+            <button class="help_nav_link">
               <p class="help_nav_number">5.</p>
               <p class="help_nav_title">履修</p>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
               </svg>                
-            </a>
+            </button>
           </li>
-          <li class="help_nav_item">
-            <a href="" class="help_nav_link">
+          <li class="help_nav_item" id="H_service_btn">
+            <button class="help_nav_link">
               <p class="help_nav_number">6.</p>
               <p class="help_nav_title">外部サービス</p>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
               </svg>                
-            </a>
+            </button>
           </li>
-          <li class="help_nav_item">
-            <a href="" class="help_nav_link">
+          <li class="help_nav_item" id="H_account_btn">
+            <button class="help_nav_link">
               <p class="help_nav_number">7.</p>
               <p class="help_nav_title">ユーザー情報</p>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
               </svg>                
-            </a>
+            </button>
           </li>
           <li class="help_nav_item">
             <a href="" class="help_nav_link">
@@ -107,102 +114,47 @@ const questions = [
     <section class="ai">
       <!-- <h3 class="ai_title">AIに相談</h3> -->
     </section>
-    <section class="box">
-      <h3 class="help_section_title">1.よくある質問</h3>
-      <!-- <div class="qa-list">
-        {questions.map((qa) => (
-          <QAitem question={qa.question} answer={qa.answer} />
-        ))}
-      </div> -->
-      <ul class="help_qalist">
-        <li class="help_qaitem" id="question">
-          <div class="help_qaitem_question">
-            <p class="help_qaitem_number">1-1.</p>
-            <p class="help_qaitem_text">ID、パスワードを忘れてしまいました。どうすればいいですか？</p>
-            <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
-            </svg>   -->
-            <span class="panel_icon">
-              <span class="panel_icon_elem el1"></span>
-              <span class="panel_icon_elem el2" id="panel_icon_elem2"></span>
-            </span>
-          </div>
-          <div class="help_qaitem_answer dis-none" id="answer">
-            <p class="help_qaitem_answer_icon">Q</p>
-            <p class="help_qaitem_answer_text">
-              下記のメールアドレスにその旨を伝えてください。
-              <br>
-              cit@gmail.com
-            </p>
-          </div>
-        </li>
-        <li class="help_qaitem" id="question">
-          <div class="help_qaitem_question">
-            <p class="help_qaitem_number">1-2.</p>
-            <p class="help_qaitem_text">卒業要件単位はどこで確認できますか？</p>
-            <span class="panel_icon">
-              <span class="panel_icon_elem el1"></span>
-              <span class="panel_icon_elem el2" id="panel_icon_elem2"></span>
-            </span>
-          </div>
-          <div class="help_qaitem_answer dis-none" id="answer">
-            <p class="help_qaitem_answer_icon">Q</p>
-            <p class="help_qaitem_answer_text">
-              成績ページの画面右にある、総合取得単位から確認できます。
-              <br>
-              また、外部サービスの学生資料室から各学科の卒業要件単位を確認することもできます。
-            </p>
-          </div>
-        </li>
-        <li class="help_qaitem" id="question">
-          <div class="help_qaitem_question">
-            <p class="help_qaitem_number">1-3.</p>
-            <p class="help_qaitem_text">期間内に履修登録を行えませんでした。どうすれば良いですか？</p>
-            <span class="panel_icon">
-              <span class="panel_icon_elem el1"></span>
-              <span class="panel_icon_elem el2" id="panel_icon_elem2"></span>
-            </span>
-          </div>
-          <div class="help_qaitem_answer dis-none" id="answer">
-            <p class="help_qaitem_answer_icon">Q</p>
-            <p class="help_qaitem_answer_text">
-              諦めましょう。
-            </p>
-          </div>
-        </li>
-      </ul>
-      <div class="help_section_btnwrapper">
-        <a href="" class="help_section_btn_prev">
-          <div class="help_section_btn_textwrapper">
-            <p class="help_section_btn_number">1.</p>
-            <p class="help_section_btn_label">よくある質問</p>
-          </div>
-          <div class="help_section_btn_navwrapper">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
-            </svg>
-            <p class="help_section_btn_navlabel">前</p>
-          </div>
-        </a>
-        <a href="" class="help_section_btn_next">
-          <div class="help_section_btn_textwrapper">
-            <p class="help_section_btn_number">1.</p>
-            <p class="help_section_btn_label">よくある質問</p>
-          </div>
-          <div class="help_section_btn_navwrapper">
-            <p class="help_section_btn_navlabel">次</p>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
-            </svg>
-          </div>
-        </a>
-      </div>
-    </section>
+    <FAQ additionalClass="" />
+    <HelpUse />
+    <HelpClass />
+    <HelpGrades />
+    <HelpCourse />
+    <HelpService />
+    <HelpAccount />
+    <div class="help_section_btnwrapper">
+      <a href="" class="help_section_btn_prev">
+        <div class="help_section_btn_textwrapper">
+          <p class="help_section_btn_number">1.</p>
+          <p class="help_section_btn_label">よくある質問</p>
+        </div>
+        <div class="help_section_btn_navwrapper">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+          </svg>
+          <p class="help_section_btn_navlabel">前</p>
+        </div>
+      </a>
+      <a href="" class="help_section_btn_next">
+        <div class="help_section_btn_textwrapper">
+          <p class="help_section_btn_number">1.</p>
+          <p class="help_section_btn_label">よくある質問</p>
+        </div>
+        <div class="help_section_btn_navwrapper">
+          <p class="help_section_btn_navlabel">次</p>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+          </svg>
+        </div>
+      </a>
+    </div>
   </div>
 </Layout>
 
 
 <style lang="scss">
+  .test{
+  }
+
   .contents{
     padding-bottom: 120px;
   }
@@ -231,6 +183,7 @@ const questions = [
     }
 
     &_link{
+      width: 100%;
       display: flex;
       align-items: center;
       padding: 16px 12px;
@@ -413,21 +366,76 @@ const questions = [
 </style>
 
 <script>
-  document.querySelectorAll('#question').forEach((question) => {
-    console.log(question)
-    const answer = question.querySelector('#answer')
-    const elem2 = question.querySelector('#panel_icon_elem2')
-    console.log(answer)
-    question.addEventListener('click', () => {
-      if (answer?.classList.contains('dis-none')) {
-        answer.classList.remove('dis-none')
-        answer.classList.add('dis-flex')
-        elem2?.classList.add('dis-none')
-      } else {
-        answer?.classList.add('dis-none')
-        answer?.classList.remove('dis-flex')
-        elem2?.classList.remove('dis-none')
-      }
+  const nav_btns = document.querySelectorAll('.help_nav_item')
+  nav_btns.forEach((nav_btn_target) => {
+    nav_btn_target.addEventListener('click', () => {
+      H_account?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
     })
   })
+  const FAQ = document.getElementById('FAQ') 
+  const FAQ_btn = document.getElementById('FAQ_btn') 
+  FAQ_btn?.addEventListener('click', () => {
+    FAQ?.classList.remove('dis-none')
+  })
+
+  const H_course = document.getElementById('H_course')
+  const H_course_btn = document.getElementById('H_course_btn') 
+  H_course_btn?.addEventListener('click', () => {
+    H_course?.classList.remove('dis-none')
+  })
+
+  const H_class = document.getElementById('H_class')
+  const H_class_btn = document.getElementById('H_class_btn') 
+  H_class_btn?.addEventListener('click', () => {
+    H_class?.classList.remove('dis-none')
+  })
+
+  const H_grades = document.getElementById('H_grades')
+  const H_grades_btn = document.getElementById('H_grades_btn') 
+  H_grades_btn?.addEventListener('click', () => {
+    H_grades?.classList.remove('dis-none')
+  })
+
+  const H_service = document.getElementById('H_service')
+  const H_service_btn = document.getElementById('H_service_btn') 
+  H_service_btn?.addEventListener('click', () => {
+    H_service?.classList.remove('dis-none')
+  })
+
+  const H_use = document.getElementById('H_use')
+  const H_use_btn = document.getElementById('H_use_btn') 
+  H_use_btn?.addEventListener('click', () => {
+    H_use?.classList.remove('dis-none')
+  })
+
+  const H_account = document.getElementById('H_account')
+  const H_account_btn = document.getElementById('H_account_btn') 
+  H_account_btn?.addEventListener('click', () => {
+    H_account?.classList.remove('dis-none')
+  })
+
+  // document.querySelectorAll('#question').forEach((question) => {
+  //   console.log(question)
+  //   const answer = question.querySelector('#answer')
+  //   const elem2 = question.querySelector('#panel_icon_elem2')
+  //   console.log(answer)
+  //   question.addEventListener('click', () => {
+  //     if (answer?.classList.contains('dis-none')) {
+  //       answer.classList.remove('dis-none')
+  //       answer.classList.add('dis-flex')
+  //       elem2?.classList.add('dis-none')
+  //     } else {
+  //       answer?.classList.add('dis-none')
+  //       answer?.classList.remove('dis-flex')
+  //       elem2?.classList.remove('dis-none')
+  //     }
+  //   })
+  // })
 </script>

@@ -1,0 +1,203 @@
+---
+// Propsのインターフェース
+interface Props {
+  additionalClass?: string; // 追加クラス用のプロップ
+}
+
+// Astro.propsからプロパティを取得
+const { additionalClass } = Astro.props;
+---
+
+<section class={`box ${additionalClass || ''}`} id="FAQ">
+  <h3 class="help_section_title">1.よくある質問</h3>
+  <!-- <div class="qa-list">
+    {questions.map((qa) => (
+      <QAitem question={qa.question} answer={qa.answer} />
+    ))}
+  </div> -->
+  <ul class="help_qalist">
+    <li class="help_qaitem" id="question">
+      <div class="help_qaitem_question">
+        <p class="help_qaitem_number">1-1.</p>
+        <p class="help_qaitem_text">ID、パスワードを忘れてしまいました。どうすればいいですか？</p>
+        <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+        </svg>   -->
+        <span class="panel_icon">
+          <span class="panel_icon_elem el1"></span>
+          <span class="panel_icon_elem el2" id="panel_icon_elem2"></span>
+        </span>
+      </div>
+      <div class="help_qaitem_answer dis-none" id="answer">
+        <p class="help_qaitem_answer_icon">Q</p>
+        <p class="help_qaitem_answer_text">
+          下記のメールアドレスにその旨を伝えてください。
+          <br>
+          cit@gmail.com
+        </p>
+      </div>
+    </li>
+    <li class="help_qaitem" id="question">
+      <div class="help_qaitem_question">
+        <p class="help_qaitem_number">1-2.</p>
+        <p class="help_qaitem_text">卒業要件単位はどこで確認できますか？</p>
+        <span class="panel_icon">
+          <span class="panel_icon_elem el1"></span>
+          <span class="panel_icon_elem el2" id="panel_icon_elem2"></span>
+        </span>
+      </div>
+      <div class="help_qaitem_answer dis-none" id="answer">
+        <p class="help_qaitem_answer_icon">Q</p>
+        <p class="help_qaitem_answer_text">
+          成績ページの画面右にある、総合取得単位から確認できます。
+          <br>
+          また、外部サービスの学生資料室から各学科の卒業要件単位を確認することもできます。
+        </p>
+      </div>
+    </li>
+    <li class="help_qaitem" id="question">
+      <div class="help_qaitem_question">
+        <p class="help_qaitem_number">1-3.</p>
+        <p class="help_qaitem_text">期間内に履修登録を行えませんでした。どうすれば良いですか？</p>
+        <span class="panel_icon">
+          <span class="panel_icon_elem el1"></span>
+          <span class="panel_icon_elem el2" id="panel_icon_elem2"></span>
+        </span>
+      </div>
+      <div class="help_qaitem_answer dis-none" id="answer">
+        <p class="help_qaitem_answer_icon">Q</p>
+        <p class="help_qaitem_answer_text">
+          諦めましょう。
+        </p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<style lang="scss">
+  .box{
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid #dadae3;
+  }
+  .help_qalist{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .help_qaitem{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 24px;
+    background-color: #fff;
+    border: 1px solid #dadae3;
+    border-radius: 16px;
+    cursor: pointer;
+
+    &_question{
+      display: flex;
+      align-items: center;
+    }
+
+    &_number{
+      width: 40px;
+      font-size: 12px;
+      font-weight: 400;
+      color: #66666d;
+    }
+
+    &_text{
+      flex: 1;
+      font-size: 12px;
+      font-weight: 400;
+      color: #252528;
+    }
+
+    &_answer{
+      display: flex;
+
+      &_icon{
+        width: 40px;
+        font-size: 12px;
+        color: #66666d;
+        font-weight: 400;
+        line-height: 2;
+      }
+
+      &_text{
+        font-size: 12px;
+        color: #66666d;
+        font-weight: 400;
+        line-height: 2;
+      }
+    }
+  }
+
+  
+  .panel_icon{
+    display: block;
+    position: relative;
+    // background-color: #66666d;
+
+    > .el1{
+        position: absolute;
+        top: -0.9px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      > .el2{
+        position: absolute;
+        top: 50%;
+        left: -0.6px;
+        transform: translateY(-50%);
+        width: 1.8px;
+        height: 14px;
+      }
+
+    &_elem{
+      display: block;
+      width: 14px;
+      height: 1.8px;
+      background-color: #66666d;
+      border-radius: 100px;
+
+    }
+  }
+
+  .help_section_title{
+    font-size: 16px;
+    color: #252528;
+    font-weight: 500;
+  }
+
+  .dis-none{
+    display: none;
+  }
+  .dis-flex{
+    display: flex;
+  }
+</style>
+
+<script>
+    document.querySelectorAll('#question').forEach((question) => {
+    console.log(question)
+    const answer = question.querySelector('#answer')
+    const elem2 = question.querySelector('#panel_icon_elem2')
+    console.log(answer)
+    question.addEventListener('click', () => {
+      if (answer?.classList.contains('dis-none')) {
+        answer.classList.remove('dis-none')
+        answer.classList.add('dis-flex')
+        elem2?.classList.add('dis-none')
+      } else {
+        answer?.classList.add('dis-none')
+        answer?.classList.remove('dis-flex')
+        elem2?.classList.remove('dis-none')
+      }
+    })
+  })
+</script>

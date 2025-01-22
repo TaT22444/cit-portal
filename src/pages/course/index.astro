@@ -46,8 +46,8 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
     <section class="box box_register">
-      <div class="box_header">
-        <p class="box_label">履修登録</p>
+      <div class="box_header" id="box_header">
+        <p class="box_label" id="box_label">履修登録</p>
         <div class="box_btns">
           <button class="box_btn reset" id="reset_btn">選択をリセット</button>
           <button class="box_btn judge">見込み判定</button>
@@ -153,11 +153,6 @@ import Layout from '../../layouts/Layout.astro';
               <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
               </svg>                                      
-            </button>
-            <button class="class_item">
-              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
-              </svg>                                  
             </button>
             <button class="class_item">
               <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -460,8 +455,8 @@ import Layout from '../../layouts/Layout.astro';
       align-items: center;
       z-index: 2;
 
-      @media (width < 768px) {
-        top: 56px;
+      @media (width < 1080px) {
+        top: 80px;
 		  }
 
       @media (width < 414px) {
@@ -482,6 +477,8 @@ import Layout from '../../layouts/Layout.astro';
       display: flex;
       align-items: center;
       align-self: flex-end;
+      margin-right: 0;
+      margin-left: auto;
       gap: 8px;
 
       >.reset{
@@ -985,4 +982,27 @@ import Layout from '../../layouts/Layout.astro';
 			tag_btn_target.classList.add('tag_item_mouseleave')
 		})
 	})
+
+  window.addEventListener('scroll', () => {
+    const box_label = document.getElementById('box_label');
+    const box_header = document.getElementById('box_header')
+    const box_header_height = box_header?.getBoundingClientRect().top ?? 0;
+    // console.log(box_header_height)
+
+    if (window.innerWidth < 768) {
+      if (box_header_height < 95) {
+        box_label?.classList.add('dis-none');
+      } else {
+        box_label?.classList.remove('dis-none');
+      }
+    }
+
+    if (window.innerWidth >= 768) {
+      if (box_header_height < 125) {
+        box_label?.classList.add('dis-none');
+      } else {
+        box_label?.classList.remove('dis-none');
+      }
+    }
+  });
 </script>

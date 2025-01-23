@@ -122,10 +122,10 @@ const questions = [
     <HelpService />
     <HelpAccount />
     <div class="help_section_btnwrapper">
-      <a href="" class="help_section_btn_prev">
+      <a href="" class="help_section_btn_prev" id="prev_btn">
         <div class="help_section_btn_textwrapper">
-          <p class="help_section_btn_number">1.</p>
-          <p class="help_section_btn_label">よくある質問</p>
+          <p class="help_section_btn_number" id="prev_number"></p>
+          <p class="help_section_btn_label" id="prev_label">よくある質問</p>
         </div>
         <div class="help_section_btn_navwrapper">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,10 +134,10 @@ const questions = [
           <p class="help_section_btn_navlabel">前</p>
         </div>
       </a>
-      <a href="" class="help_section_btn_next">
+      <a href="" class="help_section_btn_next" id="next_btn">
         <div class="help_section_btn_textwrapper">
-          <p class="help_section_btn_number">1.</p>
-          <p class="help_section_btn_label">よくある質問</p>
+          <p class="help_section_btn_number" id="next_number">1.</p>
+          <p class="help_section_btn_label" id="next_label">よくある質問</p>
         </div>
         <div class="help_section_btn_navwrapper">
           <p class="help_section_btn_navlabel">次</p>
@@ -379,6 +379,14 @@ const questions = [
       FAQ?.classList.add('dis-none')
     })
   })
+
+  const prev_btn = document.getElementById('prev_btn')
+  const prev_number = document.getElementById('prev_number')
+  const prev_label = document.getElementById('prev_label')
+  const next_label = document.getElementById('next_label')
+  const next_number = document.getElementById('next_number')
+  const next_btn = document.getElementById('next_btn')
+
   const FAQ = document.getElementById('FAQ') 
   const FAQ_btn = document.getElementById('FAQ_btn') 
   FAQ_btn?.addEventListener('click', () => {
@@ -419,6 +427,153 @@ const questions = [
   const H_account_btn = document.getElementById('H_account_btn') 
   H_account_btn?.addEventListener('click', () => {
     H_account?.classList.remove('dis-none')
+  })
+
+  window.addEventListener('click', () => {
+    if(FAQ?.classList.contains('dis-none') == false){
+      let help_next_title = H_use?.querySelector('#help_section_title')
+      let help_next_title_label = help_next_title?.textContent?.trim()
+      let help_next_number = H_use?.querySelector('#help_section_number')
+      let help_next_number_label = help_next_number?.textContent?.trim()
+      if (next_label && help_next_title_label) {
+        next_label.textContent = help_next_title_label
+      }
+      if (next_number && help_next_number_label) {
+        next_number.textContent = help_next_number_label
+      }
+    }
+    if(H_course?.classList.contains('dis-none') == false){
+      let help_next_title = H_service?.querySelector('#help_section_title')
+      let help_next_title_label = help_next_title?.textContent?.trim()
+      let help_next_number = H_service?.querySelector('#help_section_number')
+      let help_next_number_label = help_next_number?.textContent?.trim()
+      let help_prev_title = H_grades?.querySelector('#help_section_title')
+      let help_prev_title_label = help_prev_title?.textContent?.trim()
+      let help_prev_number = H_grades?.querySelector('#help_section_number')
+      let help_prev_number_label = help_prev_number?.textContent?.trim()
+      if (next_label && help_next_title_label) {
+        next_label.textContent = help_next_title_label
+      }
+      if (next_number && help_next_number_label) {
+        next_number.textContent = help_next_number_label
+      }
+      if (prev_label && help_prev_title_label) {
+        prev_label.textContent = help_prev_title_label
+      }
+      if (prev_number && help_prev_number_label) {
+        prev_number.textContent = help_prev_number_label
+      }
+    }
+    if(H_use?.classList.contains('dis-none') == false){
+      let help_next_title = H_class?.querySelector('#help_section_title')
+      let help_next_title_label = help_next_title?.textContent?.trim()
+      let help_next_number = H_class?.querySelector('#help_section_number')
+      let help_next_number_label = help_next_number?.textContent?.trim()
+      let help_prev_title = FAQ?.querySelector('#help_section_title')
+      let help_prev_title_label = help_prev_title?.textContent?.trim()
+      let help_prev_number = FAQ?.querySelector('#help_section_number')
+      let help_prev_number_label = help_prev_number?.textContent?.trim()
+      if (next_label && help_next_title_label) {
+        next_label.textContent = help_next_title_label
+      }
+      if (next_number && help_next_number_label) {
+        next_number.textContent = help_next_number_label
+      }
+      if (prev_label && help_prev_title_label) {
+        prev_label.textContent = help_prev_title_label
+      }
+      if (prev_number && help_prev_number_label) {
+        prev_number.textContent = help_prev_number_label
+      }
+    }
+    if(H_class?.classList.contains('dis-none') == false){
+      let help_next_title = H_grades?.querySelector('#help_section_title')
+      let help_next_title_label = help_next_title?.textContent?.trim()
+      let help_next_number = H_grades?.querySelector('#help_section_number')
+      let help_next_number_label = help_next_number?.textContent?.trim()
+      let help_prev_title = H_use?.querySelector('#help_section_title')
+      let help_prev_title_label = help_prev_title?.textContent?.trim()
+      let help_prev_number = H_use?.querySelector('#help_section_number')
+      let help_prev_number_label = help_prev_number?.textContent?.trim()
+      if (next_label && help_next_title_label) {
+        next_label.textContent = help_next_title_label
+      }
+      if (next_number && help_next_number_label) {
+        next_number.textContent = help_next_number_label
+      }
+      if (prev_label && help_prev_title_label) {
+        prev_label.textContent = help_prev_title_label
+      }
+      if (prev_number && help_prev_number_label) {
+        prev_number.textContent = help_prev_number_label
+      }
+    }
+    if(H_grades?.classList.contains('dis-none') == false){
+      let help_next_title = H_course?.querySelector('#help_section_title')
+      let help_next_title_label = help_next_title?.textContent?.trim()
+      let help_next_number = H_course?.querySelector('#help_section_number')
+      let help_next_number_label = help_next_number?.textContent?.trim()
+      let help_prev_title = H_class?.querySelector('#help_section_title')
+      let help_prev_title_label = help_prev_title?.textContent?.trim()
+      let help_prev_number = H_class?.querySelector('#help_section_number')
+      let help_prev_number_label = help_prev_number?.textContent?.trim()
+      if (next_label && help_next_title_label) {
+        next_label.textContent = help_next_title_label
+      }
+      if (next_number && help_next_number_label) {
+        next_number.textContent = help_next_number_label
+      }
+      if (prev_label && help_prev_title_label) {
+        prev_label.textContent = help_prev_title_label
+      }
+      if (prev_number && help_prev_number_label) {
+        prev_number.textContent = help_prev_number_label
+      }
+    }
+    if(H_account?.classList.contains('dis-none') == false){
+      let help_next_title = FAQ?.querySelector('#help_section_title')
+      let help_next_title_label = help_next_title?.textContent?.trim()
+      let help_next_number = FAQ?.querySelector('#help_section_number')
+      let help_next_number_label = help_next_number?.textContent?.trim()
+      let help_prev_title = H_service?.querySelector('#help_section_title')
+      let help_prev_title_label = help_prev_title?.textContent?.trim()
+      let help_prev_number = H_service?.querySelector('#help_section_number')
+      let help_prev_number_label = help_prev_number?.textContent?.trim()
+      if (next_label && help_next_title_label) {
+        next_label.textContent = help_next_title_label
+      }
+      if (next_number && help_next_number_label) {
+        next_number.textContent = help_next_number_label
+      }
+      if (prev_label && help_prev_title_label) {
+        prev_label.textContent = help_prev_title_label
+      }
+      if (prev_number && help_prev_number_label) {
+        prev_number.textContent = help_prev_number_label
+      }
+    }
+    if(H_service?.classList.contains('dis-none') == false){
+      let help_next_title = H_account?.querySelector('#help_section_title')
+      let help_next_title_label = help_next_title?.textContent?.trim()
+      let help_next_number = H_account?.querySelector('#help_section_number')
+      let help_next_number_label = help_next_number?.textContent?.trim()
+      let help_prev_title = H_course?.querySelector('#help_section_title')
+      let help_prev_title_label = help_prev_title?.textContent?.trim()
+      let help_prev_number = H_course?.querySelector('#help_section_number')
+      let help_prev_number_label = help_prev_number?.textContent?.trim()
+      if (next_label && help_next_title_label) {
+        next_label.textContent = help_next_title_label
+      }
+      if (next_number && help_next_number_label) {
+        next_number.textContent = help_next_number_label
+      }
+      if (prev_label && help_prev_title_label) {
+        prev_label.textContent = help_prev_title_label
+      }
+      if (prev_number && help_prev_number_label) {
+        prev_number.textContent = help_prev_number_label
+      }
+    }
   })
 
   // document.querySelectorAll('#question').forEach((question) => {

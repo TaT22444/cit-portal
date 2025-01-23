@@ -1,0 +1,54 @@
+---
+---
+
+<section class="box" id="H_chat">
+  <h3 class="help_section_title chat">
+    <span id="help_section_number" style="display: none;">0.</span>
+    <span id="help_section_title">チャットボット</span>
+  </h3>
+</section>
+
+<style lang="scss">
+  .box{
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid #dadae3;
+
+    >.chat{
+      margin-inline: auto;
+    }
+  }
+
+  .help_section_title{
+    font-size: 16px;
+    color: #252528;
+    font-weight: 500;
+  }
+
+  .dis-none{
+    display: none;
+  }
+  .dis-flex{
+    display: flex;
+  }
+</style>
+
+<script>
+    document.querySelectorAll('#question').forEach((question) => {
+    console.log(question)
+    const answer = question.querySelector('#answer')
+    const elem2 = question.querySelector('#panel_icon_elem2')
+    console.log(answer)
+    question.addEventListener('click', () => {
+      if (answer?.classList.contains('dis-none')) {
+        answer.classList.remove('dis-none')
+        answer.classList.add('dis-flex')
+        elem2?.classList.add('dis-none')
+      } else {
+        answer?.classList.add('dis-none')
+        answer?.classList.remove('dis-flex')
+        elem2?.classList.remove('dis-none')
+      }
+    })
+  })
+</script>

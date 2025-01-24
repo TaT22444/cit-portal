@@ -730,7 +730,18 @@ const questions = [
     if (window.innerWidth <= 768) {
       sp_nav_btn?.addEventListener('click', () => {
         help_nav_btns.forEach((help_nav_btn_all) => {
-          help_nav_btn_all.classList.remove('dis-none')
+          if(help_nav_btn_all.classList.contains('dis-none')==false){
+            if(help_nav_btn_all.classList.contains('active')){
+              help_nav_btn_all.classList.remove('dis-none')
+            } else {
+              help_nav_btn_all.classList.add('dis-none')
+            }
+          } else {
+            if(help_nav_btn_all.classList.contains('active')==false){
+              help_nav_btn_all.classList.remove('dis-none')
+            }
+            help_nav_btn_all.classList.remove('dis-none')
+          }
         })
       })
     }

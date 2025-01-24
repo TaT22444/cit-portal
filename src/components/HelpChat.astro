@@ -66,18 +66,6 @@
               <br>心配事やわからないことがありましたら、左の項目から、もしくはテキストで打ち込んでいただければ回答いたします！
             </p>
           </li>
-          <li class="chat_item">
-            <p class="chat_text" id="answer"></p>
-          </li>
-          <!-- <li class="chat_item user">
-            <p class="chat_text user">ここにチャットの内容が入りますここにチャットの内容が入りますここにチャットの内容が入りますここにチャットの内容が入ります</p>
-          </li>
-          <li class="chat_item">
-            <p class="chat_text">ここにチャットの内容が入りますここにチャットの内容が入りますここにチャットの内容が入りますここにチャットの内容が入ります</p>
-          </li>
-          <li class="chat_item user">
-            <p class="chat_text user">ここにチャットの内容が入りますここにチャットの内容が入りますここにチャットの内容が入りますここにチャットの内容が入ります</p>
-          </li> -->
         </ul>
       </div>
       <div class="chat_input_box">
@@ -94,7 +82,7 @@
   </div>
 </section>
 
-<style lang="scss">
+<style lang="scss" is:global>
   .box{
     margin-top: 40px;
     // padding-top: 32px;
@@ -151,7 +139,7 @@
       >.user{
         max-width: 98%;
         background-color: #e6e6ea;
-        padding: 16px 20px;
+        padding: 12px 20px;
         margin-left: auto;
 
         &::before{
@@ -237,10 +225,11 @@
   .dis-flex{
     display: flex;
   }
+
 </style>
 
 <script>
-  import { GoogleGenerativeAI } from "@google/generative-ai";
+ import { GoogleGenerativeAI } from "@google/generative-ai";
 import universityData from "../data/university_data.json";
 
 const API_KEY = import.meta.env.PUBLIC_GEMINI_API_KEY;
@@ -250,60 +239,33 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 // 会話履歴を保持する配列
-const conversationHistory: { question: string; answer: string }[] = [];
+const conversationHistory: { question: string; answer: string; }[] = [];
 
-const qu = document.getElementById("question");
-const submit = document.getElementById("submit");
-const answer = document.getElementById("answer");
+document.addEventListener("DOMContentLoaded", () => {
+  const questionInput = document.getElementById("question");
+  const submitButton = document.getElementById("submit");
+  const chatList = document.querySelector(".chat_list");
 
-submit?.addEventListener("click", async () => {
-  if (qu instanceof HTMLInputElement) {
-    const userQuestion = qu.value; // 入力値を取得
+  if (!questionInput || !submitButton || !chatList) {
+    console.error("必要な要素が見つかりません");
+    return;
+  }
 
+  // 質問送信時の処理
+  submitButton.addEventListener("click", async () => {
+    if (!(questionInput instanceof HTMLInputElement)) return;
 
-    // JSONデータから大学情報をプロンプトに追加
-    const universityContext = `
-      大学名: ${universityData.university_name}
-      ポータルURL: ${universityData.portal_url}
-      問い合わせメール: ${universityData.contact_email}
-      利用可能な機能: ${universityData.features.join(", ")}
-      よくある質問: ${universityData.faq
-        .map((faq) => `Q: ${faq.question}\nA: ${faq.answer}`)
-        .join("\n")}
-    `;
+    const userQuestion = questionInput.value.trim();
+    if (!userQuestion) return;
 
-		const ai_setting = `
-		  役: ${universityData.role}
-			口調: ${universityData.tone}
-			回答する内容: ${universityData.range}
-		`;
+    // ユーザーの質問をチャットリストに追加
+    addChatItem(chatList, userQuestion, "user");
 
-    // 会話履歴をコンテキストに含める
-    const conversationContext = conversationHistory
-      .map(
-        (entry, index) =>
-          `Q${index + 1}: ${entry.question}\nA${index + 1}: ${entry.answer}`
-      )
-      .join("\n");
-
-    // プロンプトを組み立てる
-    const fullPrompt = `
-      以下は大学ポータルサイトに関する情報です。この情報に基づいて、以下の質問に答えてください:
-      情報:
-      ${universityContext}
-			${ai_setting}
-
-      過去の会話:
-      ${conversationContext}
-
-      質問: ${userQuestion}
-      答え:
-    `;
-
-		console.log(fullPrompt)
+    // JSONデータからプロンプトを生成
+    const fullPrompt = generatePrompt(userQuestion);
 
     try {
-      // APIリクエスト
+      // GeminiAPIから回答を取得
       const result = await model.generateContent(fullPrompt);
       const response = await result.response;
       const text = await response.text();
@@ -311,17 +273,66 @@ submit?.addEventListener("click", async () => {
       // 応答を履歴に追加
       conversationHistory.push({ question: userQuestion, answer: text });
 
-      // コンソール表示および画面更新
-      console.log(text);
-      if (answer) {
-        answer.innerText = text;
-      }
+      // AIの回答をチャットリストに追加
+      addChatItem(chatList, text, "bot");
+
+      // 入力フィールドをリセット
+      questionInput.value = "";
     } catch (error) {
       console.error("エラーが発生しました:", error);
-      if (answer) {
-        answer.innerText = "エラーが発生しました。もう一度お試しください。";
-      }
+      addChatItem(chatList, "エラーが発生しました。もう一度お試しください。", "error");
     }
-  }
+  });
 });
+
+// プロンプトを生成する関数
+function generatePrompt(userQuestion: string) {
+  const universityContext = `
+    大学名: ${universityData.university_name}
+    ポータルURL: ${universityData.portal_url}
+    問い合わせメール: ${universityData.contact_email}
+    利用可能な機能: ${universityData.features.join(", ")}
+    よくある質問: ${universityData.faq
+      .map((faq) => `Q: ${faq.question}\nA: ${faq.answer}`)
+      .join("\n")}
+  `;
+
+  const aiSetting = `
+    役: ${universityData.role}
+    口調: ${universityData.tone}
+    回答する内容: ${universityData.range}
+  `;
+
+  const conversationContext = conversationHistory
+    .map(
+      (entry, index) =>
+        `Q${index + 1}: ${entry.question}\nA${index + 1}: ${entry.answer}`
+    )
+    .join("\n");
+
+  return `
+    以下は大学ポータルサイトに関する情報です。この情報に基づいて、以下の質問に答えてください:
+    情報:
+    ${universityContext}
+    ${aiSetting}
+
+    過去の会話:
+    ${conversationContext}
+
+    質問: ${userQuestion}
+    答え:
+  `;
+}
+
+// チャット項目を追加する関数
+function addChatItem(chatList: Element, text: string, type: string) {
+  const chatItem = document.createElement("li");
+  chatItem.className = `chat_item ${type}`;
+  chatItem.innerHTML = `<p class="chat_text">${text}</p>`;
+  chatList.appendChild(chatItem);
+
+  // スクロールを最下部に移動
+  chatList.scrollTop = chatList.scrollHeight;
+}
+
 </script>

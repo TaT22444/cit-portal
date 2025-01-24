@@ -132,7 +132,7 @@ const questions = [
     <HelpCourse />
     <HelpService />
     <HelpAccount />
-    <div class="help_section_btnwrapper">
+    <div class="help_section_btnwrapper dis-none" id="help_section_btnwrapper">
       <button class="help_section_btn_prev" id="prev_btn">
         <div class="help_section_btn_textwrapper">
           <p class="help_section_btn_number" id="prev_number">0.</p>
@@ -158,6 +158,16 @@ const questions = [
         </div>
       </button>
     </div>
+    <!-- <div class="input_box">
+      <div class="input_inner">
+        <input type="text" class="input">
+        <button class="send_btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.9999 10.0002L10.9999 13.0002M20.2879 3.03122C20.3828 2.99847 20.4849 2.99309 20.5827 3.01567C20.6806 3.03825 20.77 3.0879 20.841 3.15893C20.9119 3.22996 20.9614 3.31952 20.9838 3.41736C21.0063 3.5152 21.0007 3.61738 20.9679 3.71222L15.0439 20.6422C15.0084 20.7434 14.9434 20.8316 14.8572 20.8954C14.771 20.9592 14.6676 20.9956 14.5605 20.9999C14.4533 21.0042 14.3473 20.9763 14.2563 20.9196C14.1652 20.863 14.0933 20.7802 14.0499 20.6822L10.8309 13.4402C10.7767 13.3198 10.6803 13.2234 10.5599 13.1692L3.31786 9.94922C3.22016 9.9056 3.13778 9.83368 3.08137 9.74275C3.02495 9.65183 2.9971 9.54608 3.00141 9.43917C3.00572 9.33225 3.04198 9.22909 3.10553 9.14299C3.16907 9.0569 3.25697 8.99184 3.35786 8.95622L20.2879 3.03122Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>          
+        </button>
+      </div>
+    </div> -->
   </div>
 </Layout>
 
@@ -230,7 +240,7 @@ const questions = [
 
     &_btnwrapper{
       position: sticky;
-      top: 90%;
+      top: 90dvh;
       margin-top: 80px;
     }
 
@@ -374,6 +384,27 @@ const questions = [
     }
   }
 
+  .input_box{
+    position: absolute;
+    top: auto;
+    bottom: 40px;
+    width: 60%;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #252528;
+  }
+
+  .inpit_inner{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .input{
+    flex: 1;
+  }
+
   .dis-none{
     display: none;
   }
@@ -453,6 +484,8 @@ const questions = [
     H_account?.classList.remove('dis-none')
   })
 
+  const help_section_btnwrapper = document.getElementById('help_section_btnwrapper')
+
   window.addEventListener('click', () => {
     if(H_chat?.classList.contains('dis-none') == false){
       let help_next_title = FAQ?.querySelector('#help_section_title')
@@ -475,6 +508,7 @@ const questions = [
       if (prev_number && help_prev_number_label) {
         prev_number.textContent = help_prev_number_label
       }
+      help_section_btnwrapper?.classList.add('dis-none')
     }
     if(FAQ?.classList.contains('dis-none') == false){
       let help_next_title = H_use?.querySelector('#help_section_title')
@@ -497,6 +531,7 @@ const questions = [
       if (prev_number && help_prev_number_label) {
         prev_number.textContent = help_prev_number_label
       }
+      help_section_btnwrapper?.classList.remove('dis-none')
     }
     if(H_course?.classList.contains('dis-none') == false){
       let help_next_title = H_service?.querySelector('#help_section_title')
@@ -519,6 +554,7 @@ const questions = [
       if (prev_number && help_prev_number_label) {
         prev_number.textContent = help_prev_number_label
       }
+      help_section_btnwrapper?.classList.remove('dis-none')
     }
     if(H_use?.classList.contains('dis-none') == false){
       let help_next_title = H_class?.querySelector('#help_section_title')
@@ -541,6 +577,7 @@ const questions = [
       if (prev_number && help_prev_number_label) {
         prev_number.textContent = help_prev_number_label
       }
+      help_section_btnwrapper?.classList.remove('dis-none')
     }
     if(H_class?.classList.contains('dis-none') == false){
       let help_next_title = H_grades?.querySelector('#help_section_title')
@@ -563,6 +600,7 @@ const questions = [
       if (prev_number && help_prev_number_label) {
         prev_number.textContent = help_prev_number_label
       }
+      help_section_btnwrapper?.classList.remove('dis-none')
     }
     if(H_grades?.classList.contains('dis-none') == false){
       let help_next_title = H_course?.querySelector('#help_section_title')
@@ -585,6 +623,7 @@ const questions = [
       if (prev_number && help_prev_number_label) {
         prev_number.textContent = help_prev_number_label
       }
+      help_section_btnwrapper?.classList.remove('dis-none')
     }
     if(H_account?.classList.contains('dis-none') == false){
       let help_next_title = FAQ?.querySelector('#help_section_title')
@@ -607,6 +646,7 @@ const questions = [
       if (prev_number && help_prev_number_label) {
         prev_number.textContent = help_prev_number_label
       }
+      help_section_btnwrapper?.classList.remove('dis-none')
     }
     if(H_service?.classList.contains('dis-none') == false){
       let help_next_title = H_account?.querySelector('#help_section_title')
@@ -629,6 +669,7 @@ const questions = [
       if (prev_number && help_prev_number_label) {
         prev_number.textContent = help_prev_number_label
       }
+      help_section_btnwrapper?.classList.remove('dis-none')
     }
   })
 
@@ -639,7 +680,7 @@ const questions = [
         console.log(help_nav_btn_all)
         help_nav_btn_all.classList.remove('active')
       })
-      help_nav_btn_target.classList.add('active')
+      help_nav_btn_target.classList.remove('active')
     })
   })
 

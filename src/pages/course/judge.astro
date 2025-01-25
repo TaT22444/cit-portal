@@ -267,10 +267,15 @@ import Layout from '../../layouts/Layout.astro';
     font-weight: 400;
     color: #66666d;
     margin-top: 16px;
+    line-height: 1.6;
   }
 
   .box{
     margin-top: 40px;
+
+    @media (width < 768px) {
+      margin-top: 24px;
+    }
 
     &_header{
       position: sticky;
@@ -365,6 +370,7 @@ import Layout from '../../layouts/Layout.astro';
     gap: 48px;
 
     @media (width < 768px) {
+      margin-top: 32px;
       display: flex;
       flex-direction: column-reverse;
 		}

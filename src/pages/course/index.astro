@@ -49,8 +49,8 @@ import Layout from '../../layouts/Layout.astro';
       <div class="box_header" id="box_header">
         <p class="box_label" id="box_label">履修登録</p>
         <div class="box_btns">
-          <button class="box_btn reset" id="reset_btn">選択をリセット</button>
-          <button class="box_btn judge">見込み判定</button>
+          <button class="box_btn" id="reset_btn">選択をリセット</button>
+          <a href="/course/judge" class="box_btn" id="judge_btn">見込み判定</a>
         </div>
       </div>
       <nav class="tag">
@@ -928,11 +928,15 @@ import Layout from '../../layouts/Layout.astro';
 
 <script>
   const register_modal = document.getElementById('register_modal')
+  const reset_btn = document.getElementById('reset_btn')
+  const judge_btn = document.getElementById('judge_btn')
   document.querySelectorAll('.class_item').forEach((class_item)=>{
 
     const reset_btn = document.getElementById('reset_btn')
     reset_btn?.addEventListener('click', () => {
       class_item.textContent = ""
+      reset_btn?.classList.remove('reset')
+      judge_btn?.classList.remove('judge')
     })
 
     const register_modal_back = document.getElementById('register_modal_back')
@@ -961,6 +965,8 @@ import Layout from '../../layouts/Layout.astro';
           class_item.textContent = register_class_name
         }
         register_modal?.classList.add('dis-none')
+        reset_btn?.classList.add('reset')
+        judge_btn?.classList.add('judge')
       })
     })
   })
@@ -1005,4 +1011,6 @@ import Layout from '../../layouts/Layout.astro';
       }
     }
   });
+
+
 </script>

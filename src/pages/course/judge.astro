@@ -365,8 +365,8 @@ import Layout from '../../layouts/Layout.astro';
     gap: 48px;
 
     @media (width < 768px) {
-      grid-template-columns: repeat(1, 1fr);
-      gap: 64px;
+      display: flex;
+      flex-direction: column-reverse;
 		}
 
     &::after{
@@ -389,6 +389,7 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .detail_box{
+    width: 100%;
 
     &_total{
       width: 100%;

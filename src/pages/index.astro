@@ -196,8 +196,8 @@ import NewsList from '../components/NewsList.astro';
 			</button>
 		</div>
 		<div class="section_btn_wrapper">
-			<a href="/class" class="section_btn">
-				<p class="section_btn_label">授業ページへ</p>
+			<a href="/class" class="section_btn" id="section_btn">
+				<p class="section_btn_label" id="section_btn_label">授業ページへ</p>
 				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M11.2251 7.10838C11.1637 7.05116 11.1144 6.98216 11.0802 6.90549C11.0461 6.82883 11.0277 6.74607 11.0262 6.66215C11.0248 6.57823 11.0402 6.49487 11.0716 6.41705C11.1031 6.33922 11.1498 6.26853 11.2092 6.20918C11.2685 6.14983 11.3392 6.10305 11.4171 6.07161C11.4949 6.04018 11.5782 6.02474 11.6622 6.02622C11.7461 6.0277 11.8288 6.04607 11.9055 6.08023C11.9822 6.11439 12.0512 6.16364 12.1084 6.22505L15.4417 9.55838C15.5588 9.67557 15.6245 9.83442 15.6245 10C15.6245 10.1657 15.5588 10.3245 15.4417 10.4417L12.1084 13.775C12.0512 13.8365 11.9822 13.8857 11.9055 13.9199C11.8288 13.954 11.7461 13.9724 11.6622 13.9739C11.5782 13.9754 11.4949 13.9599 11.4171 13.9285C11.3392 13.897 11.2685 13.8503 11.2092 13.7909C11.1498 13.7316 11.1031 13.6609 11.0716 13.583C11.0402 13.5052 11.0248 13.4219 11.0262 13.3379C11.0277 13.254 11.0461 13.1713 11.0802 13.0946C11.1144 13.0179 11.1637 12.9489 11.2251 12.8917L13.4917 10.625H5.41673C5.25097 10.625 5.092 10.5592 4.97479 10.442C4.85758 10.3248 4.79173 10.1658 4.79173 10C4.79173 9.83429 4.85758 9.67532 4.97479 9.5581C5.092 9.44089 5.25097 9.37505 5.41673 9.37505H13.4917L11.2251 7.10838Z" fill="#6161DA"/>
 				</svg>				
@@ -296,6 +296,7 @@ import NewsList from '../components/NewsList.astro';
 			background-color: #6161DA;
 			border-color: #e6e6ea;
 			transition: all .3s;
+			transform: scale(1.05);
 		}
 
 		&_label{
@@ -308,6 +309,15 @@ import NewsList from '../components/NewsList.astro';
 			  transition: all .3s;
 		  }
 		}
+	}
+	
+	.section_btn:hover .section_btn_label {
+		color: #fff;
+		transition: all .3s;
+	}
+	.section_btn:hover svg path {
+		fill: #fff; /* ホバー時の色 */
+		transition: all .3s;
 	}
 	
 	.section_slash{
@@ -352,6 +362,22 @@ import NewsList from '../components/NewsList.astro';
 			background-color: #252528;
 			border: 1px solid #972BF0;
 			box-shadow: 0px 0px 16px rgba($color: #972BF0, $alpha: 0.25);
+			animation: ai_icon_anim 3s infinite;
+
+			@keyframes ai_icon_anim {
+				0%{
+					background-color: #66666d;
+				}
+				33%{
+					background-color: #252528;
+				}
+				66%{
+					background-color: #52446c;
+				}
+				100%{
+					background-color: #66666d;
+				}
+			}
 		}
 
 		&_cards{
@@ -730,6 +756,10 @@ submit?.addEventListener("click", async () => {
 			tag_btn_target.classList.remove('tag_item_mouseover')
 			tag_btn_target.classList.add('tag_item_mouseleave')
 		})
+	})
+
+	document.querySelectorAll('#section_btn').forEach((section_btn) => {
+
 	})
 
 </script>

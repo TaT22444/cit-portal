@@ -123,8 +123,8 @@ const isGradesPage = currentPath === "/grades/";
 								<p class="sp_header_nav_name">お知らせ</p>
 							</a>
 						</li>
-						<li class="sp_header_nav_item">
-							<a href="/class" class="sp_header_nav_link">
+						<li class="sp_header_nav_item" id="sp_header_nav_class_link">
+							<button class="sp_header_nav_link">
 								<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<g clip-path="url(#clip0_1356_1350)">
 									<path d="M5.25 16.5V9.29849C5.25 8.49749 5.25 8.09699 5.43375 7.76099C5.61675 7.42499 5.9535 7.20824 6.62775 6.77474L8.18925 5.77124C8.583 5.51849 8.7795 5.39174 9 5.39174C9.2205 5.39174 9.417 5.51849 9.8115 5.77124L11.3723 6.77474C12.0465 7.20824 12.3832 7.42499 12.5662 7.76099C12.75 8.09699 12.75 8.49749 12.75 9.29849V16.5M9 9.74999H9.00675M15.75 16.5V12.1215C15.75 10.4032 14.805 10.2637 12.75 9.74999M2.25 16.5V12.1215C2.25 10.4032 3.195 10.2637 5.25 9.74999M1.5 16.5H16.5M9 16.5V13.5M9 5.24999V3.73649M9 3.73649V2.22749C9 1.87199 9 1.69424 9.1095 1.58399C9.4545 1.23674 10.875 2.05724 11.415 2.39024C11.871 2.67074 12 3.23174 12 3.73649H9Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -136,7 +136,10 @@ const isGradesPage = currentPath === "/grades/";
 									</defs>
 								</svg>		
 								<p class="sp_header_nav_name">授業</p>
-							</a>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
+								</svg>									
+							</button>
 						</li>
 						<li class="sp_header_nav_item">
 							<a href="/grades" class="sp_header_nav_link">
@@ -196,6 +199,110 @@ const isGradesPage = currentPath === "/grades/";
 					</a>
 				</div>
 				<div class="space"></div>
+			</nav>
+			<nav class="sp_header_nav dis-none" id="sp_class_nav">
+				<div class="sp_header_nav_box">
+					<a href="/" class="sp_header_nav_pageback">				
+						<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M10.3134 9.47995C10.3592 9.43083 10.4144 9.39143 10.4757 9.3641C10.537 9.33677 10.6032 9.32208 10.6704 9.32089C10.7375 9.31971 10.8042 9.33206 10.8665 9.3572C10.9287 9.38235 10.9853 9.41978 11.0328 9.46726C11.0802 9.51474 11.1177 9.57129 11.1428 9.63355C11.168 9.69581 11.1803 9.7625 11.1791 9.82963C11.1779 9.89677 11.1632 9.96298 11.1359 10.0243C11.1086 10.0856 11.0692 10.1408 11.0201 10.1866L8.35339 12.8533C8.25964 12.9469 8.13256 12.9995 8.00006 12.9995C7.86756 12.9995 7.74048 12.9469 7.64673 12.8533L4.98006 10.1866C4.93094 10.1408 4.89153 10.0856 4.86421 10.0243C4.83688 9.96298 4.82218 9.89677 4.821 9.82963C4.81982 9.7625 4.83216 9.69581 4.85731 9.63355C4.88246 9.57129 4.91989 9.51474 4.96737 9.46726C5.01485 9.41978 5.0714 9.38235 5.13366 9.3572C5.19592 9.33206 5.26261 9.31971 5.32974 9.32089C5.39688 9.32208 5.46309 9.33677 5.52442 9.3641C5.58575 9.39143 5.64095 9.43083 5.68673 9.47995L7.50006 11.2933V4.83329C7.50006 4.70068 7.55274 4.5735 7.64651 4.47973C7.74028 4.38596 7.86745 4.33329 8.00006 4.33329C8.13267 4.33329 8.25985 4.38596 8.35361 4.47973C8.44738 4.5735 8.50006 4.70068 8.50006 4.83329V11.2933L10.3134 9.47995Z" fill="#252528"/>
+						</svg>							
+					</a>
+					<a href="/" class="sp_header_nav_link">
+						<p class="sp_header_nav_name">授業トップへ</p>
+					</a>
+				</div>
+				<div class="sp_header_nav_box">
+					<div class="sp_header_nav_child">
+						<p class="sp_header_nav_label">月</p>
+					  <ul class="sp_header_nav_list">
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+					  </ul>
+					</div>
+					<div class="sp_header_nav_child">
+						<p class="sp_header_nav_label">火</p>
+					  <ul class="sp_header_nav_list">
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+					  </ul>
+					</div>
+					<div class="sp_header_nav_child">
+						<p class="sp_header_nav_label">水</p>
+					  <ul class="sp_header_nav_list">
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+					  </ul>
+					</div>
+					<div class="sp_header_nav_child">
+						<p class="sp_header_nav_label">木</p>
+					  <ul class="sp_header_nav_list">
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+					  </ul>
+					</div>
+					<div class="sp_header_nav_child">
+						<p class="sp_header_nav_label">金</p>
+					  <ul class="sp_header_nav_list">
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+					  </ul>
+					</div>
+					<div class="sp_header_nav_child">
+						<p class="sp_header_nav_label">土</p>
+					  <ul class="sp_header_nav_list">
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+						  <li class="sp_header_nav_item">
+						  	<a href="/" class="sp_header_nav_link">
+						  		<p class="sp_header_nav_name">創造工学デザイン論及び演習</p>
+						  	</a>
+						  </li>
+					  </ul>
+					</div>
+				</div>
 			</nav>
 		</header>
 
@@ -1443,6 +1550,7 @@ const isGradesPage = currentPath === "/grades/";
 
 		&_nav{
 			position: relative;
+			// left: -100%;
 			width: 100%;
 			height: 100%;
 			padding: 24px 16px 400px;
@@ -1457,6 +1565,14 @@ const isGradesPage = currentPath === "/grades/";
 
 				>.mypage{
 					border: 1px solid #252528;
+				}
+			}
+
+			&_child{
+				margin-top: 16px;
+
+				&:first-of-type{
+					margin: 0;
 				}
 			}
 
@@ -1479,6 +1595,7 @@ const isGradesPage = currentPath === "/grades/";
 			}
 
 			&_link{
+				width: 100%;
 				display: flex;
 				align-items: center;
 				padding: 16px;
@@ -1492,6 +1609,21 @@ const isGradesPage = currentPath === "/grades/";
 				font-size: 12px;
 				font-weight: 500;
 				color: #252528;
+				flex: 1;
+				// background-color: #4FDC3F;
+			}
+
+			&_pageback{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 16px;
+				width: 44px;
+				height: 44px;
+				border-radius: 16px;
+				background-color: #fff;
+				box-shadow: 0px 0px 24px rgba($color: #252528, $alpha: 0.15);
+				transform: rotate(90deg);
 			}
 		}
 
@@ -1937,10 +2069,15 @@ const isGradesPage = currentPath === "/grades/";
 <script>
 
 	const ham = document.getElementById('ham')
+	const sp_nav = document.getElementById('sp_nav')
+	const sp_class_nav = document.getElementById('sp_class_nav')
+	const sp_nav_class_link = document.getElementById('sp_header_nav_class_link')
 	ham?.addEventListener('click', () => {
 		const elem1 = document.getElementById('ham_elem1')
 		const elem2 = document.getElementById('ham_elem2')
 		const sp_nav = document.getElementById('sp_nav')
+		const sp_class_nav = document.getElementById('sp_class_nav')
+		const sp_nav_class_link = document.getElementById('sp_header_nav_class_link')
 		const sp_header = document.getElementById('sp_header')
 
 		if (sp_nav?.classList.contains('dis-none')) {
@@ -1961,6 +2098,10 @@ const isGradesPage = currentPath === "/grades/";
 			elem1?.classList.remove('elem1-lotate-in')
 			elem2?.classList.remove('elem2-lotate-in')
 		}
+	})
+	sp_nav_class_link?.addEventListener('click', () => {
+		sp_nav?.classList.add('dis-none')
+		sp_class_nav?.classList.remove('dis-none')
 	})
 
 	document.addEventListener('DOMContentLoaded', () => {

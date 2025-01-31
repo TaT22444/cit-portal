@@ -10,7 +10,6 @@
       <nav class="nav">
         <ul class="nav_list">
           <li class="nav_item">
-            
             <h2>
               <a href="/course" class="nav_link">履修</a>
             </h2>
@@ -132,7 +131,7 @@
     color: #fff;
     background-color: #252528;
     margin-top: 40px;
-    border-radius: 64px;
+    border-radius: 40px;
 
     @media (width < 414px) {
       margin-top: 0px;
@@ -143,11 +142,11 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      padding: 64px 40px;
+      padding: 64px 40px 40px;
 
       @media (width < 414px) {
        gap: 24px;
-       padding: 40px 24px;
+       padding: 40px 24px 24px;
 		  }
     }
 
@@ -241,6 +240,7 @@
     }
 
     &_link{
+      position: relative;
       width: auto;
       display: inline-flex;
       align-items: center;
@@ -251,10 +251,16 @@
       font-weight: 500;
       border-bottom: 1px solid #585858;
 
+      &::after{
+        content: "→";
+        position: relative;
+        margin-left: 16px;
+      }
+
       @media (width < 414px) {
         font-size: 12px;
         // border: none;
-        display: inline-block;
+        display: inline-flex;
 		  }
     }
 
@@ -264,16 +270,27 @@
       gap: 8px;
 
       @media (width < 414px) {
-        flex: 1;
         padding: 12px 0;
         gap: 16px;
 		  }
     }
 
+    &_nstitem{
+    }
+
     &_nstlink{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       font-size: 12px;
       font-weight: 400;
       color: #dadae3;
+
+      &::after{
+        content: "→";
+        position: relative;
+        padding-right: 24px;
+      }
     }
   }
 </style>

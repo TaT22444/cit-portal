@@ -14,7 +14,7 @@
   .totop_btn{
     position: fixed;
     left: 50%;
-    bottom: 24px;
+    bottom: 16px;
     transform: translateX(-50%);
     padding: 12px 16px;
     gap: 8px;
@@ -25,10 +25,6 @@
     border: 1px solid #dadae3;
     border-radius: 100px;
     color: #252528;
-
-    @media (width < 1080px) {
-      display: flex;
-    }
 
     &:hover{
       background-color: #E6E6EA;
@@ -45,7 +41,7 @@
   }
   .dis-flex{
     display: flex;
-    animation: dis-flex .6s ease-in-out forwards 6s;
+    animation: dis-flex .6s ease-in-out forwards 4s;
     @keyframes dis-flex {
       0%{
         opacity: 1;
@@ -59,7 +55,6 @@
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
   const totopButton = document.querySelector(".totop_btn");
   
   // 現在のURLのパスが '/' の場合はボタンを非表示にする
@@ -70,5 +65,4 @@
     totopButton?.classList.add('dis-flex')
     totopButton?.classList.remove('dis-none')
   }
-});
 </script>

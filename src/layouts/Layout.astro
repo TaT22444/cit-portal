@@ -20,6 +20,7 @@ import HelpGrades from '../components/HelpGrades.astro';
 import HelpUse from '../components/HelpUse.astro';
 import HelpAccount from '../components/HelpAccount.astro';
 import HelpService from '../components/HelpService.astro';
+import BackToTop from '../components/BackToTop.astro';
 
 // Astro.propsからプロパティを取得
 const { title, URL, ogptitle, type, description, sns_img, paths, subtitle } = Astro.props;
@@ -468,10 +469,16 @@ const isGradesPage = currentPath === "/grades/";
 		<main class="main" id="main">
 			<div class="main_inner">
 				<header class="main_header">
-					<p class="main_header_sub_title">{subtitle}</p>
+					<!-- <p class="main_header_sub_title">{subtitle}</p> -->
+					 <!-- <div class="top_btn">
+						<svg width="20" height="20" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M10.3134 9.47995C10.3592 9.43083 10.4144 9.39143 10.4757 9.3641C10.537 9.33677 10.6032 9.32208 10.6704 9.32089C10.7375 9.31971 10.8042 9.33206 10.8665 9.3572C10.9287 9.38235 10.9853 9.41978 11.0328 9.46726C11.0802 9.51474 11.1177 9.57129 11.1428 9.63355C11.168 9.69581 11.1803 9.7625 11.1791 9.82963C11.1779 9.89677 11.1632 9.96298 11.1359 10.0243C11.1086 10.0856 11.0692 10.1408 11.0201 10.1866L8.35339 12.8533C8.25964 12.9469 8.13256 12.9995 8.00006 12.9995C7.86756 12.9995 7.74048 12.9469 7.64673 12.8533L4.98006 10.1866C4.93094 10.1408 4.89153 10.0856 4.86421 10.0243C4.83688 9.96298 4.82218 9.89677 4.821 9.82963C4.81982 9.7625 4.83216 9.69581 4.85731 9.63355C4.88246 9.57129 4.91989 9.51474 4.96737 9.46726C5.01485 9.41978 5.0714 9.38235 5.13366 9.3572C5.19592 9.33206 5.26261 9.31971 5.32974 9.32089C5.39688 9.32208 5.46309 9.33677 5.52442 9.3641C5.58575 9.39143 5.64095 9.43083 5.68673 9.47995L7.50006 11.2933V4.83329C7.50006 4.70068 7.55274 4.5735 7.64651 4.47973C7.74028 4.38596 7.86745 4.33329 8.00006 4.33329C8.13267 4.33329 8.25985 4.38596 8.35361 4.47973C8.44738 4.5735 8.50006 4.70068 8.50006 4.83329V11.2933L10.3134 9.47995Z" fill="#fff"/>
+							</svg>
+					 </div> -->
 					<h2 class="main_header_title">{title}</h2>
 				</header>
 				<slot />
+				<BackToTop />
 			</div>
 			<section class="sidebar dis-none" id="sidebar">
 				<div class="sidebar_inner" id="sidebar_inner">
@@ -481,7 +488,7 @@ const isGradesPage = currentPath === "/grades/";
 								<path d="M8.46399 15.535L15.536 8.46497M8.46399 8.46497L15.536 15.535" stroke="#252528" stroke-width="1.5" stroke-linecap="round"/>
 							</svg>								
 						</button>
-						<a href="/class" class="sidebar_link">
+						<a href="/class/class" class="sidebar_link">
 							<p class="sidebar_link_label">授業ページへ</p>
 							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M11.2251 7.10838C11.1637 7.05116 11.1144 6.98216 11.0802 6.90549C11.0461 6.82883 11.0277 6.74607 11.0262 6.66215C11.0248 6.57823 11.0402 6.49487 11.0716 6.41705C11.1031 6.33922 11.1498 6.26853 11.2092 6.20918C11.2685 6.14983 11.3392 6.10305 11.4171 6.07161C11.4949 6.04018 11.5782 6.02474 11.6622 6.02622C11.7461 6.0277 11.8288 6.04607 11.9055 6.08023C11.9822 6.11439 12.0512 6.16364 12.1084 6.22505L15.4417 9.55838C15.5588 9.67557 15.6245 9.83442 15.6245 10C15.6245 10.1657 15.5588 10.3245 15.4417 10.4417L12.1084 13.775C12.0512 13.8365 11.9822 13.8857 11.9055 13.9199C11.8288 13.954 11.7461 13.9724 11.6622 13.9739C11.5782 13.9754 11.4949 13.9599 11.4171 13.9285C11.3392 13.897 11.2685 13.8503 11.2092 13.7909C11.1498 13.7316 11.1031 13.6609 11.0716 13.583C11.0402 13.5052 11.0248 13.4219 11.0262 13.3379C11.0277 13.254 11.0461 13.1713 11.0802 13.0946C11.1144 13.0179 11.1637 12.9489 11.2251 12.8917L13.4917 10.625H5.41673C5.25097 10.625 5.092 10.5592 4.97479 10.442C4.85758 10.3248 4.79173 10.1658 4.79173 10C4.79173 9.83429 4.85758 9.67532 4.97479 9.5581C5.092 9.44089 5.25097 9.37505 5.41673 9.37505H13.4917L11.2251 7.10838Z" fill="#6161DA"/>
@@ -1658,6 +1665,13 @@ const isGradesPage = currentPath === "/grades/";
 		}
 	}
 
+  .top_btn{
+		// display: none;
+		>svg{
+			transform: rotate(90deg);
+		}
+	}
+
 	.main{
 		display: flex;
 		grid-area: 24px;
@@ -1694,9 +1708,11 @@ const isGradesPage = currentPath === "/grades/";
 			
 			@media (width < 1080px) {
 			  width: auto;
-				display: inline-block;
+				display: inline-flex;
+				flex-direction: row;
 				padding: 12px 16px;
 				border-radius: 12px;
+				align-items: center;
 		  }
 
 			&_title{

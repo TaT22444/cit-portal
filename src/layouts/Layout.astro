@@ -21,6 +21,7 @@ import HelpUse from '../components/HelpUse.astro';
 import HelpAccount from '../components/HelpAccount.astro';
 import HelpService from '../components/HelpService.astro';
 import BackToTop from '../components/BackToTop.astro';
+import Footer from '../components/Footer.astro';
 
 // Astro.propsからプロパティを取得
 const { title, URL, ogptitle, type, description, sns_img, paths, subtitle } = Astro.props;
@@ -467,7 +468,7 @@ const isGradesPage = currentPath === "/grades/";
 			</div>
 		</aside>
 		<main class="main" id="main">
-			<div class="main_inner">
+			<div class="main_container">
 				<header class="main_header">
 					<!-- <p class="main_header_sub_title">{subtitle}</p> -->
 					 <!-- <div class="top_btn">
@@ -477,8 +478,11 @@ const isGradesPage = currentPath === "/grades/";
 					 </div> -->
 					<h2 class="main_header_title">{title}</h2>
 				</header>
-				<slot />
+				<div class="main_inner">
+					<slot />
+				</div>
 				<BackToTop />
+				<Footer />
 			</div>
 			<section class="sidebar dis-none" id="sidebar">
 				<div class="sidebar_inner" id="sidebar_inner">
@@ -862,11 +866,6 @@ const isGradesPage = currentPath === "/grades/";
 		)}
 	</main>
 	
-
-	  <main class="sp_main">
-			<div class="sp_main_inner"></div>
-		</main>
-
 		<section class="sp_classmodal dis-none" id="sp_modal">
 			<div class="sp_classmodal_back" id="sp_classmodal_back"></div>
 			<div class="sp_classmodal_inner">
@@ -1686,10 +1685,15 @@ const isGradesPage = currentPath === "/grades/";
 			margin-top: 96px;
 		}
 
+		&_container{
+			width: 100%;
+			margin-inline: auto;
+		}
+
 		&_inner{
 			width: 100%;
 			margin-inline: auto;
-			padding: 24px 24px 0;
+			padding: 0 24px;
 
 			@media (width < 1080px) {
 			  padding: 0 16px;
@@ -1701,7 +1705,8 @@ const isGradesPage = currentPath === "/grades/";
 			flex-direction: column;
 			gap: 8px;
 			justify-content: center;
-			width: 100%;
+			width: calc(100% - 48px);
+			margin: 24px 24px 0;
 			padding: 20px 24px;
 			background-color: #6161DA;
 			border-radius: 16px;
@@ -1710,6 +1715,7 @@ const isGradesPage = currentPath === "/grades/";
 			  width: auto;
 				display: inline-flex;
 				flex-direction: row;
+				margin: 0 16px;
 				padding: 12px 16px;
 				border-radius: 12px;
 				align-items: center;

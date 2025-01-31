@@ -338,6 +338,10 @@ import NewsList from '../components/NewsList.astro';
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
+
+		@media (width < 1080px) {
+			margin-top: 16px;
+		}
 	}
 
 	.ai_suggetion{

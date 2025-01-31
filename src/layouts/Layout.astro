@@ -468,7 +468,7 @@ const isGradesPage = currentPath === "/grades/";
 			</div>
 		</aside>
 		<main class="main" id="main">
-			<div class="main_container">
+			<div class="main_inner">
 				<header class="main_header">
 					<!-- <p class="main_header_sub_title">{subtitle}</p> -->
 					 <!-- <div class="top_btn">
@@ -478,9 +478,7 @@ const isGradesPage = currentPath === "/grades/";
 					 </div> -->
 					<h2 class="main_header_title">{title}</h2>
 				</header>
-				<div class="main_inner">
-					<slot />
-				</div>
+				<slot />
 				<BackToTop />
 				<Footer />
 			</div>
@@ -1685,18 +1683,13 @@ const isGradesPage = currentPath === "/grades/";
 			margin-top: 96px;
 		}
 
-		&_container{
-			width: 100%;
-			margin-inline: auto;
-		}
-
 		&_inner{
 			width: 100%;
 			margin-inline: auto;
-			padding: 0 24px 80px;
+			padding: 24px 16px 16px;
 
 			@media (width < 1080px) {
-			  padding: 0 16px 80px;
+			  padding: 0px 16px 16px;
 		  }
 		}
 
@@ -1705,8 +1698,8 @@ const isGradesPage = currentPath === "/grades/";
 			flex-direction: column;
 			gap: 8px;
 			justify-content: center;
-			width: calc(100% - 48px);
-			margin: 24px 24px 0;
+			width: 100%;
+			// margin: 24px 24px 0;
 			padding: 20px 24px;
 			background-color: #6161DA;
 			border-radius: 16px;
@@ -1715,7 +1708,6 @@ const isGradesPage = currentPath === "/grades/";
 			  width: auto;
 				display: inline-flex;
 				flex-direction: row;
-				margin: 0 16px;
 				padding: 12px 16px;
 				border-radius: 12px;
 				align-items: center;

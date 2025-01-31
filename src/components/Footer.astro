@@ -201,7 +201,7 @@
 
   .nav{
     width: 100%;
-    margin-top: 24px;
+    margin-top: 40px;
 
     &_list{
       display: grid;
@@ -210,6 +210,7 @@
       row-gap: 40px;
 
       @media (width < 414px) {
+        margin-top: 24px;
         display: flex;
         flex-direction: column;
         gap: 24px;
@@ -222,10 +223,13 @@
       gap: 16px;
 
       @media (width < 414px) {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
+        flex-direction: row;
         gap: 16px;
 		  }
+
+      >h2{
+        width: 120px;
+      }
     }
 
     &_link{

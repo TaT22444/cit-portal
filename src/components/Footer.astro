@@ -10,7 +10,51 @@
     <nav class="nav">
       <ul class="nav_list">
         <li class="nav_item">
+          <a href="" class="nav_link">履修</a>
+        </li>
+        <li class="nav_item">
+          <a href="" class="nav_link">お知らせ</a>
+        </li>
+        <li class="nav_item">
           <a href="" class="nav_link">授業</a>
+          <ul class="nav_nstlist">
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">創造工学デザイン論</a>
+            </li>
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">英語表現Ⅱ</a>
+            </li>
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">物理学演習</a>
+            </li>
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">創造工学デザイン論</a>
+            </li>
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">英語表現Ⅱ</a>
+            </li>
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">物理学演習</a>
+            </li>
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">創造工学デザイン論</a>
+            </li>
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">英語表現Ⅱ</a>
+            </li>
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">物理学演習</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav_item">
+          <a href="" class="nav_link">成績</a>
+        </li>
+        <li class="nav_item">
+          <a href="" class="nav_link">就職システム</a>
+        </li>
+        <li class="nav_item">
+          <a href="" class="nav_link">外部サービス</a>
           <ul class="nav_nstlist">
             <li class="nav_nstitem">
               <a href="" class="nav_nstlink">創造工学デザイン論</a>
@@ -24,7 +68,21 @@
           </ul>
         </li>
         <li class="nav_item">
-          <a href="" class="nav_link">授業</a>
+          <a href="" class="nav_link">ヘルプ</a>
+          <ul class="nav_nstlist">
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">創造工学デザイン論</a>
+            </li>
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">英語表現Ⅱ</a>
+            </li>
+            <li class="nav_nstitem">
+              <a href="" class="nav_nstlink">物理学演習</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav_item">
+          <a href="" class="nav_link">マイページ</a>
           <ul class="nav_nstlist">
             <li class="nav_nstitem">
               <a href="" class="nav_nstlink">創造工学デザイン論</a>
@@ -39,13 +97,21 @@
         </li>
       </ul>
     </nav>
-    <div class="footer_bottom"></div>
+    <div class="footer_bottom">
+      <a href="/" class="footer_bottom_text">CIT Portal</a>
+      <p class="footer_bottom_copy">
+        <small>
+          &copy; 2025 CIT Portal
+        </small>
+      </p>
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   .footer{
     width: 100%;
+    color: #fff;
     background-color: #252528;
 
     &_inner{
@@ -53,7 +119,130 @@
       display: flex;
       flex-direction: column;
       gap: 40px;
-      padding: 40px 24px;
+      padding: 64px 40px;
+
+      @media (width < 414px) {
+       gap: 24px;
+       padding: 40px 24px;
+		  }
+    }
+
+    &_main{
+      width: 100%;
+
+      >.top_btn{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        border: 1px solid #585858;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 400;
+
+        @media (width < 414px) {
+          font-size: 12px;
+          border: none;
+          display: block;
+		    }
+      }
+    }
+
+    &_bottom{
+      width: 100%;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #585858;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+        @media (width < 414px) {
+          margin-top: 24px;
+          padding-top: 24px;
+		    }
+      
+      &_text{
+        font-weight: 600;
+        font-size: 40px;
+
+        @media (width < 414px) {
+          font-size: 32px;
+		    }
+      }
+
+      &_copy{
+        font-size: 14px;
+
+        @media (width < 414px) {
+          font-size: 12px;
+		    }
+      }
+    }
+  }
+
+  .nav{
+    width: 100%;
+
+    &_list{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      column-gap: 24px;
+      row-gap: 40px;
+
+      @media (width < 414px) {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+		  }
+    }
+
+    &_item{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @media (width < 414px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+		  }
+    }
+
+    &_link{
+      width: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: baseline;
+      padding: 8px 16px;
+      border: 1px solid #585858;
+      font-size: 14px;
+      font-weight: 400;
+      border-radius: 12px;
+
+      @media (width < 414px) {
+        font-size: 12px;
+        border: none;
+        display: block;
+		  }
+    }
+
+    &_nstlist{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-left: 16px;
+
+      @media (width < 414px) {
+        padding-left: 0;
+        gap: 16px;
+		  }
+    }
+
+    &_nstlink{
+      font-size: 12px;
+      font-weight: 400;
     }
   }
 </style>

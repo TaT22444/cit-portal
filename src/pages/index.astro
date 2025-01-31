@@ -241,11 +241,13 @@ import NewsList from '../components/NewsList.astro';
 		margin-top: 40px;
 
 		&:first-of-type{
-			margin-top: 16px;
+			margin-top: 40px;
 		}
 
 		@media (width < 1080px) {
-			margin-top: 24px;
+			&:first-of-type{
+			  margin-top: 32px;
+		  }
 		}
 	}
 
@@ -340,13 +342,11 @@ import NewsList from '../components/NewsList.astro';
 	}
 
 	.ai_suggetions{
-		margin-top: 24px;
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
 
 		@media (width < 1080px) {
-			margin-top: 16px;
 		}
 	}
 

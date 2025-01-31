@@ -31,7 +31,7 @@ import NewsList from '../components/NewsList.astro';
 					</button>
 					<p class="ai_suggetion_label">課題の締め切りが近づいています</p>
 				</div>
-				<div class="ai_suggetion_cards" id="ai_cards">
+				<div class="ai_suggetion_cards dis-none" id="ai_cards">
 					<a href="/class/class" class="ai_suggetion_card">
 						<div class="ai_suggetion_card_content">
 							<p class="ai_suggetion_card_label">創造工学デザイン論</p>
@@ -74,7 +74,7 @@ import NewsList from '../components/NewsList.astro';
 					</button>
 					<p class="ai_suggetion_label">授業の重要なお知らせです</p>
 				</div>
-				<div class="ai_suggetion_cards" id="ai_cards">
+				<div class="ai_suggetion_cards dis-none" id="ai_cards">
 					<a href="/class/class" class="ai_suggetion_card">
 						<div class="ai_suggetion_card_content">
 							<p class="ai_suggetion_card_label">創造工学デザイン論</p>
@@ -235,6 +235,7 @@ import NewsList from '../components/NewsList.astro';
 		display: flex;
 		flex-direction: column;
 		padding-bottom: 80px;
+		z-index: 2;
 	}
 	
 	.box{
@@ -393,7 +394,7 @@ import NewsList from '../components/NewsList.astro';
 		}
 
 		&_toggle{
-			transform: rotate(90deg)
+			// transform: rotate(90deg)
 		}
 
 		&_cards{
@@ -673,10 +674,10 @@ import NewsList from '../components/NewsList.astro';
 		animation: ai_btn_close .3s forwards;
 		@keyframes ai_btn_close {
 			0%{
-				transform: rotate(90deg);
+				transform: rotate(0);
 			}
 			100%{
-				transform: rotate(0);
+				transform: rotate(90deg);
 			}
 		}
 	}
@@ -684,10 +685,10 @@ import NewsList from '../components/NewsList.astro';
 		animation: ai_btn_open .3s forwards;
 		@keyframes ai_btn_open {
 			0%{
-				transform: rotate(0);
+				transform: rotate(90deg);
 			}
 			100%{
-				transform: rotate(90deg);
+				transform: rotate(0);
 			}
 		}
 	}
@@ -813,13 +814,13 @@ submit?.addEventListener("click", async () => {
 			if(ai_toggle_btn?.classList.contains('ai_btn_close') == false){
 				ai_toggle_btn.classList.add('ai_btn_close')
 			  ai_toggle_btn.classList.remove('ai_btn_open')
-			  ai_cards?.classList.add("dis-none")
-			  ai_cards?.classList.remove("dis-grid")
+			  ai_cards?.classList.remove("dis-none")
+			  ai_cards?.classList.add("dis-grid")
 			} else {
 				ai_toggle_btn?.classList.remove('ai_btn_close')
 			  ai_toggle_btn?.classList.add('ai_btn_open')
-			  ai_cards?.classList.remove("dis-none")
-			  ai_cards?.classList.add("dis-grid")
+			  ai_cards?.classList.add("dis-none")
+			  ai_cards?.classList.remove("dis-grid")
 			}
 		})
 	})

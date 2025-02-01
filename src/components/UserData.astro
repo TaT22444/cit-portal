@@ -1,0 +1,229 @@
+---
+const { data, id, isVisible } = Astro.props;
+---
+
+<div class={`box ${!isVisible ? 'dis-none' : ''}`} id={id}>
+  <h3 class="box_title">{data.title}</h3>
+  <p class="box_label">{data.desc}</p>
+  <div class="box_list">
+    {data.items.map((item: { label: unknown; details: any[]; }) => (
+      <div class="box_item" id="box">
+        <div class="box_item_wrapper" id="toggle_btn">
+          <svg id="toggle" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99957 4C8.07838 4.00007 8.15606 4.01876 8.22627 4.05456C8.29648 4.09036 8.35723 4.14225 8.40357 4.206L12.4036 9.706C12.4578 9.78057 12.4903 9.86866 12.4976 9.96056C12.5049 10.0525 12.4866 10.1446 12.4448 10.2267C12.403 10.3089 12.3393 10.3779 12.2607 10.4261C12.1821 10.4744 12.0918 10.4999 11.9996 10.5H3.99957C3.90738 10.4999 3.81701 10.4744 3.73845 10.4261C3.65988 10.3779 3.59617 10.3089 3.55437 10.2267C3.51256 10.1446 3.49429 10.0525 3.50156 9.96056C3.50883 9.86866 3.54136 9.78057 3.59557 9.706L7.59557 4.206C7.64191 4.14225 7.70266 4.09036 7.77287 4.05456C7.84308 4.01876 7.92076 4.00007 7.99957 4Z" fill="#66666d"/>
+          </svg>    
+          <h4 class="box_item_name">{item.label}</h4>
+        </div>
+        <ul class="box_item_list dis-none" id="item">
+          {item.details.map((detail: { key: unknown; value: unknown; }) => (
+            <li class="box_item_list_item">
+              <div class="box_item_list_item_left">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.667 10.833H15.8337V9.16634H11.667V10.833ZM11.667 8.33301H15.8337V6.66634H11.667V8.33301ZM4.16699 13.333H10.8337V12.8747C10.8337 12.2497 10.5281 11.7533 9.91699 11.3855C9.30588 11.0177 8.50033 10.8336 7.50033 10.833C6.50033 10.8325 5.69477 11.0166 5.08366 11.3855C4.47255 11.7544 4.16699 12.2508 4.16699 12.8747V13.333ZM7.50033 9.99967C7.95866 9.99967 8.35116 9.83662 8.67783 9.51051C9.00449 9.1844 9.16755 8.7919 9.16699 8.33301C9.16644 7.87412 9.00338 7.4819 8.67783 7.15634C8.35227 6.83079 7.95977 6.66745 7.50033 6.66634C7.04088 6.66523 6.64866 6.82856 6.32366 7.15634C5.99866 7.48412 5.83533 7.87634 5.83366 8.33301C5.83199 8.78967 5.99533 9.18217 6.32366 9.51051C6.65199 9.83884 7.04421 10.0019 7.50033 9.99967ZM3.33366 16.6663C2.87533 16.6663 2.4831 16.5033 2.15699 16.1772C1.83088 15.8511 1.66755 15.4586 1.66699 14.9997V4.99967C1.66699 4.54134 1.83033 4.14912 2.15699 3.82301C2.48366 3.4969 2.87588 3.33356 3.33366 3.33301H16.667C17.1253 3.33301 17.5178 3.49634 17.8445 3.82301C18.1712 4.14967 18.3342 4.5419 18.3337 4.99967V14.9997C18.3337 15.458 18.1706 15.8505 17.8445 16.1772C17.5184 16.5038 17.1259 16.6669 16.667 16.6663H3.33366ZM3.33366 14.9997H16.667V4.99967H3.33366V14.9997Z" fill="#66666D"/>
+                </svg>
+                <h5 class="box_item_list_item_name">{detail.key}</h5>
+              </div>
+              <div class="box_item_list_item_textbox">
+                <p class="box_item_list_item_text">{detail.value}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style lang="scss">
+  .box{
+    width: 100%;
+    padding: 24px 32px;
+
+    @media (width < 768px) {
+      width: calc(100% - 48px);
+      padding: 24px 0 0;
+      margin: 24px 24px 0;
+      border-top: 1px solid #dadae3;
+    }
+
+    @media (width < 414px) {
+      width: calc(100% - 16px);
+      padding: 24px 0 0;
+      margin: 24px 8px 0;
+    }
+
+    &_title{
+      font-size: 20px;
+      font-weight: 500;
+      color: #252528;
+    }
+
+    &_label{
+      margin-top: 16px;
+      font-size: 14px;
+      color: #66666d;
+    }
+
+    &_list{
+      width: 100%;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &_item{
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      &_wrapper{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+        border-radius: 16px;
+        background-color: #e6e6ea;
+        cursor: pointer;
+
+        >svg{
+          transform: rotate(90deg);
+        }
+      }
+
+      &_name{
+        font-size: 14px;
+      }
+
+      &_list{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 0 40px;
+
+        &_item{
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          &_left{
+            width: 160px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-bottom: 8px;
+          }
+
+          &_name{
+            font-size: 14px;
+            color: #252528;
+          }
+
+          &_textbox{
+            flex: 1;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #dadae3;
+          }
+
+          &_text{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .toggle_close{
+    animation: toggle_close .3s forwards;
+    @keyframes toggle_close {
+      0%{
+        transform: rotate(90deg);
+      }
+      100%{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .toggle_open{
+    animation: toggle_open .3s forwards;
+    @keyframes toggle_open {
+      0%{
+        transform: rotate(180deg);
+      }
+      100%{
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .dis-none{
+    display: none;
+  }
+  .dis-flex{
+    display: flex;
+  }
+</style>
+
+<script>
+  const tag_btns = document.querySelectorAll('#tag_item')
+  tag_btns.forEach((tag_btn_target) => {
+  tag_btn_target.addEventListener('click', () => {
+    tag_btns.forEach((tag_btn_all) => {
+      tag_btn_all.classList.remove('active')
+    })
+    const target_label = tag_btn_target.textContent?.trim()
+    const box_label = document.getElementById('box_label')
+    if (box_label && target_label) {
+      box_label.textContent = target_label
+    }
+    
+    tag_btn_target.classList.add('active')
+  })
+  tag_btn_target.addEventListener('mouseover', () => {
+    tag_btn_target.classList.add('tag_item_mouseover')
+    tag_btn_target.classList.remove('tag_item_mouseleave')
+  })
+  tag_btn_target.addEventListener('mouseleave', () => {
+    tag_btn_target.classList.remove('tag_item_mouseover')
+    tag_btn_target.classList.add('tag_item_mouseleave')
+  })
+})
+
+document.querySelectorAll('#box').forEach((box) => {
+  const toggle_btn = box.querySelector('#toggle_btn')
+  const toggle = box.querySelector('#toggle')
+  const item = box.querySelector('#item')
+  toggle_btn?.addEventListener('click', () => {
+    if(toggle?.classList.contains('toggle_close')==false){
+      toggle.classList.add('toggle_close')
+      toggle.classList.remove('toggle_open')
+      item?.classList.add('dis-flex')
+      item?.classList.remove('dis-none')
+    } else {
+      toggle?.classList.remove('toggle_close')
+      toggle?.classList.add('toggle_open')
+      item?.classList.remove('dis-flex')
+      item?.classList.add('dis-none')
+    }
+  })
+  // toggle_btn?.addEventListener('mouseover', () => {
+  //   if(toggle?.classList.contains('toggle_close')==false){
+  //     toggle.classList.add('toggle_close')
+  //     toggle.classList.remove('toggle_open')
+  //   } else {
+  //     toggle?.classList.remove('toggle_close')
+  //     toggle?.classList.add('toggle_open')
+  //   }
+  // })
+  // toggle_btn?.addEventListener('mouseleave', () => {
+  //   if(toggle?.classList.contains('toggle_close')==false){
+  //     toggle.classList.add('toggle_close')
+  //     toggle.classList.remove('toggle_open')
+  //   } else {
+  //     toggle?.classList.remove('toggle_close')
+  //     toggle?.classList.add('toggle_open')
+  //   }
+  // })
+})
+</script>
+

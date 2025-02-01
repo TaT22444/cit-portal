@@ -37,9 +37,9 @@ const questions = [
     <section class="box">
       <nav class="help_nav">
         <button class="sp_nav_btn" id="sp_nav_btn">
-          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.3134 9.47995C10.3592 9.43083 10.4144 9.39143 10.4757 9.3641C10.537 9.33677 10.6032 9.32208 10.6704 9.32089C10.7375 9.31971 10.8042 9.33206 10.8665 9.3572C10.9287 9.38235 10.9853 9.41978 11.0328 9.46726C11.0802 9.51474 11.1177 9.57129 11.1428 9.63355C11.168 9.69581 11.1803 9.7625 11.1791 9.82963C11.1779 9.89677 11.1632 9.96298 11.1359 10.0243C11.1086 10.0856 11.0692 10.1408 11.0201 10.1866L8.35339 12.8533C8.25964 12.9469 8.13256 12.9995 8.00006 12.9995C7.86756 12.9995 7.74048 12.9469 7.64673 12.8533L4.98006 10.1866C4.93094 10.1408 4.89153 10.0856 4.86421 10.0243C4.83688 9.96298 4.82218 9.89677 4.821 9.82963C4.81982 9.7625 4.83216 9.69581 4.85731 9.63355C4.88246 9.57129 4.91989 9.51474 4.96737 9.46726C5.01485 9.41978 5.0714 9.38235 5.13366 9.3572C5.19592 9.33206 5.26261 9.31971 5.32974 9.32089C5.39688 9.32208 5.46309 9.33677 5.52442 9.3641C5.58575 9.39143 5.64095 9.43083 5.68673 9.47995L7.50006 11.2933V4.83329C7.50006 4.70068 7.55274 4.5735 7.64651 4.47973C7.74028 4.38596 7.86745 4.33329 8.00006 4.33329C8.13267 4.33329 8.25985 4.38596 8.35361 4.47973C8.44738 4.5735 8.50006 4.70068 8.50006 4.83329V11.2933L10.3134 9.47995Z" fill="#66666D"/>
-          </svg>          
+          <svg class="sp_nav_toggle" id="sp_nav_toggle" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="#252528"/>
+          </svg>       
         </button>
         <ul class="help_nav_list">
           <li class="help_nav_item active" id="H_chat_btn">
@@ -183,7 +183,7 @@ const questions = [
 
   .contents{
     padding-bottom: 120px;
-    // height: 100%;
+    min-height: 100dvh;
   }
 
   .box{
@@ -199,6 +199,10 @@ const questions = [
 
     .sp_nav_btn{
       display: none;
+    }
+
+    .sp_nav_toggle{
+      transform: rotate(90deg);
     }
 
     &_list{
@@ -447,6 +451,29 @@ const questions = [
   }
   .dis-flex{
     display: flex;
+  }
+
+  .toggle_close{
+    animation: toggle_close .3s forwards;
+    @keyframes toggle_close {
+      0%{
+        transform: rotate(90deg);
+      }
+      100%{
+        transform: rotate(0);
+      }
+    }
+  }
+  .toggle_open{
+    animation: toggle_open .3s forwards;
+    @keyframes toggle_open {
+      0%{
+        transform: rotate(0);
+      }
+      100%{
+        transform: rotate(90deg);
+      }
+    }
   }
 </style>
 
@@ -711,12 +738,15 @@ const questions = [
   })
 
   const sp_nav_btn = document.getElementById('sp_nav_btn')
+  const sp_nav_toggle = document.getElementById('sp_nav_toggle')
   const help_nav_btns = document.querySelectorAll('.help_nav_item')
   help_nav_btns.forEach((help_nav_btn_target) => {
     help_nav_btn_target.addEventListener('click', () => {
       help_nav_btns.forEach((help_nav_btn_all) => {
         if (window.innerWidth <= 768) {
           help_nav_btn_all.classList.add('dis-none')
+          sp_nav_toggle?.classList.add('toggle_close')
+          sp_nav_toggle?.classList.remove('toggle_open')
         }
         console.log(help_nav_btn_all)
         help_nav_btn_all.classList.remove('active')
@@ -728,15 +758,19 @@ const questions = [
     })
 
     if (window.innerWidth <= 768) {
-      sp_nav_btn?.addEventListener('click', () => {
-        help_nav_btns.forEach((help_nav_btn_all) => {
+      help_nav_btns.forEach((help_nav_btn_all) => {
+        sp_nav_btn?.addEventListener('click', () => {
           if(help_nav_btn_all.classList.contains('dis-none')==false){
+            sp_nav_toggle?.classList.add('toggle_close')
+            sp_nav_toggle?.classList.remove('toggle_open')
             if(help_nav_btn_all.classList.contains('active')){
               help_nav_btn_all.classList.remove('dis-none')
             } else {
               help_nav_btn_all.classList.add('dis-none')
             }
           } else {
+            sp_nav_toggle?.classList.remove('toggle_close')
+            sp_nav_toggle?.classList.add('toggle_open')
             if(help_nav_btn_all.classList.contains('active')==false){
               help_nav_btn_all.classList.remove('dis-none')
             }

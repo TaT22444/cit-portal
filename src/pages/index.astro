@@ -74,15 +74,15 @@ import NewsList from '../components/NewsList.astro';
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="#fff"/>
 						</svg>		
 					</button>
-					<p class="ai_suggetion_label">授業の重要なお知らせです</p>
+					<p class="ai_suggetion_label">大学からの重要なお知らせです</p>
 				</div>
 				<div class="ai_suggetion_cards dis-none" id="ai_cards">
 					<a href="/class/class" class="ai_suggetion_card" id="ai_card">
 						<div class="ai_suggetion_card_content">
-							<p class="ai_suggetion_card_label">創造工学デザイン論</p>
-							<h4 class="ai_suggetion_card_title">緊急事態宣言の発令により、来週の授業をオンラインとします。</h4>
+							<p class="ai_suggetion_card_label">重要</p>
+							<h4 class="ai_suggetion_card_title">CITポータルサービス終了のお知らせ</h4>
 							<p class="ai_suggetion_card_limit">
-								<span>2024-10-13</span>
+								<span>2025-01-12</span>
 							</p>
 						</div>
 						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,8 +91,8 @@ import NewsList from '../components/NewsList.astro';
 					</a>
 					<a href="/class/class" class="ai_suggetion_card" id="ai_card">
 						<div class="ai_suggetion_card_content">
-							<p class="ai_suggetion_card_label">物理学演習</p>
-							<h4 class="ai_suggetion_card_title">中間テスト追試のお知らせ</h4>
+							<p class="ai_suggetion_card_label">重要</p>
+							<h4 class="ai_suggetion_card_title">奨学金の申請が締め切り間近となりました</h4>
 							<p class="ai_suggetion_card_limit">
 								<span>2024-10-13</span>
 							</p>
@@ -373,7 +373,7 @@ import NewsList from '../components/NewsList.astro';
 	.section_btn_wrapper{
 		position: relative;
 		// margin-top: 40px;
-		margin-top: 80px;
+		margin-top: 64px;
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -391,6 +391,13 @@ import NewsList from '../components/NewsList.astro';
 			flex: 1;
 			height: 1px;
 			background-color: #dadae3;
+		}
+
+		@media (width >= 1920px) {
+			margin-top: 80px;
+		}
+		@media (width < 1080px) {
+			margin-top: 40px;
 		}
 	}
 

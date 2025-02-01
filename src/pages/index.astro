@@ -411,6 +411,10 @@ import NewsList from '../components/NewsList.astro';
 		border-radius: 100px;
 		transition: all .3s;
 
+		@media (width < 768px) {
+		  padding: 12px 16px;
+		}
+
 		&:hover{
 			background-color: #6161DA;
 			border-color: #e6e6ea;
@@ -422,6 +426,10 @@ import NewsList from '../components/NewsList.astro';
 			font-weight: 500;
 			font-size: 14px;
 			color: #6161DA;
+
+			@media (width < 768px) {
+		    font-size: 12px;
+		  }
 
 			&:hover{
 				color: #fff;

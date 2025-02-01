@@ -184,10 +184,18 @@ const questions = [
   .contents{
     padding-bottom: 120px;
     min-height: 100dvh;
+
+    @media (width >= 1920px) {
+			padding-inline: 16px;
+		}
   }
 
   .box{
-    margin-top: 32px;
+    margin-top: 40px;
+
+    @media (width < 768px) {
+		  margin-top: 24px;
+		}
 
     &:nth-last-of-type(1){
       padding-top: 32px;

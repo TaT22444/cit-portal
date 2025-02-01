@@ -70,6 +70,10 @@ import NewsList from '../../components/NewsList.astro';
   .container{
     padding-bottom: 80px;
     min-height: 100dvh;
+
+    @media (width >= 1920px) {
+			padding-inline: 16px;
+		}
   }
 
   .contents{
@@ -77,7 +81,11 @@ import NewsList from '../../components/NewsList.astro';
   }
 
   .box{
-    margin-top: 32px;
+    margin-top: 40px;
+
+    @media (width < 768px) {
+			margin-top: 24px;
+		}
   }
 
   .tag{

@@ -108,10 +108,18 @@ import Layout from '../../layouts/Layout.astro';
   .container{
     padding-bottom: 80px;
     min-height: 100dvh;
+
+    @media (width >= 1920px) {
+			padding-inline: 16px;
+		}
   }
 
   .contents{
-    margin-top: 32px;
+    margin-top: 40px;
+    
+    @media (width < 768px) {
+      margin-top: 24px;
+    }
   }
 
   .classname{

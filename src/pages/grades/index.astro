@@ -126,6 +126,10 @@ import Layout from '../../layouts/Layout.astro';
   .contents{
     padding-bottom: 80px;
     min-height: 100dvh;
+
+    @media (width >= 1920px) {
+			padding-inline: 16px;
+		}
   }
 
   .box_label{
@@ -135,7 +139,11 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .box{
-    margin-top: 32px;
+    margin-top: 40px;
+
+    @media (width < 768px) {
+			margin-top: 24px;
+		}
 
     &_register{
       margin-top: 40px;

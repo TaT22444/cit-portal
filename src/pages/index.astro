@@ -135,7 +135,7 @@ import NewsList from '../components/NewsList.astro';
 		<div class="class_list" id="sidebar_list">
 			<button class="class sidebar_item" id="sidebar_item">
 				<p class="class_time">
-					<span>1-4限</span>
+					<span>1-2限</span>
 					<span>9:00-11:00</span>
 				</p>
 				<div class="class_header">
@@ -145,12 +145,29 @@ import NewsList from '../components/NewsList.astro';
 					</svg>
 				</div>
 				<p class="class_location">津田沼キャンパス4号館3002</p>
-				<p class="class_teacher">千葉 工大</p>
+				<div class="progress_wrapper">
+					<p class="pregress_label">出席</p>
+					<div class="bar" id="progress_bar">
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+					</div>
+					<p class="progress_number" id="progress_number">10/12</p>
+				</div>
 			</button>
 			<button class="class sidebar_item" id="sidebar_item">
 				<p class="class_time">
-					<span>1-4限</span>
-					<span>9:00-11:00</span>
+					<span>4-5限</span>
+					<span>12:00-14:00</span>
 				</p>
 				<div class="class_header">
 					<h4 class="class_name">英語表現Ⅱ</h4>
@@ -159,12 +176,29 @@ import NewsList from '../components/NewsList.astro';
 					</svg>
 				</div>
 				<p class="class_location">津田沼キャンパス4号館3002</p>
-				<p class="class_teacher">千葉 工大</p>
+				<div class="progress_wrapper">
+					<p class="pregress_label">出席</p>
+					<div class="bar" id="progress_bar">
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+					</div>
+					<p class="progress_number" id="progress_number">10/12</p>
+				</div>
 			</button>
 			<button class="class sidebar_item" id="sidebar_item">
 				<p class="class_time">
-					<span>1-4限</span>
-					<span>9:00-11:00</span>
+					<span>6-7限</span>
+					<span>14:00-16:00</span>
 				</p>
 				<div class="class_header">
 					<h4 class="class_name">物理学演習</h4>
@@ -173,12 +207,29 @@ import NewsList from '../components/NewsList.astro';
 					</svg>
 				</div>
 				<p class="class_location">津田沼キャンパス4号館3002</p>
-				<p class="class_teacher">千葉 工大</p>
+				<div class="progress_wrapper">
+					<p class="pregress_label">出席</p>
+					<div class="bar" id="progress_bar">
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+					</div>
+					<p class="progress_number" id="progress_number">10/12</p>
+				</div>
 			</button>
 			<button class="class sidebar_item" id="sidebar_item">
 				<p class="class_time">
-					<span>1-4限</span>
-					<span>9:00-11:00</span>
+					<span>8-9限</span>
+					<span>16:00-18:00</span>
 				</p>
 				<div class="class_header">
 					<h4 class="class_name">デザイン基礎</h4>
@@ -187,21 +238,55 @@ import NewsList from '../components/NewsList.astro';
 					</svg>
 				</div>
 				<p class="class_location">津田沼キャンパス4号館3002</p>
-				<p class="class_teacher">千葉 工大</p>
+				<div class="progress_wrapper">
+					<p class="pregress_label">出席</p>
+					<div class="bar" id="progress_bar">
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+					</div>
+					<p class="progress_number" id="progress_number">10/12</p>
+				</div>
 			</button>
 			<button class="class sidebar_item" id="sidebar_item">
 				<p class="class_time">
-					<span>1-4限</span>
-					<span>9:00-11:00</span>
+					<span>10限</span>
+					<span>18:00-19:00</span>
 				</p>
 				<div class="class_header">
-					<h4 class="class_name">創造工学デザイン論及び演習</h4>
+					<h4 class="class_name">キャリア理論</h4>
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
 					</svg>
 				</div>
 				<p class="class_location">津田沼キャンパス4号館3002</p>
-				<p class="class_teacher">千葉 工大</p>
+				<div class="progress_wrapper">
+					<p class="pregress_label">出席</p>
+					<div class="bar" id="progress_bar">
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elembar_active_elem"></div>
+						<div class="elem" id="bar_active_elembar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_elem"></div>
+						<div class="elem" id="bar_active_elembar_active_elem"></div>
+						<div class="elem" id="bar_active_elembar_active_elem"></div>
+						<div class="elem" id="bar_active_elembar_active_elem"></div>
+						<div class="elem" id="bar_active_elembar_active_elem"></div>
+						<div class="elem" id="bar_active_elem"></div>
+						<div class="elem" id="bar_active_elembar_active_elem"></div>
+					</div>
+					<p class="progress_number" id="progress_number">10/12</p>
+				</div>
 			</button>
 		</div>
 		<div class="section_btn_wrapper">
@@ -241,12 +326,22 @@ import NewsList from '../components/NewsList.astro';
 	}
 	
 	.box{
+		width: 100%;
+		// max-width: 1400px;
 		margin-top: 40px;
+		margin-inline: auto;
 
 		&:first-of-type{
 			margin-top: 40px;
 		}
 
+		@media (width >= 1920px) {
+			// margin-top: 64px;
+			padding-inline: 16px;
+			&:nth-of-type(3){
+			margin-top: 80px;
+		  }
+		}
 		@media (width < 1080px) {
 			&:first-of-type{
 			  margin-top: 32px;
@@ -261,10 +356,14 @@ import NewsList from '../components/NewsList.astro';
 	}
 
   .section_title{
-		font-size: 20px;
+		font-size: 24px;
 		font-weight: 600;
 		color: #252528;
 
+
+		@media (width >= 1920px) {
+			font-size: 32px;
+		}
 		@media (width < 1080px) {
 			font-weight: 500;
 			font-size: 16px;
@@ -273,7 +372,8 @@ import NewsList from '../components/NewsList.astro';
 
 	.section_btn_wrapper{
 		position: relative;
-		margin-top: 40px;
+		// margin-top: 40px;
+		margin-top: 80px;
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -360,6 +460,10 @@ import NewsList from '../components/NewsList.astro';
 			font-weight: 500;
 			color: #252528;
 			margin-left: 12px;
+
+			@media (width >= 1920px) {
+		    font-size: 14px;
+		  }
 
 			&_wrapper{
 				display: inline-flex;
@@ -469,6 +573,10 @@ import NewsList from '../components/NewsList.astro';
 		gap: 8;
 		align-items: center;
 
+		@media (width >= 1920px) {
+			margin-top: 32px;
+		}
+
 		&_list{
 			display: flex;
 			align-items: center;
@@ -485,6 +593,9 @@ import NewsList from '../components/NewsList.astro';
 				background-color: #252528;
 			}
 
+			// @media (width >= 1920px) {
+			//   font-size: 14px;
+		  // }
 			@media (width < 1080px) {
 			  font-size: 10px;
 	    }
@@ -498,6 +609,10 @@ import NewsList from '../components/NewsList.astro';
 			height: 36px;
 			border-radius: 100px;
 
+			// @media (width >= 1920px) {
+			//   width: 64px;
+			// 	height: 44px;
+		  // }
 			@media (width < 1080px) {
 				width: 44px;
 				height: 32px;
@@ -509,11 +624,13 @@ import NewsList from '../components/NewsList.astro';
   .class_list{
     margin-top: 16px;
 		display: grid;
-		// grid-template-columns: repeat(3, 1fr);
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    // display: flex;
-		// flex-wrap: wrap;
     gap: 8px;
+
+		@media (width >= 1920px) {
+			margin-top: 24px;
+			grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+		}
   }
 
   .class{
@@ -542,6 +659,10 @@ import NewsList from '../components/NewsList.astro';
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+			@media (width >= 1920px) {
+			  margin-top: 16px;
+		  }
     }
 
 		&_name{
@@ -549,6 +670,9 @@ import NewsList from '../components/NewsList.astro';
 			color: #252528;
 			font-weight: 600;
 
+		  @media (width >= 1920px) {
+		  	font-size: 18px;
+		  }
 			@media (width < 1080px) {
 				font-size: 14px;
 		  	color: #252528;
@@ -569,12 +693,15 @@ import NewsList from '../components/NewsList.astro';
 		}
 
 		&_location{
-			font-size: 14px;
-			font-weight: 400;
+			font-size: 12px;
+			font-weight: 500;
 			color: #66666d;
 			margin-top: 12px;
 
-
+			@media (width >= 1920px) {
+			  font-weight: 500;
+				font-size: 14px;
+		  }
 			@media (width < 1080px) {
 				font-size: 10px;
 		  	color: #66666d;
@@ -583,19 +710,22 @@ import NewsList from '../components/NewsList.astro';
 		  }
 		}
 
-		&_teacher{
-			font-size: 14px;
-			font-weight: 400;
-			color: #66666d;
-			margin-top: 8px;
+		// &_teacher{
+		// 	font-size: 12px;
+		// 	font-weight: 500;
+		// 	color: #66666d;
+		// 	margin-top: 8px;
 
-			@media (width < 1080px) {
-				font-size: 10px;
-		  	color: #66666d;
-			  font-weight: 500;
-				margin-top: 8px;
-		  }
-		}
+		// 	@media (width >= 1920px) {
+		// 	  font-weight: 500;
+		//   }
+		// 	@media (width < 1080px) {
+		// 		font-size: 10px;
+		//   	color: #66666d;
+		// 	  font-weight: 500;
+		// 		margin-top: 8px;
+		//   }
+		// }
   }
 
 	.news_list{
@@ -708,6 +838,90 @@ import NewsList from '../components/NewsList.astro';
 				transform: rotate(0);
 			}
 		}
+	}
+
+	.progress_wrapper{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin-top: 12px;
+		padding: 8px 12px;
+		border-radius: 12px;
+		background-color: #ededed;
+
+		@media (width >= 1920px) {
+		  margin-top: 16px;
+		}
+	}
+  .pregress_label{
+		width: auto;
+		font-size: 12px;
+		font-weight: 500;
+		color: #66666d;
+	}
+	.bar{
+		flex: 1;
+		display: flex;
+		align-items: center;
+		gap: 2px;
+	}
+	.elem{
+		width: 100%;
+		height: 12px;
+		border-radius: 2px;
+		background-color: #dadae3;
+
+		&_active{
+			animation: elem_active .3s forwards;
+			@keyframes elem_active {
+				0%{
+					background-color: #dadae3;
+				}
+				100%{
+					background-color: #6161DA;
+				}
+			}
+		}
+
+		&:nth-child(2){
+			animation-delay: 0.03s;
+		}
+		&:nth-child(3){
+			animation-delay: 0.06s;
+		}
+		&:nth-child(4){
+			animation-delay: 0.09s;
+		}
+		&:nth-child(5){
+			animation-delay: 0.12s;
+		}
+		&:nth-child(6){
+			animation-delay: 0.15s;
+		}
+		&:nth-child(7){
+			animation-delay: 0.18s;
+		}
+		&:nth-child(8){
+			animation-delay: 0.21s;
+		}
+		&:nth-child(9){
+			animation-delay: 0.24s;
+		}
+		&:nth-child(10){
+			animation-delay: 0.27s;
+		}
+		&:nth-child(11){
+			animation-delay: 0.30s;
+		}
+		&:nth-child(12){
+			animation-delay: 0.33s;
+		}
+	}
+	.progress_number{
+		font-size: 12px;
+		font-weight: 500;
+		color: #66666d;
 	}
 
 	.dis-none{
@@ -849,6 +1063,24 @@ submit?.addEventListener("click", async () => {
 				length_label.textContent = `${ai_card_length}`
 			}
 		})
+	})
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const progress_number = document.getElementById('progress_number')
+		const progress_bar = document.querySelectorAll('#progress_bar')
+		progress_bar.forEach((progress_bar) => {
+			const bar_active_elem = progress_bar.querySelectorAll('#bar_active_elem')
+			bar_active_elem.forEach((bar_active_elem) => {
+				bar_active_elem.classList.add('elem_active')
+			})
+		})
+
+		// const indices = [0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 12] as const;
+		// indices.forEach((index) => {
+		// 	if(bar_elem[index]){
+		// 		bar_elem[index].classList.add('elem_active')
+		// 	}
+		// })
 	})
 
 </script>

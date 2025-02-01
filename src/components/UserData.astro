@@ -101,6 +101,11 @@ const { data, id, isVisible } = Astro.props;
         gap: 24px;
         padding: 0 40px;
 
+        @media (width < 768px) {
+          gap: 16px;
+          padding: 0 8px;
+        }
+
         &_item{
           display: flex;
           align-items: center;

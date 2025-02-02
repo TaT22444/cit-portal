@@ -1583,7 +1583,7 @@ const isGradesPage = currentPath === "/grades/";
 				animation: expantion .3s forwards;
 				@keyframes expantion {
 					0%{
-						padding: 16px 16px 4px;
+						padding: 8px 16px 4px;
 					}
 					100%{
 						padding: 24px 16px 8px;
@@ -1597,7 +1597,7 @@ const isGradesPage = currentPath === "/grades/";
 						padding: 24px 16px 8px;
 					}
 					100%{
-						padding: 16px 16px 4px;
+						padding: 8px 16px 4px;
 					}
 				}
 			}
@@ -2215,6 +2215,8 @@ const isGradesPage = currentPath === "/grades/";
 			elem2?.classList.remove('elem2-lotate-out')
 			sp_header?.classList.remove('sp_header_back_none')
 			sp_header_title?.classList.remove('sp_header_title_shrink')
+			ham?.classList.remove('ham_shrink')
+			ham?.classList.add('ham_expantion')
 		} else {
 			sp_nav_container?.classList.add('dis-none')
 			sp_nav?.classList.add('dis-none')

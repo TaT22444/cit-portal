@@ -2180,8 +2180,10 @@ const isGradesPage = currentPath === "/grades/";
 	const sp_header_title = document.getElementById('sp_header_title')
 	let lastScrollY = window.scrollY;
   window.addEventListener('scroll', () => {
+		const sy = window.scrollY
+		console.log(sy)
     const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY) {
+    if (currentScrollY >= lastScrollY) {
 			if (sp_nav_container?.classList.contains('dis-none')) {
 				sp_header_height?.classList.remove('sp_header_wrapper_expantion')
 			  sp_header_height?.classList.add('sp_header_wrapper_shrink')
@@ -2191,6 +2193,14 @@ const isGradesPage = currentPath === "/grades/";
 				ham?.classList.remove('ham_expantion')
 			}
     } else {
+			sp_header_height?.classList.remove('sp_header_wrapper_shrink')
+			sp_header_height?.classList.add('sp_header_wrapper_expantion')
+			sp_header?.classList.remove('sp_header_back_none')
+			sp_header_title?.classList.remove('sp_header_title_shrink')
+			ham?.classList.remove('ham_shrink')
+			ham?.classList.add('ham_expantion')
+		}
+		if(sy == 0){
 			sp_header_height?.classList.remove('sp_header_wrapper_shrink')
 			sp_header_height?.classList.add('sp_header_wrapper_expantion')
 			sp_header?.classList.remove('sp_header_back_none')

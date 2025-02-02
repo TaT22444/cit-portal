@@ -56,8 +56,8 @@ const isGradesPage = currentPath === "/grades/";
 	</head>
 	<body>
 		<header class="sp_header" id="sp_header">
-			<div class="sp_header_wrapper">
-				<h1 class="sp_header_title">CIT Portal</h1>
+			<div class="sp_header_wrapper" id="sp_header_height">
+				<h1 class="sp_header_title" id="sp_header_title">CIT Portal</h1>
 				<span class="ham" id="ham">
 					<span class="ham_elem elem1" id="ham_elem1"></span>
 					<!-- <span class="ham_elem elem2" id="ham_elem2"></span> -->
@@ -1562,20 +1562,45 @@ const isGradesPage = currentPath === "/grades/";
 		position: fixed;
 		top: 0;
 		width: 100%;
-		// display: flex;
-		// align-items: center;
-		// justify-content: space-between;
-		// padding: 32px 16px 16px;
-		// border-bottom: 1px solid #dadae3;
 		border-bottom: 1px solid #dadae3;
 		background-color: #fff;
 		z-index: 99;
+
+		&_back_none{
+			background-color: transparent;
+			border: none;
+			color: inherit;
+			// mix-blend-mode: difference; 
+		}
 
 		&_wrapper{
 			display: flex;
 		  align-items: center;
 		  justify-content: space-between;
-		  padding: 32px 16px 16px;
+		  padding: 24px 16px 8px;
+
+			&_expantion{
+				animation: expantion .3s forwards;
+				@keyframes expantion {
+					0%{
+						padding: 16px 16px 4px;
+					}
+					100%{
+						padding: 24px 16px 8px;
+					}
+				}
+			}
+			&_shrink{
+				animation: shrink .3s forwards;
+				@keyframes shrink {
+					0%{
+						padding: 24px 16px 8px;
+					}
+					100%{
+						padding: 16px 16px 4px;
+					}
+				}
+			}
 		}
 
 		&_nav{
@@ -1669,7 +1694,11 @@ const isGradesPage = currentPath === "/grades/";
 		&_title{
 			font-size: 20px;
 			font-weight: 500;
-			color: #252528;
+			color: #f9f9f9;
+			mix-blend-mode: difference; 
+			&_shrink{
+				color: inherit;
+			}
 		}
 	}
   .ham{
@@ -1677,6 +1706,32 @@ const isGradesPage = currentPath === "/grades/";
 		display: flex;
 		flex-direction: column;
 		gap: 6px;
+		padding: 12px 8px;
+		border-radius: 8px;
+		background-color: #fff;
+
+		&_shrink{
+			animation: ham_shrink .3s forwards;
+			@keyframes ham_shrink {
+				0%{
+					border: 1px solid #fff; 
+				}
+				100%{
+					border: 1px solid #e6e6ea;
+				}
+			}
+		}
+		&_expantion{
+			animation: ham_expantion .3s forwards;
+			@keyframes ham_expantion {
+				0%{
+					border: 1px solid #e6e6ea;
+				}
+				100%{
+					border: 1px solid #fff; 
+				}
+			}
+		}
 
 		&_elem{
 			width: 28px;
@@ -2120,10 +2175,34 @@ const isGradesPage = currentPath === "/grades/";
 	const sp_nav_class_link = document.getElementById('sp_header_nav_class_link')
 	const sp_nav_pageback = document.getElementById('sp_header_nav_pageback')
 	const sp_nav_container = document.getElementById('sp_header_nav_container')
+	const sp_header = document.getElementById('sp_header')
+	const sp_header_height = document.getElementById('sp_header_height')
+	const sp_header_title = document.getElementById('sp_header_title')
+	let lastScrollY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY) {
+			if (sp_nav_container?.classList.contains('dis-none')) {
+				sp_header_height?.classList.remove('sp_header_wrapper_expantion')
+			  sp_header_height?.classList.add('sp_header_wrapper_shrink')
+			  sp_header?.classList.add('sp_header_back_none')
+			  sp_header_title?.classList.add('sp_header_title_shrink')
+				ham?.classList.add('ham_shrink')
+				ham?.classList.remove('ham_expantion')
+			}
+    } else {
+			sp_header_height?.classList.remove('sp_header_wrapper_shrink')
+			sp_header_height?.classList.add('sp_header_wrapper_expantion')
+			sp_header?.classList.remove('sp_header_back_none')
+			sp_header_title?.classList.remove('sp_header_title_shrink')
+			ham?.classList.remove('ham_shrink')
+			ham?.classList.add('ham_expantion')
+		}
+    lastScrollY = currentScrollY;
+  });
 	ham?.addEventListener('click', () => {
 		const elem1 = document.getElementById('ham_elem1')
 		const elem2 = document.getElementById('ham_elem2')
-		const sp_header = document.getElementById('sp_header')
 
 		if (sp_nav_container?.classList.contains('dis-none')) {
 			sp_nav_container?.classList.remove('dis-none')
@@ -2134,7 +2213,8 @@ const isGradesPage = currentPath === "/grades/";
 			elem2?.classList.add('elem2-lotate-in')
 			elem1?.classList.remove('elem1-lotate-out')
 			elem2?.classList.remove('elem2-lotate-out')
-
+			sp_header?.classList.remove('sp_header_back_none')
+			sp_header_title?.classList.remove('sp_header_title_shrink')
 		} else {
 			sp_nav_container?.classList.add('dis-none')
 			sp_nav?.classList.add('dis-none')

@@ -1,0 +1,10 @@
+{
+  "workbench.editor.defaultBinaryEditor": "default",
+  "editor.wordWrapColumn": 800
+} // {
+//   "editor.wordWrap": "off",
+//   "editor.wordSeparators": "",
+//   "editor.wordWrapColumn": 800,
+//   "terminal.integrated.wordSeparators": "",
+//   "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false
+// }

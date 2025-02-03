@@ -1,7 +1,10 @@
 ---
 import Welcome from '../../components/Welcome.astro';
 import Layout from '../../layouts/Layout.astro';
+import courses from '../../data/courses.json';
 
+const mondayCourses = courses["Mon"];
+const tueCourses = courses["Tue"];
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -174,17 +177,19 @@ import Layout from '../../layouts/Layout.astro';
         <div class="register_modal dis-none" id="register_modal">
           <div class="register_modal_back" id="register_modal_back"></div>
           <div class="register_modal_contents">
-            <p class="register_modal_label">月曜1限</p>
-          <ul class="register_modal_list">
-            <li class="register_modal_item">
-              <button class="register_modal_btn" id="register_modal_item">
-                <p class="register_modal_period">1-4</p>
+            <p class="register_modal_label">月曜の授業</p>
+      <ul class="register_modal_list">
+        {tueCourses.length > 0 ? (
+          tueCourses.map(course => (
+            <li class="register_modal_item" id="register_modal_item">
+              <button class="register_modal_btn">
+                <p class="register_modal_period">{course.period}</p>
                 <div class="register_modal_box">
-                  <h4 class="register_modal_class_name">数学演習</h4>
+                  <h4 class="register_modal_class_name">{course.name}</h4>
                   <div class="register_modal_details">
-                    <p class="register_modal_text">津田沼キャンパス4号館3002</p>
-                    <p class="register_modal_text">千葉 工大</p>
-                    <p class="register_modal_text">4単位</p>
+                    <p class="register_modal_text">{course.location}</p>
+                    <p class="register_modal_text">{course.teacher}</p>
+                    <p class="register_modal_text">{course.credits}</p>
                   </div>
                 </div>
               </button>
@@ -194,25 +199,11 @@ import Layout from '../../layouts/Layout.astro';
                 </svg>                  
               </button>
             </li>
-            <li class="register_modal_item">
-              <button class="register_modal_btn" id="register_modal_item">
-                <p class="register_modal_period">1-4</p>
-                <div class="register_modal_box">
-                  <h4 class="register_modal_class_name">創造工学デザイン論</h4>
-                  <div class="register_modal_details">
-                    <p class="register_modal_text">津田沼キャンパス4号館3002</p>
-                    <p class="register_modal_text">千葉 工大</p>
-                    <p class="register_modal_text">4単位</p>
-                  </div>
-                </div>
-              </button>
-              <button class="register_modal_detail_btn">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8.33333 9.16667H15M8.33333 11.6667H11.6667M8.33333 6.66667H15M16.6667 18.3333H7C4.51667 18.3333 2.5 16.3167 2.5 13.8333V4.16667M7 2.5H16.3333C16.596 2.5 16.856 2.55173 17.0987 2.65224C17.3414 2.75275 17.5618 2.90007 17.7475 3.08579C17.9333 3.2715 18.0806 3.49198 18.1811 3.73463C18.2816 3.97728 18.3333 4.23736 18.3333 4.5V13.8333C18.3333 14.3638 18.1226 14.8725 17.7475 15.2475C17.3725 15.6226 16.8638 15.8333 16.3333 15.8333H7C6.73736 15.8333 6.47728 15.7816 6.23463 15.6811C5.99198 15.5806 5.7715 15.4333 5.58579 15.2475C5.21071 14.8725 5 14.3638 5 13.8333V4.5C5 4.23736 5.05173 3.97728 5.15224 3.73463C5.25275 3.49198 5.40007 3.2715 5.58579 3.08579C5.96086 2.71071 6.46957 2.5 7 2.5Z" stroke="#252528" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>                  
-              </button>
-            </li>
-          </ul>
+          ))
+        ) : (
+          <p class="no_classes">この曜日の授業はありません</p>
+        )}
+      </ul>
           </div>
         </div>
       </div>
@@ -220,205 +211,187 @@ import Layout from '../../layouts/Layout.astro';
     <section class="box box_detail">
       <p class="box_label">取得単位</p>
       <div class="detail_contents">
-        <div class="detail_box">
-          <div class="detail_box_total">
-            <p class="detail_box_total_label">これまでの総取得単位</p>
+        <div class="detail_box_total">
+          <p class="detail_box_total_label">総取得単位</p>
+          <div class="detail_box_total_numberbox">
             <p class="detail_box_total_numberwrapper">
               <span class="detail_box_total_number">22</span>
               <span>/</span>
               <span>124</span>
             </p>
+            <!-- <div class="detail_box_total_change">
+              <div class="detail_box_total_change_icon">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.3134 9.47995C10.3592 9.43083 10.4144 9.39143 10.4757 9.3641C10.537 9.33677 10.6032 9.32208 10.6704 9.32089C10.7375 9.31971 10.8042 9.33206 10.8665 9.3572C10.9287 9.38235 10.9853 9.41978 11.0328 9.46726C11.0802 9.51474 11.1177 9.57129 11.1428 9.63355C11.168 9.69581 11.1803 9.7625 11.1791 9.82963C11.1779 9.89677 11.1632 9.96298 11.1359 10.0243C11.1086 10.0856 11.0692 10.1408 11.0201 10.1866L8.35339 12.8533C8.25964 12.9469 8.13256 12.9995 8.00006 12.9995C7.86756 12.9995 7.74048 12.9469 7.64673 12.8533L4.98006 10.1866C4.93094 10.1408 4.89153 10.0856 4.86421 10.0243C4.83688 9.96298 4.82218 9.89677 4.821 9.82963C4.81982 9.7625 4.83216 9.69581 4.85731 9.63355C4.88246 9.57129 4.91989 9.51474 4.96737 9.46726C5.01485 9.41978 5.0714 9.38235 5.13366 9.3572C5.19592 9.33206 5.26261 9.31971 5.32974 9.32089C5.39688 9.32208 5.46309 9.33677 5.52442 9.3641C5.58575 9.39143 5.64095 9.43083 5.68673 9.47995L7.50006 11.2933V4.83329C7.50006 4.70068 7.55274 4.5735 7.64651 4.47973C7.74028 4.38596 7.86745 4.33329 8.00006 4.33329C8.13267 4.33329 8.25985 4.38596 8.35361 4.47973C8.44738 4.5735 8.50006 4.70068 8.50006 4.83329V11.2933L10.3134 9.47995Z" fill="#fff"/>
+                  </svg>                    
+              </div>
+              <p class="detail_box_total_change_number">
+                <span>+</span>
+                <span>20</span>
+              </p>
+            </div> -->
           </div>
-          <ul class="detail_box_list">
-            <li class="detail_box_item">
-              <p class="detail_box_item_Label">専門科目</p>
-              <div class="detail_box_item_progresswrapper">
-                <div class="detail_box_item_progress"></div>
-              </div>
-              <p class="detail_box_item_number">12/84</p>
-            </li>
-            <li class="detail_box_item">
-              <p class="detail_box_item_Label">選択科目</p>
-              <div class="detail_box_item_progresswrapper">
-                <div class="detail_box_item_progress"></div>
-              </div>
-              <p class="detail_box_item_number">10/84</p>
-            </li>
-
-            <ul class="detail_box_item_list">
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-            </ul>
-          </ul>
         </div>
+        <div class="detail_box_expranation">
+          <div class="detail_box_expranation_item">
+            <div class="item_left"></div>
+            <p class="item_label">取得済み単位</p>
+          </div>
+          <!-- <div class="detail_box_expranation_item">
+            <div class="item_left up"></div>
+            <p class="item_label">見込み増加単位</p>
+          </div> -->
+        </div>
+        <ul class="detail_box_list">
+          <li class="detail_box_item">
+            <p class="detail_box_item_Label">専門科目</p>
+            <div class="detail_box_item_progresswrapper">
+              <div class="detail_box_item_progress progress1"></div>
+              <!-- <div class="detail_box_item_change change1"></div> -->
+            </div>
+            <p class="detail_box_item_number">22/84</p>
+            <!-- <p class="detail_box_item_change_number">
+              <span>+</span>
+              <span>20</span>
+            </p> -->
+          </li>
+          <li class="detail_box_item">
+            <p class="detail_box_item_Label">教養科目</p>
+            <div class="detail_box_item_progresswrapper">
+              <div class="detail_box_item_progress progress2"></div>
+              <!-- <div class="detail_box_item_change change2"></div> -->
+            </div>
+            <p class="detail_box_item_number">20/36</p>
+            <!-- <p class="detail_box_item_change_number">
+              <span>+</span>
+              <span>20</span>
+            </p> -->
+          </li>
+    
+          <ul class="detail_box_item_list">
+            <li class="detail_box_item">
+              <p class="detail_box_item_label">Cスキル(必)</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress progress3"></div>
+                <!-- <div class="detail_box_item_change change3"></div> -->
+              </div>
+              <p class="detail_box_item_number">1/1</p>
+              <!-- <p class="detail_box_item_change_number">
+                <span></span>
+                <span></span>
+              </p> -->
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_label">Cスキル(選)</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress progress4"></div>
+                <!-- <div class="detail_box_item_change change4"></div> -->
+              </div>
+              <p class="detail_box_item_number">4/6</p>
+              <!-- <p class="detail_box_item_change_number">
+                <span>+</span>
+                <span>20</span>
+              </p> -->
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_label">情報(L)</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress progress5"></div>
+                <!-- <div class="detail_box_item_change change5"></div> -->
+              </div>
+              <p class="detail_box_item_number">2/2</p>
+              <!-- <p class="detail_box_item_change_number"> -->
+                <!-- <span></span>
+                <span></span>
+              </p> -->
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_label">人間力</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress progress6"></div>
+                <!-- <div class="detail_box_item_change change6"></div> -->
+              </div>
+              <p class="detail_box_item_number">6/6</p>
+              <!-- <p class="detail_box_item_change_number">
+                <span>+</span>
+                <span>20</span>
+              </p> -->
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_label">国際理解(必)</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress progress7"></div>
+                <!-- <div class="detail_box_item_change change7"></div> -->
+              </div>
+              <p class="detail_box_item_number">3/6</p>
+              <!-- <p class="detail_box_item_change_number">
+                <span>+</span>
+                <span>20</span>
+              </p> -->
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_label">国際理解(選必)</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress progress8"></div>
+                <!-- <div class="detail_box_item_change change8"></div> -->
+              </div>
+              <p class="detail_box_item_number">0/2</p>
+              <!-- <p class="detail_box_item_change_number">
+                <span></span>
+                <span></span>
+              </p> -->
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_label">人社自(学指定1)</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress progress9"></div>
+                <!-- <div class="detail_box_item_change change9"></div> -->
+              </div>
+              <p class="detail_box_item_number">2/6</p>
+              <!-- <p class="detail_box_item_change_number">
+                <span></span>
+                <span></span>
+              </p> -->
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_label">人社自(学指定1)</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress progress10"></div>
+                <!-- <div class="detail_box_item_change change10"></div> -->
+              </div>
+              <p class="detail_box_item_number">0/4</p>
+              <!-- <p class="detail_box_item_change_number">
+                <span></span>
+                <span></span>
+              </p> -->
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_label">総合(選必)</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress progress11"></div>
+                <!-- <div class="detail_box_item_change change11"></div> -->
+              </div>
+              <p class="detail_box_item_number">1/2</p>
+              <!-- <p class="detail_box_item_change_number">
+                <span>+</span>
+                <span>20</span>
+              </p> -->
+            </li>
+            <li class="detail_box_item">
+              <p class="detail_box_item_label">教養特別(選必)</p>
+              <div class="detail_box_item_progresswrapper">
+                <div class="detail_box_item_progress progress12"></div>
+                <!-- <div class="detail_box_item_change change12"></div> -->
+              </div>
+              <p class="detail_box_item_number">1/1</p>
+              <!-- <p class="detail_box_item_change_number">
+                <span>+</span>
+                <span>20</span>
+              </p> -->
+            </li>
+          </ul>
+        </ul>
         <!-- <div class="detail_box_slash"></div> -->
-        <div class="detail_box">
-          <div class="detail_box_total">
-            <p class="detail_box_total_label">見込み総取得単位</p>
-            <p class="detail_box_total_numberwrapper">
-              <span class="detail_box_total_number">22</span>
-              <span>/</span>
-              <span>124</span>
-            </p>
-          </div>
-          <ul class="detail_box_list">
-            <li class="detail_box_item">
-              <p class="detail_box_item_Label">専門科目</p>
-              <div class="detail_box_item_progresswrapper">
-                <div class="detail_box_item_progress"></div>
-              </div>
-              <p class="detail_box_item_number">12/84</p>
-            </li>
-            <li class="detail_box_item">
-              <p class="detail_box_item_Label">選択科目</p>
-              <div class="detail_box_item_progresswrapper">
-                <div class="detail_box_item_progress"></div>
-              </div>
-              <p class="detail_box_item_number">10/84</p>
-            </li>
-
-            <ul class="detail_box_item_list">
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-              <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
-                <div class="detail_box_item_progresswrapper">
-                  <div class="detail_box_item_progress"></div>
-                </div>
-                <p class="detail_box_item_number">12/84</p>
-              </li>
-            </ul>
-          </ul>
-        </div>
       </div>
     </section>
   </div>
@@ -610,48 +583,84 @@ import Layout from '../../layouts/Layout.astro';
 
   .detail_contents{
     position: relative;
-    margin-top: 16px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
+    margin-top: 24px;
 
     @media (width < 768px) {
-      grid-template-columns: repeat(1, 1fr);
-      gap: 64px;
 		}
 
-    &::after{
-      content: "";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      height: 100%;
-      background-color: #dadae3;
+    // &::after{
+    //   content: "";
+    //   position: absolute;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   width: 1px;
+    //   height: 100%;
+    //   background-color: #dadae3;
 
-      @media (width < 768px) {
-        width: 80%;
-        left: 50%;
-        height: 1px;
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%);
-		  }
-    }
+    //   @media (width < 768px) {
+    //     width: 80%;
+    //     left: 50%;
+    //     height: 1px;
+    //     top: 50%;
+    //     transform: translateX(-50%) translateY(-50%);
+		//   }
+    // }
   }
 
   .detail_box{
+    &_expranation{
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      @media (width < 414px) {
+        margin-top: 16px;
+        gap: 16px;
+		  }
+
+      &_item{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        >.item_left{
+          width: 80px;
+          height: 4px;
+          border-radius: 100px;
+          background-color: #6161DA;
+
+          @media (width < 414px) {
+            width: 40px;
+		      }
+        }
+        >.up{
+          background-color: #4FDC3F;
+        }
+        >.item_label{
+          font-size: 12px;
+          color: #66666d;
+          font-weight: 400;
+
+          @media (width < 414px) {
+            font-size: 10px;
+		    } 
+        }
+      }
+    }
 
     &_total{
       width: 100%;
-      padding: 16px 24px;
+      padding: 24px 24px;
       background-color: #fff;
       border-radius: 16px;
       border: 1px solid #dadae3;
 
-      @media (width < 414px) {
-        padding: 16px 16px;
+      @media (width <= 414px) {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        padding: 24px 16px 16px;
 		  }
 
       &_label{
@@ -664,29 +673,79 @@ import Layout from '../../layouts/Layout.astro';
 		    }
       }
 
+      &_numberbox{
+        display: flex;
+        align-items: flex-end;
+        gap: 16px;
+        justify-content: right;
+      }
+
       &_numberwrapper{
         margin-top: 16px;
         font-size: 16px;
         font-weight: 500;
         color: #66666d;
         text-align: right;
+        @media (width <= 414px) {
+          margin-top: 8px;
+          font-size: 12px;
+		    }
       }
 
       &_number{
         font-size: 32px;
         color: #252528;
+
+        @media (width <= 414px) {
+          font-size: 28px;
+		    }
+      }
+
+      &_change{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        // margin-bottom: 2px;
+
+        &_icon{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: rotate(210deg);
+          width: 20px;
+          height: 20px;
+          border-radius: 100px;
+          background-color: #4FDC3F;
+
+          @media (width <= 414px) {
+            width: 16px;
+            height: 16px;
+		      }
+        }
+
+        &_number{
+          color: #4FDC3F;
+          font-weight: 500;
+
+          @media (width <= 414px) {
+            font-size: 12px;
+		      }
+        }
       }
     }
 
     &_list{
-      margin-top: 16px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin: 16px 8px 0;
+      gap: 16px;
+      margin: 24px 24px 0;
 
       @media (width < 768px) {
         margin: 24px 8px 0;
+		  }
+      @media (width <= 414px) {
+        gap: 12px;
+        margin: 16px 4px 0;
 		  }
     }
 
@@ -696,10 +755,15 @@ import Layout from '../../layouts/Layout.astro';
       align-items: center;
 
       &_label{
-        width: 72px;
+        width: 92px;
         font-size: 12px;
         font-weight: 400;
         color: #66666d;
+
+        @media (width <= 414px) {
+          width: 80px;
+          font-size: 10px;
+		    }
       }
 
       &_Label{
@@ -710,29 +774,234 @@ import Layout from '../../layouts/Layout.astro';
 
       &_progresswrapper{
         flex: 1;
+        display: flex;
+        align-items: center;
         height: 6px;
         background-color: #dadae3;
         border-radius: 100px;
+
+        @media (width < 414px) {
+          height: 4px;
+		    }
+
+        >.progress1{
+          width: 20%;
+          border-radius: 100px 0 0 100px;
+        }
+        >.change1{
+          animation: change1 .3s ease-in-out forwards .2s;
+          @keyframes change1 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 10%;
+            }
+          }
+        }
+        >.progress2{
+          width: 30%;
+          border-radius: 100px 0 0 100px;
+        }
+        >.change2{
+          animation: change2 .3s forwards .25s;
+          @keyframes change2 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 30%;
+            }
+          }
+        }
+        >.progress3{
+          width: 100%;
+        }
+        >.change3{
+          animation: change3 .3s forwards .3s;
+          @keyframes change3 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 0;
+            }
+          }
+        }
+        >.progress4{
+          width: 33%;
+          border-radius: 100px 0 0 100px;
+        }
+        >.change4{
+          animation: change4 .3s forwards .35s;
+          @keyframes change4 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 33%;
+            }
+          }
+        }
+        >.progress5{
+          width: 100%;
+        }
+        >.change5{
+          animation: change5 .3s forwards .4s;
+          @keyframes change5 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 0;
+            }
+          }
+        }
+        >.progress6{
+          width: 33%;
+          border-radius: 100px 0 0 100px;
+        }
+        >.change6{
+          animation: change6 .3s forwards .45s;
+          @keyframes change6 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 67%;
+            }
+          }
+        }
+        >.progress7{
+          width: 16%;
+          border-radius: 100px 0 0 100px;
+        }
+        >.change7{
+          animation: change7 .3s forwards .5s;
+          @keyframes change7 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 32%;
+            }
+          }
+        }
+        >.progress8{
+          width: 0;
+          border-radius: 100px 0 0 100px;
+        }
+        >.change8{
+          animation: change8 .3s forwards .55s;
+          @keyframes change8 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 0;
+            }
+          }
+        }
+        >.progress9{
+          width: 33%;
+        }
+        >.change9{
+          animation: change9 .3s forwards .6s;
+          @keyframes change9 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 0;
+            }
+          }
+        }
+        >.progress10{
+          width: 0;
+          border-radius: 100px 0 0 100px;
+        }
+        >.change10{
+          animation: change10 .3s forwards .65s;
+          @keyframes change10 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 0;
+            }
+          }
+        }
+        >.progress11{
+          width: 0;
+          border-radius: 100px 0 0 100px;
+        }
+        >.change11{
+          border-radius: 100px;
+          animation: change11 .3s ease-out forwards .7s;
+          @keyframes change11 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 50%;
+            }
+          }
+        }
+        >.progress12{
+          width: 0;
+          border-radius: 100px 0 0 100px;
+        }
+        >.change12{
+          border-radius: 100px;
+          animation: change12 .3s ease-out forwards .75s;
+          @keyframes change12 {
+            0%{
+              width: 0;
+            }
+            100%{
+              width: 100%;
+            }
+          }
+        }
       }
 
       &_progress{
-        width: 60%;
+        // width: 100%;
         height: 100%;
         border-radius: 100px;
         background-color: #6161DA;
       }
+      &_change{
+        // width: 100%;
+        height: 100%;
+        border-radius: 0 100px 100px 0;
+        background-color: #4FDC3F;
+      }
+
+      &_change_number{
+        width: 24px;
+        text-align: right;
+        font-size: 12px;
+        color: #4FDC3F;
+        font-weight: 600;
+      }
 
       &_number{
         font-size: 12px;
-        font-weight: 400;
+        font-weight: 500;
         color: #66666d;
       }
 
       &_list{
-        margin-left: 8px;
+        margin-left: 16px;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
+
+        @media (width <= 414px) {
+          gap: 12px;
+          margin-left: 8px;
+		    }
       }
     }
   }
@@ -887,7 +1156,7 @@ import Layout from '../../layouts/Layout.astro';
 
     @media (width < 414px) {
       font-size: 12px;
-      padding: 16px 0;
+      padding: 8px 0;
       margin-right: 8px;
       align-items: baseline;
     }
@@ -904,8 +1173,10 @@ import Layout from '../../layouts/Layout.astro';
     font-size: 14px;
     box-shadow: 0px 0px 2px rgba($color: #252528, $alpha: 0.25);
 
-    @media (width < 414px) {
+    @media (width <= 414px) {
       font-size: 12px;
+      padding: 12px 16px;
+      border-radius: 20px;
     }
   }
 

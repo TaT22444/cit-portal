@@ -167,7 +167,7 @@ import Layout from '../../layouts/Layout.astro';
               </p>
             </li>
             <li class="detail_box_item">
-              <p class="detail_box_item_Label">選択科目</p>
+              <p class="detail_box_item_Label">教養科目</p>
               <div class="detail_box_item_progresswrapper">
                 <div class="detail_box_item_progress progress2"></div>
                 <div class="detail_box_item_change change2"></div>
@@ -181,7 +181,7 @@ import Layout from '../../layouts/Layout.astro';
 
             <ul class="detail_box_item_list">
               <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
+                <p class="detail_box_item_label">Cスキル(必)</p>
                 <div class="detail_box_item_progresswrapper">
                   <div class="detail_box_item_progress progress3"></div>
                   <div class="detail_box_item_change change3"></div>
@@ -193,7 +193,7 @@ import Layout from '../../layouts/Layout.astro';
                 </p>
               </li>
               <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
+                <p class="detail_box_item_label">Cスキル(選)</p>
                 <div class="detail_box_item_progresswrapper">
                   <div class="detail_box_item_progress progress4"></div>
                   <div class="detail_box_item_change change4"></div>
@@ -205,7 +205,7 @@ import Layout from '../../layouts/Layout.astro';
                 </p>
               </li>
               <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
+                <p class="detail_box_item_label">情報(L)</p>
                 <div class="detail_box_item_progresswrapper">
                   <div class="detail_box_item_progress progress5"></div>
                   <div class="detail_box_item_change change5"></div>
@@ -217,7 +217,7 @@ import Layout from '../../layouts/Layout.astro';
                 </p>
               </li>
               <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
+                <p class="detail_box_item_label">人間力</p>
                 <div class="detail_box_item_progresswrapper">
                   <div class="detail_box_item_progress progress6"></div>
                   <div class="detail_box_item_change change6"></div>
@@ -229,7 +229,7 @@ import Layout from '../../layouts/Layout.astro';
                 </p>
               </li>
               <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
+                <p class="detail_box_item_label">国際理解(必)</p>
                 <div class="detail_box_item_progresswrapper">
                   <div class="detail_box_item_progress progress7"></div>
                   <div class="detail_box_item_change change7"></div>
@@ -241,7 +241,7 @@ import Layout from '../../layouts/Layout.astro';
                 </p>
               </li>
               <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
+                <p class="detail_box_item_label">国際理解(選必)</p>
                 <div class="detail_box_item_progresswrapper">
                   <div class="detail_box_item_progress progress8"></div>
                   <div class="detail_box_item_change change8"></div>
@@ -253,7 +253,7 @@ import Layout from '../../layouts/Layout.astro';
                 </p>
               </li>
               <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
+                <p class="detail_box_item_label">人社自(学指定1)</p>
                 <div class="detail_box_item_progresswrapper">
                   <div class="detail_box_item_progress progress9"></div>
                   <div class="detail_box_item_change change9"></div>
@@ -265,7 +265,7 @@ import Layout from '../../layouts/Layout.astro';
                 </p>
               </li>
               <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
+                <p class="detail_box_item_label">人社自(学指定1)</p>
                 <div class="detail_box_item_progresswrapper">
                   <div class="detail_box_item_progress progress10"></div>
                   <div class="detail_box_item_change change10"></div>
@@ -277,7 +277,7 @@ import Layout from '../../layouts/Layout.astro';
                 </p>
               </li>
               <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
+                <p class="detail_box_item_label">総合(選必)</p>
                 <div class="detail_box_item_progresswrapper">
                   <div class="detail_box_item_progress progress11"></div>
                   <div class="detail_box_item_change change11"></div>
@@ -289,7 +289,7 @@ import Layout from '../../layouts/Layout.astro';
                 </p>
               </li>
               <li class="detail_box_item">
-                <p class="detail_box_item_label">専門科目</p>
+                <p class="detail_box_item_label">教養特別(選必)</p>
                 <div class="detail_box_item_progresswrapper">
                   <div class="detail_box_item_progress progress12"></div>
                   <div class="detail_box_item_change change12"></div>
@@ -594,12 +594,10 @@ import Layout from '../../layouts/Layout.astro';
       display: flex;
       flex-direction: column;
       gap: 16px;
-      padding: 0 24px;
-      margin: 24px 8px 0;
+      margin: 24px 24px 0;
 
       @media (width < 768px) {
         margin: 24px 8px 0;
-        padding: 0;
 		  }
       @media (width <= 414px) {
         gap: 12px;
@@ -613,7 +611,7 @@ import Layout from '../../layouts/Layout.astro';
       align-items: center;
 
       &_label{
-        width: 72px;
+        width: 92px;
         font-size: 12px;
         font-weight: 400;
         color: #66666d;
@@ -846,13 +844,14 @@ import Layout from '../../layouts/Layout.astro';
       }
 
       &_list{
-        margin-left: 8px;
+        margin-left: 16px;
         display: flex;
         flex-direction: column;
         gap: 16px;
 
         @media (width <= 414px) {
           gap: 12px;
+          margin-left: 8px;
 		    }
       }
     }

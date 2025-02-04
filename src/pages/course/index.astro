@@ -538,6 +538,10 @@ const dayMapping = {
 			font-size: 12px;
 			color: #66666d;
 			font-weight: 500;
+      @media (width < 414px) {
+        width: 56px;
+        height: 44px;
+      }
 
 			>.active{
 				color: #fff;
@@ -553,9 +557,8 @@ const dayMapping = {
 			height: 36px;
 			border-radius: 100px;
 
-      @media (width < 414px) {
-        width: 56px;
-        height: 44px;
+      @media (width < 1080px) {
+        font-size: 10px;
       }
 		}
 	}
@@ -1194,7 +1197,7 @@ const dayMapping = {
     // justify-content: baseline;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
   }
 
   .time_item{
@@ -1209,10 +1212,10 @@ const dayMapping = {
     font-size: 12px;
     color: #66666d;
 
-    @media (width < 414px) {
+    @media (width < 1080px) {
       height: 56px;
       font-size: 12px;
-      padding: 8px 16px 8px 8px;
+      padding: 8px;
       margin-right: 8px;
       align-items: baseline;
     }
@@ -1233,9 +1236,9 @@ const dayMapping = {
     font-weight: 400;
     border: 1px solid #dadae3;
 
-    @media (width <= 414px) {
+    @media (width < 1080px) {
       font-size: 12px;
-      padding: 8px 16px;
+      padding: 8px;
       height: 56px;
     }
   }
@@ -1471,7 +1474,9 @@ const dayMapping = {
   const tag_btns = document.querySelectorAll('#tag_item')
 	tag_btns.forEach((tag_btn_target) => {
 		tag_btn_target.addEventListener('click', () => {
-      register_modal?.classList.remove('dis-none')
+      if(window.innerWidth >= 1080){
+        register_modal?.classList.remove('dis-none')
+      }
 			tag_btns.forEach((tag_btn_all) => {
 				tag_btn_all.classList.remove('active')
 			})

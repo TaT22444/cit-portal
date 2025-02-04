@@ -45,7 +45,94 @@ import Layout from '../../layouts/Layout.astro';
       </nav>
       <div class="grades_box">
         <p class="box_label" id="box_label">全て</p>
-        <ul class="grades_list">
+        <ul class="sp_grades_list">
+          <li class="sp_grades_item">
+            <p class="grades_period">s-1</p>
+            <div class="sp_grades_table">
+              <div class="sp_grades_thead">
+                <p class="sp_grades_thead_subject">科目</p>
+                <div class="sp_grades_thead_label">
+                  <p class="sp_grades_thead_label_elem">教員氏名</p>
+                  <p class="sp_grades_thead_label_elem">単位数</p>
+                  <p class="sp_grades_thead_label_elem">GPA対象</p>
+                  <p class="sp_grades_thead_label_elem">評価</p>
+                </div>
+              </div>
+              <div class="sp_grades_tbody_wrapper">
+                <div class="sp_grades_tbody">
+                  <p class="sp_grades_tbody_subject">創造工学デザイン論及び演習</p>
+                  <div class="sp_grades_tbody_label">
+                    <p class="sp_grades_tbody_label_elem">千葉 工大</p>
+                    <p class="sp_grades_tbody_label_elem">4</p>
+                    <p class="sp_grades_tbody_label_elem">◯</p>
+                    <p class="sp_grades_tbody_label_elem">
+                      <span>S</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="sp_grades_tbody">
+                  <p class="sp_grades_tbody_subject">物理学演習</p>
+                  <div class="sp_grades_tbody_label">
+                    <p class="sp_grades_tbody_label_elem">千葉 工大</p>
+                    <p class="sp_grades_tbody_label_elem">2</p>
+                    <p class="sp_grades_tbody_label_elem">◯</p>
+                    <p class="sp_grades_tbody_label_elem">
+                      <span>S</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="sp_grades_tbody">
+                  <p class="sp_grades_tbody_subject">線形代数</p>
+                  <div class="sp_grades_tbody_label">
+                    <p class="sp_grades_tbody_label_elem">千葉 工大</p>
+                    <p class="sp_grades_tbody_label_elem">2</p>
+                    <p class="sp_grades_tbody_label_elem">◯</p>
+                    <p class="sp_grades_tbody_label_elem">
+                      <span>A</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="sp_grades_tbody">
+                  <p class="sp_grades_tbody_subject">創造工学デザイン論及び演習</p>
+                  <div class="sp_grades_tbody_label">
+                    <p class="sp_grades_tbody_label_elem">千葉 工大</p>
+                    <p class="sp_grades_tbody_label_elem">1</p>
+                    <p class="sp_grades_tbody_label_elem">◯</p>
+                    <p class="sp_grades_tbody_label_elem">
+                      <span class="sp_grades_tbody_grade">S</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="sp_grades_item">
+            <p class="grades_period">s-1</p>
+            <div class="sp_grades_table">
+              <div class="sp_grades_thead">
+                <p class="sp_grades_thead_subject">科目</p>
+                <div class="sp_grades_thead_label">
+                  <p class="sp_grades_thead_label_elem">教員氏名</p>
+                  <p class="sp_grades_thead_label_elem">単位数</p>
+                  <p class="sp_grades_thead_label_elem">GPA対象</p>
+                  <p class="sp_grades_thead_label_elem">評価</p>
+                </div>
+              </div>
+              <div class="sp_grades_tbody">
+                <p class="sp_grades_tbody_subject">創造工学デザイン論及び演習</p>
+                <div class="sp_grades_tbody_label">
+                  <p class="sp_grades_tbody_label_elem">千葉 工大</p>
+                  <p class="sp_grades_tbody_label_elem">1</p>
+                  <p class="sp_grades_tbody_label_elem"></p>
+                  <p class="sp_grades_tbody_label_elem">
+                    <span>S</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- <ul class="grades_list">
           <li class="grades_item">
             <p class="grades_period">s-1</p>
             <table class="grades_item_table">
@@ -77,7 +164,6 @@ import Layout from '../../layouts/Layout.astro';
                     <p class="grade_label">合</p>
                   </td>
                 </tr>
-                <!-- 追加行 -->
               </tbody>
             </table>
           </li>
@@ -112,11 +198,11 @@ import Layout from '../../layouts/Layout.astro';
                     <p class="grade_label">合</p>
                   </td>
                 </tr>
-                <!-- 追加行 -->
+
               </tbody>
             </table>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </div>
@@ -341,6 +427,10 @@ import Layout from '../../layouts/Layout.astro';
     font-size: 14px;
     font-weight: 600;
     color: #252528;
+
+    @media (width < 768px) {
+      font-size: 12px;
+    }
   }
 
   .grades_item_table{
@@ -353,11 +443,128 @@ import Layout from '../../layouts/Layout.astro';
     flex-direction: column;
     gap: 16px;
   }
+
+  .sp_grades{
+
+    &_list{
+      width: 100%;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    
+    &_item{
+      width: 100%;
+    }
+
+    &_table{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 16px;
+      // padding-inline: 8px;
+    }
+
+    &_thead{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: #66666d;
+      font-weight: 400;
+
+      &_subject{
+        flex: 1;
+        font-size: 12px;
+      }
+      &_label{
+        display: flex;
+        align-items: center;
+
+        &_elem{
+          width: 72px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          border-right: 1px solid #dadae3;
+
+          &:first-of-type{
+            flex: 1;
+            width: 100%;
+            min-width: 96px;
+            display: block;
+            margin-right: 8px;
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
+    &_tbody_wrapper{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    &_tbody{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-weight: 400;
+
+      &_subject{
+        flex: 1;
+        font-size: 14px;
+      }
+      &_label{
+        display: flex;
+        align-items: center;
+
+        &_elem{
+          position: relative;
+          width: 72px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+
+          &::after{
+            position: absolute;
+            content: "";
+            right: 0;
+            width: 1px;
+            height: 16px;
+            background-color: #dadae3;
+          }
+
+          &:first-of-type{
+            flex: 1;
+            width: 100%;
+            min-width: 96px;
+            display: block;
+            margin-right: 8px;
+            justify-content: flex-start;
+          }
+          &:last-of-type{
+            >span{
+              padding: 8px 16px;
+              background-color: #6161DA;
+              border-radius: 12px;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
   
   table {
-  width: 100%;
-  // table-layout: fixed; /* 各列の幅を固定 */
-}
+    width: 100%;
+    // table-layout: fixed; /* 各列の幅を固定 */
+  }
 
 thead th, tbody td {
   overflow: hidden; /* 長すぎるテキストを隠す */
@@ -404,6 +611,10 @@ tbody td:nth-child(1) {
 tbody td:nth-child(1){
   font-size: 16px;
   font-weight: 500;
+
+  @media (width < 1080px) {
+    font-size: 14px;
+  }
 }
 
 thead th:nth-child(2),

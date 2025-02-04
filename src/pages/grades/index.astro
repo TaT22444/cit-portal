@@ -107,7 +107,7 @@ import Layout from '../../layouts/Layout.astro';
             </div>
           </li>
           <li class="sp_grades_item">
-            <p class="grades_period">s-1</p>
+            <p class="grades_period">s-2</p>
             <div class="sp_grades_table">
               <div class="sp_grades_thead">
                 <p class="sp_grades_thead_subject">科目</p>
@@ -132,7 +132,7 @@ import Layout from '../../layouts/Layout.astro';
             </div>
           </li>
         </ul>
-        <!-- <ul class="grades_list">
+        <ul class="grades_list">
           <li class="grades_item">
             <p class="grades_period">s-1</p>
             <table class="grades_item_table">
@@ -202,7 +202,7 @@ import Layout from '../../layouts/Layout.astro';
               </tbody>
             </table>
           </li>
-        </ul> -->
+        </ul>
       </div>
     </div>
   </div>
@@ -222,6 +222,11 @@ import Layout from '../../layouts/Layout.astro';
     font-size: 16px;
     color: #252528;
     font-weight: 500;
+
+    @media (width < 768px) {
+			font-size: 14px;
+      margin-left: 8px;
+		}
   }
 
   .box{
@@ -409,12 +414,20 @@ import Layout from '../../layouts/Layout.astro';
 
   .grades_box{
     margin-top: 32px;
+
+    @media (width < 768px) {
+			margin-top: 24px;
+		}
   }
   .grades_list{
     margin-top: 24px;
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @media (width < 768px) {
+			display: none;
+		}
   }
   .grades_item{
     width: 100%;
@@ -452,6 +465,10 @@ import Layout from '../../layouts/Layout.astro';
       display: flex;
       flex-direction: column;
       gap: 40px;
+
+      @media (width >= 768px) {
+			  display: none;
+		  }
     }
     
     &_item{
@@ -463,7 +480,7 @@ import Layout from '../../layouts/Layout.astro';
       display: flex;
       flex-direction: column;
       gap: 24px;
-      margin-top: 16px;
+      margin-top: 24px;
       // padding-inline: 8px;
     }
 
@@ -471,7 +488,7 @@ import Layout from '../../layouts/Layout.astro';
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 12px;
       color: #66666d;
       font-weight: 400;
 
@@ -506,7 +523,7 @@ import Layout from '../../layouts/Layout.astro';
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 32px;
     }
     &_tbody{
       width: 100%;

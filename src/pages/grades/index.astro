@@ -117,18 +117,55 @@ import Layout from '../../layouts/Layout.astro';
                   <p class="sp_grades_thead_label_elem">教員氏名</p>
                   <p class="sp_grades_thead_label_elem">単位数</p>
                   <p class="sp_grades_thead_label_elem">GPA対象</p>
-                  <p class="sp_grades_thead_label_elem">評価</p>
+                  <p class="sp_grades_thead_label_elem">
+                    <span>評価</span>
+                  </p>
                 </div>
               </div>
-              <div class="sp_grades_tbody">
-                <p class="sp_grades_tbody_subject">創造工学デザイン論及び演習</p>
-                <div class="sp_grades_tbody_label">
-                  <p class="sp_grades_tbody_label_elem">千葉 工大</p>
-                  <p class="sp_grades_tbody_label_elem">1</p>
-                  <p class="sp_grades_tbody_label_elem"></p>
-                  <p class="sp_grades_tbody_label_elem">
-                    <span>S</span>
-                  </p>
+              <div class="sp_grades_tbody_wrapper">
+                <div class="sp_grades_tbody">
+                  <p class="sp_grades_tbody_subject">創造工学デザイン論及び演習</p>
+                  <div class="sp_grades_tbody_label">
+                    <p class="sp_grades_tbody_label_elem">千葉 工大</p>
+                    <p class="sp_grades_tbody_label_elem">4</p>
+                    <p class="sp_grades_tbody_label_elem">◯</p>
+                    <p class="sp_grades_tbody_label_elem">
+                      <span>S</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="sp_grades_tbody">
+                  <p class="sp_grades_tbody_subject">物理学演習</p>
+                  <div class="sp_grades_tbody_label">
+                    <p class="sp_grades_tbody_label_elem">千葉 工大</p>
+                    <p class="sp_grades_tbody_label_elem">2</p>
+                    <p class="sp_grades_tbody_label_elem">◯</p>
+                    <p class="sp_grades_tbody_label_elem">
+                      <span>S</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="sp_grades_tbody">
+                  <p class="sp_grades_tbody_subject">線形代数</p>
+                  <div class="sp_grades_tbody_label">
+                    <p class="sp_grades_tbody_label_elem">千葉 工大</p>
+                    <p class="sp_grades_tbody_label_elem">2</p>
+                    <p class="sp_grades_tbody_label_elem">◯</p>
+                    <p class="sp_grades_tbody_label_elem">
+                      <span>A</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="sp_grades_tbody">
+                  <p class="sp_grades_tbody_subject">創造工学デザイン論及び演習</p>
+                  <div class="sp_grades_tbody_label">
+                    <p class="sp_grades_tbody_label_elem">千葉 工大</p>
+                    <p class="sp_grades_tbody_label_elem">1</p>
+                    <p class="sp_grades_tbody_label_elem">◯</p>
+                    <p class="sp_grades_tbody_label_elem">
+                      <span class="sp_grades_tbody_grade">S</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -563,6 +600,7 @@ import Layout from '../../layouts/Layout.astro';
       &_subject{
         flex: 1;
         font-size: 14px;
+        font-weight: 500;
       }
       &_label{
         display: flex;

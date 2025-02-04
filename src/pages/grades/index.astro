@@ -525,7 +525,11 @@ import Layout from '../../layouts/Layout.astro';
             display: block;
             margin-right: 8px;
             justify-content: flex-start;
-            border: none;
+
+            &::after{
+              width: 0;
+              height: 0;
+            }
           }
 
           &:last-of-type{

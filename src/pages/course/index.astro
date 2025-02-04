@@ -125,31 +125,31 @@ const dayMapping = {
               <!-- <p class="time_number">9:00 - 10:00</p> -->
             </div>
             <div class="time_item">
-              <p class="time_period">1限</p>
+              <p class="time_period">2限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">1限</p>
+              <p class="time_period">3限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">1限</p>
+              <p class="time_period">4限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">1限</p>
+              <p class="time_period">5限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">1限</p>
+              <p class="time_period">6限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">1限</p>
+              <p class="time_period">7限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">1限</p>
+              <p class="time_period">8限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">1限</p>
+              <p class="time_period">9限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">1限</p>
+              <p class="time_period">10限</p>
             </div>
           </div>
           <div class="class_list" id="class_list">
@@ -1128,7 +1128,7 @@ const dayMapping = {
       gap: 8px;
       overflow-y: auto;
 
-      @media (width < 768) {
+      @media (width < 768px) {
         padding: 0 16px;
       }
     }
@@ -1210,8 +1210,9 @@ const dayMapping = {
     color: #66666d;
 
     @media (width < 414px) {
+      height: 56px;
       font-size: 12px;
-      padding: 8px 0;
+      padding: 8px 16px 8px 8px;
       margin-right: 8px;
       align-items: baseline;
     }
@@ -1230,11 +1231,12 @@ const dayMapping = {
     background-color: #fff;
     font-size: 12px;
     font-weight: 400;
-    box-shadow: 0px 0px 2px rgba($color: #252528, $alpha: 0.25);
+    border: 1px solid #dadae3;
 
     @media (width <= 414px) {
       font-size: 12px;
       padding: 8px 16px;
+      height: 56px;
     }
   }
 

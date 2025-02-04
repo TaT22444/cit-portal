@@ -8,7 +8,7 @@
       "credits": "2単位"
     },
     {
-      "period": "1-4",
+      "period": "3-4",
       "name": "創造工学デザイン論",
       "location": "津田沼キャンパス4号館3002",
       "teacher": "千葉 工大",
@@ -18,14 +18,60 @@
   "Tue": [
     {
       "period": "1-2",
-      "name": "数学演習",
+      "name": "デザイン概論",
       "location": "津田沼キャンパス4号館3002",
       "teacher": "千葉 工大",
       "credits": "2単位"
     }
   ],
-  "Wed": [],
-  "Thu": [],
-  "Fri": [],
-  "Sat": []
+  "Wed": [
+    {
+      "period": "1-2",
+      "name": "デザインプレゼンテーション",
+      "location": "津田沼キャンパス4号館3002",
+      "teacher": "千葉 工大",
+      "credits": "2単位"
+    }
+  ],
+  "Thu": [
+    {
+      "period": "1-2",
+      "name": "情報デザイン基礎",
+      "location": "津田沼キャンパス4号館3002",
+      "teacher": "千葉 工大",
+      "credits": "2単位"
+    },
+    {
+      "period": "3-4",
+      "name": "情報とデザイン",
+      "location": "津田沼キャンパス4号館3002",
+      "teacher": "千葉 工大",
+      "credits": "2単位"
+    },
+    {
+      "period": "5-8",
+      "name": "ディスプレイデザイン論及び演習",
+      "location": "津田沼キャンパス4号館3002",
+      "teacher": "千葉 工大",
+      "credits": "4単位"
+    }
+  ],
+  "Fri": [
+    {
+      "period": "1-2",
+      "name": "",
+      "location": "津田沼キャンパス4号館3002",
+      "teacher": "千葉 工大",
+      "credits": "2単位"
+    }
+  ],
+  "Sat": [
+    {
+      "period": "1-2",
+      "name": "数学演習",
+      "location": "津田沼キャンパス4号館3002",
+      "teacher": "千葉 工大",
+      "credits": "2単位"
+    }
+  ]
 }

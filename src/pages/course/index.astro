@@ -1,10 +1,49 @@
 ---
 import Welcome from '../../components/Welcome.astro';
 import Layout from '../../layouts/Layout.astro';
-import courses from '../../data/courses.json';
+import coursesData from '../../data/courses.json';
+
+// 型定義を追加
+interface Course {
+  period: string;
+  name: string;
+  location: string;
+  teacher: string;
+  credits: string;
+}
+
+interface Courses {
+  [key: string]: Course[];
+}
+
+const courses: Courses = coursesData;
+
+// マッピング用のオブジェクト
+const dayToKey = {
+  "月曜": "Mon",
+  "火曜": "Tue",
+  "水曜": "Wed",
+  "木曜": "Thu",
+  "金曜": "Fri",
+  "土曜": "Sat"
+} as const;
 
 const mondayCourses = courses["Mon"];
 const tueCourses = courses["Tue"];
+const wedCourses = courses["Wed"];
+const thuCourses = courses["Thu"];
+const friCourses = courses["Fri"];
+const satCourses = courses["Sat"];
+
+const dayMapping = {
+  "月曜": "Mon",
+  "火曜": "Tue",
+  "水曜": "Wed",
+  "木曜": "Thu",
+  "金曜": "Fri",
+  "土曜": "Sat",
+};
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -16,7 +55,7 @@ const tueCourses = courses["Tue"];
   <div class="contents">
     <section class="box">
       <h3 class="section_title">履修選択</h3>
-      <div class="help_box">
+      <!-- <div class="help_box">
         <p class="box_label">ヘルプ</p>
         <ul class="help_box_list">
           <li class="help_box_item">
@@ -46,7 +85,7 @@ const tueCourses = courses["Tue"];
             </a>
           </li>
         </ul>
-      </div>
+      </div> -->
     </section>
     <section class="box box_register">
       <div class="box_header" id="box_header">
@@ -59,22 +98,22 @@ const tueCourses = courses["Tue"];
       <nav class="tag">
         <ul class="tag_list">
           <li class="tag_item active">
-            <button class="tag_btn active" id="tag_item">月曜</button>
+            <button class="tag_btn active" id="tag_item" data-day="月曜">月曜</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn" id="tag_item">火曜</button>
+            <button class="tag_btn" id="tag_item" data-day="火曜">火曜</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn" id="tag_item">水曜</button>
+            <button class="tag_btn" id="tag_item" data-day="水曜">水曜</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn" id="tag_item">木曜</button>
+            <button class="tag_btn" id="tag_item" data-day="木曜">木曜</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn" id="tag_item">金曜</button>
+            <button class="tag_btn" id="tag_item" data-day="金曜">金曜</button>
           </li>
           <li class="tag_item">
-            <button class="tag_btn" id="tag_item">土曜</button>
+            <button class="tag_btn" id="tag_item" data-day="土曜">土曜</button>
           </li>
         </ul>
       </nav>
@@ -82,52 +121,39 @@ const tueCourses = courses["Tue"];
         <div class="register_box">
           <div class="time_list">
             <div class="time_item">
-              <p class="time_period">1</p>
-              <p class="time_number">9:00 - 10:00</p>
+              <p class="time_period">1限</p>
+              <!-- <p class="time_number">9:00 - 10:00</p> -->
             </div>
             <div class="time_item">
-              <p class="time_period">2</p>
-              <p class="time_number">10:00 - 11:00</p>
+              <p class="time_period">1限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">3</p>
-              <p class="time_number">11:00 - 12:00</p>
+              <p class="time_period">1限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">4</p>
-              <p class="time_number">12:00 - 13:00</p>
+              <p class="time_period">1限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">5</p>
-              <p class="time_number">13:00 - 14:00</p>
+              <p class="time_period">1限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">6</p>
-              <p class="time_number">14:00 - 15:00</p>
+              <p class="time_period">1限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">7</p>
-              <p class="time_number">15:00 - 16:00</p>
+              <p class="time_period">1限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">8</p>
-              <p class="time_number">16:00 - 17:00</p>
+              <p class="time_period">1限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">9</p>
-              <p class="time_number">17:00 - 18:00</p>
+              <p class="time_period">1限</p>
             </div>
             <div class="time_item">
-              <p class="time_period">10</p>
-              <p class="time_number">18:00 - 19:00</p>
+              <p class="time_period">1限</p>
             </div>
           </div>
           <div class="class_list" id="class_list">
             <button class="class_item" id="class_item">
-              <!-- <h4 class="class_name">創造工学デザイン論</h4>
-              <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.4417 10.058C15.5581 10.1756 15.6234 10.3343 15.6234 10.4997C15.6234 10.6651 15.5581 10.8239 15.4417 10.9414L11.275 15.108C11.2178 15.1694 11.1488 15.2187 11.0721 15.2529C10.9954 15.287 10.9127 15.3054 10.8288 15.3069C10.7448 15.3083 10.6615 15.2929 10.5837 15.2615C10.5058 15.23 10.4351 15.1833 10.3758 15.1239C10.3164 15.0646 10.2697 14.9939 10.2382 14.916C10.2068 14.8382 10.1914 14.7549 10.1928 14.6709C10.1943 14.587 10.2127 14.5043 10.2468 14.4276C10.281 14.3509 10.3303 14.2819 10.3917 14.2247L13.4917 11.1247H5C4.83424 11.1247 4.67526 11.0589 4.55805 10.9417C4.44084 10.8244 4.375 10.6655 4.375 10.4997C4.375 10.3339 4.44084 10.175 4.55805 10.0578C4.67526 9.94056 4.83424 9.87471 5 9.87471H13.4917L10.3917 6.77471C10.2813 6.65623 10.2212 6.49952 10.224 6.33761C10.2269 6.17569 10.2925 6.0212 10.407 5.90669C10.5215 5.79218 10.676 5.72659 10.8379 5.72373C10.9998 5.72087 11.1565 5.78098 11.275 5.89138L15.4417 10.058Z" fill="#252528"/>
-              </svg>      -->
               <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
               </svg>                                                    
@@ -155,17 +181,17 @@ const tueCourses = courses["Tue"];
             <button class="class_item">
               <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
+              </svg>                                   
+            </button>
+            <button class="class_item">
+              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
               </svg>                                      
             </button>
             <button class="class_item">
               <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
               </svg>                              
-            </button>
-            <button class="class_item">
-              <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#66666D"/>
-              </svg>                               
             </button>
             <button class="class_item">
               <svg class="class_add" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -183,32 +209,32 @@ const tueCourses = courses["Tue"];
           <div class="register_modal_back" id="register_modal_back"></div>
           <div class="register_modal_contents">
             <p class="register_modal_label">月曜の授業</p>
-      <ul class="register_modal_list">
-        {tueCourses.length > 0 ? (
-          tueCourses.map(course => (
-            <li class="register_modal_item" id="register_modal_item">
-              <button class="register_modal_btn">
-                <p class="register_modal_period">{course.period}</p>
-                <div class="register_modal_box">
-                  <h4 class="register_modal_class_name">{course.name}</h4>
-                  <div class="register_modal_details">
-                    <p class="register_modal_text">{course.location}</p>
-                    <p class="register_modal_text">{course.teacher}</p>
-                    <p class="register_modal_text">{course.credits}</p>
-                  </div>
-                </div>
-              </button>
-              <button class="register_modal_detail_btn">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8.33333 9.16667H15M8.33333 11.6667H11.6667M8.33333 6.66667H15M16.6667 18.3333H7C4.51667 18.3333 2.5 16.3167 2.5 13.8333V4.16667M7 2.5H16.3333C16.596 2.5 16.856 2.55173 17.0987 2.65224C17.3414 2.75275 17.5618 2.90007 17.7475 3.08579C17.9333 3.2715 18.0806 3.49198 18.1811 3.73463C18.2816 3.97728 18.3333 4.23736 18.3333 4.5V13.8333C18.3333 14.3638 18.1226 14.8725 17.7475 15.2475C17.3725 15.6226 16.8638 15.8333 16.3333 15.8333H7C6.73736 15.8333 6.47728 15.7816 6.23463 15.6811C5.99198 15.5806 5.7715 15.4333 5.58579 15.2475C5.21071 14.8725 5 14.3638 5 13.8333V4.5C5 4.23736 5.05173 3.97728 5.15224 3.73463C5.25275 3.49198 5.40007 3.2715 5.58579 3.08579C5.96086 2.71071 6.46957 2.5 7 2.5Z" stroke="#252528" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>                  
-              </button>
-            </li>
-          ))
-        ) : (
-          <p class="no_classes">この曜日の授業はありません</p>
-        )}
-      </ul>
+            <ul class="register_modal_list">
+              {courses[dayToKey["月曜"]].length > 0 ? (
+                courses[dayToKey["月曜"]].map((course: Course) => (
+                  <li class="register_modal_item" id="register_modal_item">
+                    <button class="register_modal_btn">
+                      <p class="register_modal_period">{course.period}</p>
+                      <div class="register_modal_box">
+                        <h4 class="register_modal_class_name">{course.name}</h4>
+                        <div class="register_modal_details">
+                          <p class="register_modal_text">{course.location}</p>
+                          <p class="register_modal_text">{course.teacher}</p>
+                          <p class="register_modal_text">{course.credits}</p>
+                        </div>
+                      </div>
+                    </button>
+                    <button class="register_modal_detail_btn">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.33333 9.16667H15M8.33333 11.6667H11.6667M8.33333 6.66667H15M16.6667 18.3333H7C4.51667 18.3333 2.5 16.3167 2.5 13.8333V4.16667M7 2.5H16.3333C16.596 2.5 16.856 2.55173 17.0987 2.65224C17.3414 2.75275 17.5618 2.90007 17.7475 3.08579C17.9333 3.2715 18.0806 3.49198 18.1811 3.73463C18.2816 3.97728 18.3333 4.23736 18.3333 4.5V13.8333C18.3333 14.3638 18.1226 14.8725 17.7475 15.2475C17.3725 15.6226 16.8638 15.8333 16.3333 15.8333H7C6.73736 15.8333 6.47728 15.7816 6.23463 15.6811C5.99198 15.5806 5.7715 15.4333 5.58579 15.2475C5.21071 14.8725 5 14.3638 5 13.8333V4.5C5 4.23736 5.05173 3.97728 5.15224 3.73463C5.25275 3.49198 5.40007 3.2715 5.58579 3.08579C5.96086 2.71071 6.46957 2.5 7 2.5Z" stroke="#252528" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>                  
+                    </button>
+                  </li>
+                ))
+              ) : (
+                <p class="no_classes">この曜日の授業はありません</p>
+              )}
+            </ul>
           </div>
         </div>
       </div>
@@ -402,7 +428,7 @@ const tueCourses = courses["Tue"];
   </div>
 </Layout>
 
-<style lang="scss">
+<style lang="scss" is:global>
   .contents{
     padding-bottom: 160px;
     min-height: 100dvh;
@@ -434,10 +460,10 @@ const tueCourses = courses["Tue"];
 
     &_header{
       position: sticky;
-      top: 40px;
+      top: 24px;
       display: flex;
       align-items: center;
-      z-index: 2;
+      z-index: 1;
 
       @media (width < 1080px) {
         top: 80px;
@@ -1021,17 +1047,28 @@ const tueCourses = courses["Tue"];
   }
 
   .register_box{
-    flex: 1;
+    // flex: 1;
+    position: sticky;
+    top: 40px;
+    height: 100%;
+    width: 36%;
+    min-width: 300px;
     display: grid;
     grid-template-columns: auto 1fr; /* 左:右の比率 */
+
+    @media (width < 768px){
+      width: 100%;
+      min-width: none;
+    }
   }
 
   .register_modal{
+    border-left: 1px solid #dadae3;
+    flex: 1;
     position: sticky;
-    top: 120px;
-    width: 30%;
-    min-width: 300px;
+    top: 96px;
     height: 100%;
+    padding: 16px 0 16px 16px;
 
     @media (width < 768px) {
       display: flex;
@@ -1044,6 +1081,7 @@ const tueCourses = courses["Tue"];
       min-width: none;
       height: 100%;
       z-index: 100;
+      padding: 0;
 		}
 
     &_back{
@@ -1062,6 +1100,7 @@ const tueCourses = courses["Tue"];
     }
 
     &_contents{
+      overflow-y: hidden;
 
       @media (width < 768px) {
         display: flex;
@@ -1069,7 +1108,7 @@ const tueCourses = courses["Tue"];
         align-items: center;
         width: 100%;
         height: 60%;
-        padding: 24px 16px;
+        padding: 24px 0;
         border-radius: 32px 32px 0 0 ;
         background-color: #f9f9f9;
       }
@@ -1084,9 +1123,14 @@ const tueCourses = courses["Tue"];
     &_list{
       width: 100%;
       margin-top: 16px;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 8px;
+      overflow-y: auto;
+
+      @media (width < 768) {
+        padding: 0 16px;
+      }
     }
 
     &_item{
@@ -1145,18 +1189,24 @@ const tueCourses = courses["Tue"];
   }
 
   .time_list, .class_list {
-    display: grid;
-    grid-auto-rows: 1fr; /* 各行の高さを均等に */
+    // display: flex;
+    // grid-auto-rows: 1fr; /* 各行の高さを均等に */
+    // justify-content: baseline;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
   }
 
   .time_item{
+    // flex: 1;
+    height: 64px;
     display: flex;
     gap: 8px;
     flex-direction: column;
     align-items: center;
-    padding: 16px;
-    font-size: 14px;
+    justify-content: center;
+    padding: 16px 24px 16px 16px;
+    font-size: 12px;
     color: #66666d;
 
     @media (width < 414px) {
@@ -1168,6 +1218,9 @@ const tueCourses = courses["Tue"];
   }
 
   .class_item{
+    // flex: 1;
+    width: 100%;
+    height: 64px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -1175,8 +1228,8 @@ const tueCourses = courses["Tue"];
     padding: 16px 24px;
     border-radius: 16px;
     background-color: #fff;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
     box-shadow: 0px 0px 2px rgba($color: #252528, $alpha: 0.25);
 
     @media (width <= 414px) {
@@ -1202,6 +1255,10 @@ const tueCourses = courses["Tue"];
     transform: translateX(-50%);
   }
 
+  .class_light{
+    border: 1px solid #6161DA;
+  }
+
   .dis-none{
     display: none;
   }
@@ -1214,13 +1271,71 @@ const tueCourses = courses["Tue"];
   }
 </style>
 
-<script>
-  const register_modal = document.getElementById('register_modal')
-  const reset_btn = document.getElementById('reset_btn')
-  const judge_btn = document.getElementById('judge_btn')
-  document.querySelectorAll('.class_item').forEach((class_item)=>{
+<script define:vars={{ courses, dayToKey }}>
+  let selectedDay = "Mon";
+  const tagButtons = document.querySelectorAll('.tag_btn');
+  const register_modal = document.getElementById('register_modal');
+  const class_items = document.querySelectorAll('.class_item');
+  const box_header = document.getElementById('box_header') 
+  const box_label = document.getElementById('box_label')
 
-    const reset_btn = document.getElementById('reset_btn')
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth >= 1080) {
+      if(box_header.getBoundingClientRect().top < 40){
+        box_label.classList.add('dis-none')
+      }
+      if(box_header.getBoundingClientRect().top >= 40){
+        box_label.classList.remove('dis-none')
+      }
+    } else {
+      if(box_header.getBoundingClientRect().top < 96){
+        box_label.classList.add('dis-none')
+      }
+      if(box_header.getBoundingClientRect().top >= 96){
+        box_label.classList.remove('dis-none')
+      }
+    }
+  })
+
+  // タグボタンのイベント処理
+  tagButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      // アクティブクラスの切り替え
+      tagButtons.forEach(btn => btn.parentElement?.classList.remove('active'));
+      button.parentElement?.classList.add('active');
+
+      // 曜日の更新
+      const day = button.getAttribute('data-day');
+      if (day) {
+        selectedDay = day;
+        updateDisplay(selectedDay);
+      }
+    });
+  });
+
+  // 授業選択のモーダル表示
+  class_items.forEach((item) => {
+    document.addEventListener('DOMContentLoaded', () => {
+      if(window.innerWidth >= 1080){
+        register_modal?.classList.remove('dis-none')
+      }
+    })
+    item.addEventListener('click', () => {
+      register_modal?.classList.remove('dis-none');
+    });
+
+    // ホバー効果
+    item.addEventListener('mouseover', () => {
+      item.classList.add('back-hover');
+    });
+    item.addEventListener('mouseleave', () => {
+      item.classList.remove('back-hover');
+    });
+  });
+
+  document.querySelectorAll('.class_item').forEach((class_item)=>{
+    window.addEventListener('click', () => {
+      const reset_btn = document.getElementById('reset_btn')
     reset_btn?.addEventListener('click', () => {
       class_item.textContent = ""
       reset_btn?.classList.remove('reset')
@@ -1247,21 +1362,114 @@ const tueCourses = courses["Tue"];
 
     document.querySelectorAll('#register_modal_item').forEach((register_modal_item) => {
       const register_class_name = register_modal_item.querySelector('.register_modal_class_name')?.textContent?.trim()
-      console.log(register_class_name)
+      const class_period_item_1_4 = Array.from(document.querySelectorAll('.class_item')).slice(0, 4)
+      const class_period_item_1_2 = Array.from(document.querySelectorAll('.class_item')).slice(0, 2)
+      const class_period_item_3_4 = Array.from(document.querySelectorAll('.class_item')).slice(2, 4)
+      const class_period_item_5_8 = Array.from(document.querySelectorAll('.class_item')).slice(4, 8)
       register_modal_item.addEventListener('click', () => {
-        if (class_item && register_class_name) {
-          class_item.textContent = register_class_name
-        }
+        // if (class_item && register_class_name) {
+        //   class_item.textContent = register_class_name
+        // }
+        // console.log(class_item)
         register_modal?.classList.add('dis-none')
         reset_btn?.classList.add('reset')
         judge_btn?.classList.add('judge')
       })
+      register_modal_item.addEventListener('mouseover', () => {
+        let period = register_modal_item.querySelector('.register_modal_period')
+        if(period.textContent == "1-2"){
+          class_period = 2
+          class_period_item_1_2.forEach((class_period_item_1_2) => {
+            class_period_item_1_2.classList.add('class_light')
+            const class_name = register_modal_item.querySelector('.register_modal_class_name')?.textContent?.trim()
+            register_modal_item.addEventListener('click', () => {
+              class_period_item_1_2.textContent = class_name
+            })
+          })
+          // console.log(class_period_item_1_4)
+        }
+        if(period.textContent == "1-4"){
+          class_period = 4
+          class_period_item_1_4.forEach((class_period_item_1_4) => {
+            class_period_item_1_4.classList.add('class_light')
+            const class_name = register_modal_item.querySelector('.register_modal_class_name')?.textContent?.trim()
+            register_modal_item.addEventListener('click', () => {
+              class_period_item_1_4.textContent = class_name
+            })
+          })
+        }
+        if(period.textContent == "3-4"){
+          class_period = 2
+          class_period_item_3_4.forEach((class_period_item_3_4) => {
+            class_period_item_3_4.classList.add('class_light')
+            const class_name = register_modal_item.querySelector('.register_modal_class_name')?.textContent?.trim()
+            register_modal_item.addEventListener('click', () => {
+              class_period_item_3_4.textContent = class_name
+            })
+          })
+          // console.log(class_period_item_1_4)
+        }
+        if(period.textContent == "5-8"){
+          class_period = 4
+          class_period_item_5_8.forEach((class_period_item_5_8) => {
+            class_period_item_5_8.classList.add('class_light')
+            const class_name = register_modal_item.querySelector('.register_modal_class_name')?.textContent?.trim()
+            register_modal_item.addEventListener('click', () => {
+              class_period_item_5_8.textContent = class_name
+            })
+          })
+        }
+      })
+      document.querySelectorAll('.class_item').forEach((all_class) => {
+        register_modal_item.addEventListener('mouseleave', () => {
+          all_class.classList.remove('class_light')
+        })
+      })
+    })
     })
   })
 
+  // モーダルを閉じる
+  document.getElementById('register_modal_back')?.addEventListener('click', () => {
+    register_modal?.classList.add('dis-none');
+  });
+
+  function updateDisplay(day) {
+    const modalLabel = document.querySelector('.register_modal_label');
+    const modalList = document.querySelector('.register_modal_list');
+    
+    if (!modalLabel || !modalList) return;
+    
+    const key = dayToKey[day] || "Mon";
+    modalLabel.textContent = `${day}の授業`;
+    
+    modalList.innerHTML = courses[key].length > 0 
+      ? courses[key].map(course => `
+        <li class="register_modal_item" id="register_modal_item">
+          <button class="register_modal_btn">
+            <p class="register_modal_period">${course.period}</p>
+            <div class="register_modal_box">
+              <h4 class="register_modal_class_name">${course.name}</h4>
+              <div class="register_modal_details">
+                <p class="register_modal_text">${course.location}</p>
+                <p class="register_modal_text">${course.teacher}</p>
+                <p class="register_modal_text">${course.credits}</p>
+              </div>
+            </div>
+          </button>
+          <button class="register_modal_detail_btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.33333 9.16667H15M8.33333 11.6667H11.6667M8.33333 6.66667H15M16.6667 18.3333H7C4.51667 18.3333 2.5 16.3167 2.5 13.8333V4.16667M7 2.5H16.3333C16.596 2.5 16.856 2.55173 17.0987 2.65224C17.3414 2.75275 17.5618 2.90007 17.7475 3.08579C17.9333 3.2715 18.0806 3.49198 18.1811 3.73463C18.2816 3.97728 18.3333 4.23736 18.3333 4.5V13.8333C18.3333 14.3638 18.1226 14.8725 17.7475 15.2475C17.3725 15.6226 16.8638 15.8333 16.3333 15.8333H7C6.73736 15.8333 6.47728 15.7816 6.23463 15.6811C5.99198 15.5806 5.7715 15.4333 5.58579 15.2475C5.21071 14.8725 5 14.3638 5 13.8333V4.5C5 4.23736 5.05173 3.97728 5.15224 3.73463C5.25275 3.49198 5.40007 3.2715 5.58579 3.08579C5.96086 2.71071 6.46957 2.5 7 2.5Z" stroke="#252528" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>            
+          </button>
+        </li>
+      `).join('')
+      : '<p class="no_classes">この曜日の授業はありません</p>';
+  }
   const tag_btns = document.querySelectorAll('#tag_item')
 	tag_btns.forEach((tag_btn_target) => {
 		tag_btn_target.addEventListener('click', () => {
+      register_modal?.classList.remove('dis-none')
 			tag_btns.forEach((tag_btn_all) => {
 				tag_btn_all.classList.remove('active')
 			})
@@ -1276,29 +1484,4 @@ const tueCourses = courses["Tue"];
 			tag_btn_target.classList.add('tag_item_mouseleave')
 		})
 	})
-
-  window.addEventListener('scroll', () => {
-    const box_label = document.getElementById('box_label');
-    const box_header = document.getElementById('box_header')
-    const box_header_height = box_header?.getBoundingClientRect().top ?? 0;
-    // console.log(box_header_height)
-
-    if (window.innerWidth < 768) {
-      if (box_header_height < 95) {
-        box_label?.classList.add('dis-none');
-      } else {
-        box_label?.classList.remove('dis-none');
-      }
-    }
-
-    if (window.innerWidth >= 768) {
-      if (box_header_height < 125) {
-        box_label?.classList.add('dis-none');
-      } else {
-        box_label?.classList.remove('dis-none');
-      }
-    }
-  });
-
-
 </script>

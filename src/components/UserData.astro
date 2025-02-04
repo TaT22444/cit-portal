@@ -47,9 +47,9 @@ const { data, id, isVisible } = Astro.props;
     }
 
     @media (width < 414px) {
-      width: calc(100% - 16px);
+      width: 100%;
       padding: 24px 0 0;
-      margin: 24px 8px 0;
+      margin: 24px 0px 0;
     }
 
     &_title{
@@ -62,6 +62,10 @@ const { data, id, isVisible } = Astro.props;
       margin-top: 16px;
       font-size: 14px;
       color: #66666d;
+
+      @media (width < 768px) {
+        font-size: 12px;
+      }
     }
 
     &_list{
@@ -70,6 +74,10 @@ const { data, id, isVisible } = Astro.props;
       display: flex;
       flex-direction: column;
       gap: 16px;
+
+      @media (width < 768px) {
+        gap: 8px;
+      } 
     }
 
     &_item{
@@ -93,6 +101,10 @@ const { data, id, isVisible } = Astro.props;
 
       &_name{
         font-size: 14px;
+
+        @media (width < 768px) {
+          font-size: 12px;
+        }
       }
 
       &_list{

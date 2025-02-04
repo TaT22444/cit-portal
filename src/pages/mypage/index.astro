@@ -104,6 +104,7 @@ import userData from '../../data/user_data.json'; // JSONファイルをイン�
       width: 100%;
       height: auto;
       padding: 0 16px;
+      margin: 0;
       border: none;
     }
 
@@ -151,6 +152,10 @@ import userData from '../../data/user_data.json'; // JSONファイルをイン�
         font-size: 14px;
         color: #252528;
         flex: 1;
+
+        @media (width < 768px) {
+          font-size: 12px;
+        }
       }
     }
   }

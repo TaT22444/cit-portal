@@ -1054,7 +1054,7 @@ const dayMapping = {
     position: sticky;
     top: 40px;
     height: 100%;
-    width: 36%;
+    width: 34%;
     min-width: 300px;
     display: grid;
     grid-template-columns: auto 1fr; /* 左:右の比率 */
@@ -1127,7 +1127,7 @@ const dayMapping = {
       width: 100%;
       margin-top: 16px;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(322px, 1fr));
       gap: 8px;
       overflow-y: auto;
 
@@ -1237,10 +1237,12 @@ const dayMapping = {
     border: 1px solid #dadae3;
 
     @media (width < 1080px) {
-      font-size: 12px;
       padding: 8px 16px;
       height: 56px;
     }
+    @media (width >= 1920px) {
+		  font-size: 14px;
+		}
   }
 
   .class_none{
@@ -1283,6 +1285,7 @@ const dayMapping = {
   const class_items = document.querySelectorAll('.class_item');
   const box_header = document.getElementById('box_header') 
   const box_label = document.getElementById('box_label')
+  const reset_btn = document.getElementById('reset_btn')
 
   window.addEventListener('scroll', () => {
     if (window.innerWidth >= 1080) {
@@ -1340,7 +1343,6 @@ const dayMapping = {
 
   document.querySelectorAll('.class_item').forEach((class_item)=>{
     window.addEventListener('click', () => {
-      const reset_btn = document.getElementById('reset_btn')
     reset_btn?.addEventListener('click', () => {
       class_item.textContent = ""
       reset_btn?.classList.remove('reset')
@@ -1371,16 +1373,17 @@ const dayMapping = {
       const class_period_item_1_2 = Array.from(document.querySelectorAll('.class_item')).slice(0, 2)
       const class_period_item_3_4 = Array.from(document.querySelectorAll('.class_item')).slice(2, 4)
       const class_period_item_5_8 = Array.from(document.querySelectorAll('.class_item')).slice(4, 8)
+      reset_btn.addEventListener('click', () => {
+        register_modal_item.classList.remove('back-active')
+      })
       register_modal_item.addEventListener('click', () => {
-        // if (class_item && register_class_name) {
-        //   class_item.textContent = register_class_name
-        // }
-        // console.log(class_item)
         register_modal?.classList.add('dis-none')
         reset_btn?.classList.add('reset')
         judge_btn?.classList.add('judge')
       })
       register_modal_item.addEventListener('mouseover', () => {
+        register_modal_item.classList.add('back-hover')
+
         let period = register_modal_item.querySelector('.register_modal_period')
         if(period.textContent == "1-2"){
           class_period = 2
@@ -1389,6 +1392,7 @@ const dayMapping = {
             const class_name = register_modal_item.querySelector('.register_modal_class_name')?.textContent?.trim()
             register_modal_item.addEventListener('click', () => {
               class_period_item_1_2.textContent = class_name
+              register_modal_item.classList.add('back-active')
             })
           })
           // console.log(class_period_item_1_4)
@@ -1400,6 +1404,7 @@ const dayMapping = {
             const class_name = register_modal_item.querySelector('.register_modal_class_name')?.textContent?.trim()
             register_modal_item.addEventListener('click', () => {
               class_period_item_1_4.textContent = class_name
+              register_modal_item.classList.add('back-active')
             })
           })
         }
@@ -1410,6 +1415,7 @@ const dayMapping = {
             const class_name = register_modal_item.querySelector('.register_modal_class_name')?.textContent?.trim()
             register_modal_item.addEventListener('click', () => {
               class_period_item_3_4.textContent = class_name
+              register_modal_item.classList.add('back-active')
             })
           })
           // console.log(class_period_item_1_4)
@@ -1421,9 +1427,13 @@ const dayMapping = {
             const class_name = register_modal_item.querySelector('.register_modal_class_name')?.textContent?.trim()
             register_modal_item.addEventListener('click', () => {
               class_period_item_5_8.textContent = class_name
+              register_modal_item.classList.add('back-active')
             })
           })
         }
+      })
+      register_modal_item.addEventListener('mouseleave', () => {
+        register_modal_item.classList.remove('back-hover')
       })
       document.querySelectorAll('.class_item').forEach((all_class) => {
         register_modal_item.addEventListener('mouseleave', () => {

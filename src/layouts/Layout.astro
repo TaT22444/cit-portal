@@ -312,7 +312,10 @@ const isGradesPage = currentPath === "/grades/";
 
 		<aside class="aside" id="aside">
 			<div class="aside_inner" id="aside_inner">
-				<header class="aside_header">
+				<div class="aside_header_min_title dis-none" id="aside_header_min_title">
+					<a href="/">C</a>
+				</div>
+				<header class="aside_header ">
 					<h1 class="aside_header_title" id="min_item">
 						<a href="/" id="min_item">CIT Portal</a>
 					</h1>
@@ -327,7 +330,7 @@ const isGradesPage = currentPath === "/grades/";
 						</svg>						
 					</button>
 				</header>
-				<div class="aside_content">
+				<div class="aside_content" id="aside_content_min">
 					<div class="aside_content_box">
 						<p class="aside_content_box_label" id="min_item">ヘルプ</p>
 						<nav class="aside_nav">
@@ -746,7 +749,7 @@ const isGradesPage = currentPath === "/grades/";
 						<div class="gradesbar_box_graph_box">
 							<!-- <p class="gradesbar_box_graph_box_label">GPA推移</p> -->
 							<div class="gradesbar_box_graph_box_graph">
-								<img src="../assets/graph.png" alt="">
+								<img src="../src/assets/graph.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -1443,11 +1446,42 @@ const isGradesPage = currentPath === "/grades/";
 				color: #252528;
 			}
 
+			&_min_title{
+				font-size: 24px;
+				font-weight: 600;
+				color: #252528;
+				padding: 0 12px 12px;
+				margin-bottom: 8px;
+			}
+
 			&_btn{
 				display: flex;
 				padding: 8px;
 				align-items: center;
 				justify-content: center;
+				position: relative;
+
+				&_min{
+					position: relative;
+					padding: 16px 12px;
+
+					&::before{
+					  content: "";
+					  position: absolute;
+					  top: 0;
+					  width: 12px;
+					  height: 1px;
+					  background-color: #dadae3;
+				  }
+				  &::after{
+				  	content: "";
+				  	position: absolute;
+				  	bottom: 0;
+				  	width: 12px;
+				  	height: 1px;
+				  	background-color: #dadae3;
+				  }
+				}
 			}
 		}
 
@@ -1462,6 +1496,10 @@ const isGradesPage = currentPath === "/grades/";
 			@media (width >= 1920px) {
 				margin-top: 40px;
 				gap: 32px;
+			}
+
+			&_min{
+				margin-top: 8px;
 			}
 			
 			&_box{
@@ -2255,6 +2293,8 @@ const isGradesPage = currentPath === "/grades/";
   const aside = document.getElementById('aside');
   const aside_min_inner = document.getElementById('aside_inner');
   const main = document.getElementById('main');
+	const aside_header_min_title = document.getElementById('aside_header_min_title');
+	const aside_content_min = document.getElementById('aside_content_min')
 
   // ページ読み込み時に状態を復元
   const isAsideMinimized = localStorage.getItem('aside_minimized') === 'true';
@@ -2297,6 +2337,9 @@ const isGradesPage = currentPath === "/grades/";
     document.querySelectorAll('#min_item').forEach((min_item) => {
       min_item.classList.add('dis-none');
     });
+		aside_content_min?.classList.add('aside_content_min')
+		aside_min_btn?.classList.add('aside_header_btn_min')
+		aside_header_min_title?.classList.remove('dis-none')
     aside?.classList.add('aside_min');
     aside_min_inner?.classList.add('aside_min_inner');
     main?.classList.add('main_min');
@@ -2306,6 +2349,9 @@ const isGradesPage = currentPath === "/grades/";
     document.querySelectorAll('#min_item').forEach((min_item) => {
       min_item.classList.remove('dis-none');
     });
+		aside_content_min?.classList.remove('aside_content_min')
+		aside_min_btn?.classList.remove('aside_header_btn_min')
+		aside_header_min_title?.classList.add('dis-none')
     aside?.classList.remove('aside_min');
     aside_min_inner?.classList.remove('aside_min_inner');
     main?.classList.remove('main_min');

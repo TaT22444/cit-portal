@@ -334,13 +334,17 @@ import Layout from '../../layouts/Layout.astro';
 			}
 		}
 
-		&_btn{
+    &_btn{
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			width: 56px;
 			height: 36px;
 			border-radius: 100px;
+
+      @media (width < 1080px) {
+        font-size: 10px;
+      }
 		}
 	}
 

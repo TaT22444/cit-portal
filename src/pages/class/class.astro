@@ -557,7 +557,7 @@ import Layout from '../../layouts/Layout.astro';
     &_list{
 			display: flex;
 			flex-direction: column;
-			gap: 16px;
+			gap: 24px;
 			margin-top: 24px;
       padding: 0 8px;
 
@@ -575,9 +575,9 @@ import Layout from '../../layouts/Layout.astro';
 			color: #66666d;
 		}
 
-			// &_pub{
-			//   margin-left: 8px;
-			// }
+			&_pub{
+			  font-size: 12px;
+			}
 
 			&_text{
 				display: block;
@@ -586,6 +586,9 @@ import Layout from '../../layouts/Layout.astro';
 				font-weight: 400;
 				color: #252528;
 				text-decoration: underline;
+        @media (width < 768px) {
+          margin-top: 8px;
+        }
 			}
   }
 
@@ -830,6 +833,10 @@ import Layout from '../../layouts/Layout.astro';
     display: flex;
     gap: 24px;
 
+    @media (width < 768px) {
+      margin-top: 24px;
+    }
+
     &_contents{
       width: 100%;
       display: flex;
@@ -847,6 +854,10 @@ import Layout from '../../layouts/Layout.astro';
         font-size: 14px;
         font-weight: 500;
         color: #66666d;
+
+        @media (width < 768px) {
+          font-size: 12px;
+        }
       }
     }
 
@@ -893,8 +904,14 @@ import Layout from '../../layouts/Layout.astro';
 
     &_limit{
       font-size: 12px;
-      font-weight: 400;
+      font-weight: 500;
       color: #66666d;
+
+      @media (width < 768px) {
+        margin-top: 4px;
+        font-size: 10px;
+        color: #252528;
+      }
     }
   }
 

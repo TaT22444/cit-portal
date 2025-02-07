@@ -515,6 +515,12 @@ import Layout from '../../layouts/Layout.astro';
     border-radius: 16px;
     background-color: #fff;
     border: 1px solid #dadae3;
+    transition: all .3s;
+
+    &:hover{
+      background-color: #dadae3;
+      transition: all .3s;
+    }
 
     @media (width < 768px) {
 		  padding: 12px 16px;
@@ -876,6 +882,11 @@ import Layout from '../../layouts/Layout.astro';
       border-radius: 16px;
       background-color: #fff;
       border: 1px solid #dadae3;
+      transition: all .3s;
+
+      &:hover{
+        background-color: #e6e6ea;
+      }
     }
 
     &_title_wrapper{
@@ -909,8 +920,7 @@ import Layout from '../../layouts/Layout.astro';
 
       @media (width < 768px) {
         margin-top: 4px;
-        font-size: 10px;
-        color: #252528;
+        font-size: 12px;
       }
     }
   }

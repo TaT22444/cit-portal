@@ -354,7 +354,7 @@ import Layout from '../../layouts/Layout.astro';
 
     &_label{
       font-size: 14px;
-      font-weight: 400;
+      font-weight: 500;
       color: #66666d;
 
       @media (width < 768px) {
@@ -421,21 +421,25 @@ import Layout from '../../layouts/Layout.astro';
 
   .news{
     &_list{
-				display: flex;
-				flex-direction: column;
-				gap: 16px;
-				margin-top: 24px;
-        padding: 0 8px;
-			}
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			margin-top: 24px;
+      padding: 0 8px;
 
-			&_item{
-			}
+      @media (width < 768px) {
+        padding: 0 4px;
+      }
+		}
 
-			&_label{
-				font-size: 12px;
-				font-weight: 400;
-				color: #66666d;
-			}
+		&_item{
+		}
+
+		&_label{
+			font-size: 12px;
+			font-weight: 400;
+			color: #66666d;
+		}
 
 			// &_pub{
 			//   margin-left: 8px;
@@ -574,7 +578,7 @@ import Layout from '../../layouts/Layout.astro';
   .attendance_label{
     width: 64px;
 		font-size: 14px;
-		font-weight: 400;
+		font-weight: 500;
 		color: #66666d;
 
 		@media (width < 768px) {

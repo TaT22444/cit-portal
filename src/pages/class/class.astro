@@ -23,13 +23,13 @@ import Layout from '../../layouts/Layout.astro';
             <button class="tag_btn active" id="tag_item">トップ</button>
           </li>
           <li class="tag_item">
+            <button class="tag_btn" id="tag_item">課題</button>
+          </li>
+          <li class="tag_item">
             <button class="tag_btn" id="tag_item">お知らせ</button>
           </li>
           <li class="tag_item">
             <button class="tag_btn" id="tag_item">資料</button>
-          </li>
-          <li class="tag_item">
-            <button class="tag_btn" id="tag_item">レポート</button>
           </li>
           <li class="tag_item">
             <button class="tag_btn" id="tag_item">テスト</button>
@@ -42,64 +42,165 @@ import Layout from '../../layouts/Layout.astro';
           </li>
         </ul>
       </nav>
-      <section class="box">
-        <p class="box_label">未提出</p>
-        <div class="card_wrapper">
-          <button class="card_item">
-            <div class="card_item_left">
-              <p class="card_item_limit">あと14時間</p>
-              <h4 class="card_item_title">卒研タイトル提出</h4>
-              <p class="card_item_time">2024-11-11</p>
+      <div class="section_contents section_contents_first" id="section_contents">
+        <div class="attendance box">
+          <p class="attendance_label">出席数</p>
+          <div class="attendance_wrapper">
+            <div class="bar" id="progress_bar">
+              <div class="elem" id="bar_active_elem"></div>
+              <div class="elem" id="bar_active_elem"></div>
+              <div class="elem" id="bar_active_elem"></div>
+              <div class="elem" id="bar_elem"></div>
+              <div class="elem" id="bar_active_elem"></div>
+              <div class="elem" id="bar_elem"></div>
+              <div class="elem" id="bar_active_elem"></div>
+              <div class="elem" id="bar_active_elem"></div>
+              <div class="elem" id="bar_active_elem"></div>
+              <div class="elem" id="bar_elem"></div>
+              <div class="elem" id="bar_active_elem"></div>
+              <div class="elem" id="bar_active_elem"></div>
+              <span class="bar_now">現在</span>
             </div>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
-            </svg>              
-          </button>
-          <button class="card_item">
-            <div class="card_item_left">
-              <p class="card_item_limit">あと14時間</p>
-              <h4 class="card_item_title">卒研タイトル提出</h4>
-              <p class="card_item_time">2024-11-11</p>
-            </div>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
-            </svg>              
-          </button>
-          <button class="card_item">
-            <div class="card_item_left">
-              <p class="card_item_limit">あと14時間</p>
-              <h4 class="card_item_title">卒研タイトル提出</h4>
-              <p class="card_item_time">2024-11-11</p>
-            </div>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.96991 7.47007C10.1105 7.32962 10.3012 7.25073 10.4999 7.25073C10.6987 7.25073 10.8893 7.32962 11.0299 7.47007L15.0299 11.4701C15.1704 11.6107 15.2492 11.8013 15.2492 12.0001C15.2492 12.1988 15.1704 12.3894 15.0299 12.5301L11.0299 16.5301C10.9612 16.6038 10.8784 16.6629 10.7864 16.7039C10.6944 16.7448 10.5951 16.7669 10.4944 16.7687C10.3937 16.7704 10.2937 16.7519 10.2003 16.7142C10.1069 16.6765 10.0221 16.6203 9.95087 16.5491C9.87965 16.4779 9.82351 16.3931 9.78579 16.2997C9.74807 16.2063 9.72954 16.1063 9.73132 16.0056C9.73309 15.9048 9.75514 15.8055 9.79613 15.7135C9.83712 15.6215 9.89622 15.5387 9.96991 15.4701L13.4399 12.0001L9.96991 8.53007C9.82946 8.38945 9.75057 8.19882 9.75057 8.00007C9.75057 7.80132 9.82946 7.6107 9.96991 7.47007Z" fill="black"/>
-            </svg>              
-          </button>
+            <p class="attendance_number" id="progress_number">9/12</p>
+          </div>
         </div>
-      </section>
-      <section class="box">
-        <p class="box_label">お知らせ</p>
-        <ul class="news_list">
-          <li class="news_item">
-            <p class="news_label">
-              <span class="news_pub">2024-11-11</span>
-            </p>
-            <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
-          </li>
-          <li class="news_item">
-            <p class="news_label">
-              <span class="news_pub">2024-11-11</span>
-            </p>
-            <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
-          </li>
-          <li class="news_item">
-            <p class="news_label">
-              <span class="news_pub">2024-11-11</span>
-            </p>
-            <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
-          </li>
-        </ul>
-      </section>
+        <section class="box">
+          <p class="box_label">未提出</p>
+          <div class="card_wrapper">
+            <button class="card_item">
+              <div class="card_item_left">
+                <p class="card_item_limit">あと14時間</p>
+                <h4 class="card_item_title">卒研タイトル提出</h4>
+                <p class="card_item_time">2024-11-11</p>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+                </svg>                            
+            </button>
+            <button class="card_item">
+              <div class="card_item_left">
+                <p class="card_item_limit">あと14時間</p>
+                <h4 class="card_item_title">卒研タイトル提出</h4>
+                <p class="card_item_time">2024-11-11</p>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+              </svg>             
+            </button>
+            <button class="card_item">
+              <div class="card_item_left">
+                <p class="card_item_limit">あと14時間</p>
+                <h4 class="card_item_title">卒研タイトル提出</h4>
+                <p class="card_item_time">2024-11-11</p>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.3534 7.64673C12.4465 7.74073 12.4988 7.86772 12.4988 8.00006C12.4988 8.1324 12.4465 8.25939 12.3534 8.35339L9.02004 11.6867C8.97427 11.7359 8.91907 11.7753 8.85773 11.8026C8.7964 11.8299 8.73019 11.8446 8.66305 11.8458C8.59592 11.847 8.52923 11.8346 8.46698 11.8095C8.40472 11.7843 8.34816 11.7469 8.30068 11.6994C8.2532 11.6519 8.21577 11.5954 8.19063 11.5331C8.16548 11.4709 8.15313 11.4042 8.15431 11.337C8.1555 11.2699 8.17019 11.2037 8.19752 11.1424C8.22485 11.081 8.26425 11.0258 8.31337 10.9801L10.7934 8.50006H4.00004C3.86743 8.50006 3.74025 8.44738 3.64649 8.35361C3.55272 8.25985 3.50004 8.13267 3.50004 8.00006C3.50004 7.86745 3.55272 7.74028 3.64649 7.64651C3.74025 7.55274 3.86743 7.50006 4.00004 7.50006H10.7934L8.31337 5.02006C8.22505 4.92528 8.17697 4.79991 8.17926 4.67038C8.18154 4.54084 8.23402 4.41725 8.32563 4.32565C8.41723 4.23404 8.54082 4.18156 8.67036 4.17928C8.79989 4.17699 8.92526 4.22507 9.02004 4.31339L12.3534 7.64673Z" fill="#252528"/>
+              </svg>          
+            </button>
+          </div>
+        </section>
+        <section class="box">
+          <p class="box_label">お知らせ</p>
+          <ul class="news_list">
+            <li class="news_item">
+              <p class="news_label">
+                <span class="news_pub">2024-11-11</span>
+              </p>
+              <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+            </li>
+            <li class="news_item">
+              <p class="news_label">
+                <span class="news_pub">2024-11-11</span>
+              </p>
+              <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+            </li>
+            <li class="news_item">
+              <p class="news_label">
+                <span class="news_pub">2024-11-11</span>
+              </p>
+              <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="section_contents section_contents_border dis-none" id="section_contents">
+        <section class="box">
+          <p class="section_box_label">課題・レポート</p>
+          <ul class="news_list">
+            <li class="news_item">
+              <p class="news_label">
+                <span class="news_pub">2024-11-11</span>
+              </p>
+              <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+            </li>
+            <li class="news_item">
+              <p class="news_label">
+                <span class="news_pub">2024-11-11</span>
+              </p>
+              <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+            </li>
+            <li class="news_item">
+              <p class="news_label">
+                <span class="news_pub">2024-11-11</span>
+              </p>
+              <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="section_contents section_contents_border dis-none" id="section_contents">
+        <section class="box">
+          <p class="section_box_label">お知らせ</p>
+          <div class="search_box">
+            <div class="input_box">
+              <div class="input_wrapper">
+                <svg width="16" height="16" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.9999 14.4999L11.1046 11.6046M11.1046 11.6046C11.5998 11.1093 11.9927 10.5213 12.2607 9.87426C12.5287 9.22717 12.6667 8.53363 12.6667 7.83323C12.6667 7.13283 12.5287 6.43928 12.2607 5.7922C11.9927 5.14511 11.5998 4.55715 11.1046 4.06189C10.6093 3.56663 10.0213 3.17377 9.37426 2.90574C8.72717 2.63771 8.03363 2.49976 7.33323 2.49976C6.63283 2.49976 5.93928 2.63771 5.2922 2.90574C4.64511 3.17377 4.05715 3.56663 3.56189 4.06189C2.56167 5.06211 1.99976 6.4187 1.99976 7.83323C1.99976 9.24775 2.56167 10.6043 3.56189 11.6046C4.56211 12.6048 5.9187 13.1667 7.33323 13.1667C8.74775 13.1667 10.1043 12.6048 11.1046 11.6046Z" stroke="#66666D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>					
+                <input type="text" class="input" placeholder="キーワードで検索">
+              </div>
+              <button class="search_btn">検索</button>
+            </div>
+            <div class="order_box">
+              <p class="order_title">並び順</p>
+              <div class="order_wrapper">
+                <button class="order_btn">
+                  <p class="order_label">掲載日</p>
+                  <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99994 12.5C7.92113 12.4999 7.84345 12.4812 7.77324 12.4454C7.70304 12.4096 7.64228 12.3577 7.59594 12.294L3.59594 6.794C3.54174 6.71943 3.5092 6.63134 3.50193 6.53944C3.49466 6.44754 3.51294 6.35542 3.55474 6.27326C3.59655 6.19109 3.66025 6.12209 3.73882 6.07387C3.81739 6.02564 3.90776 6.00008 3.99994 6H11.9999C12.0921 6.00008 12.1825 6.02564 12.2611 6.07387C12.3396 6.12209 12.4033 6.19109 12.4451 6.27326C12.4869 6.35542 12.5052 6.44754 12.498 6.53944C12.4907 6.63134 12.4581 6.71943 12.4039 6.794L8.40394 12.294C8.3576 12.3577 8.29685 12.4096 8.22664 12.4454C8.15643 12.4812 8.07875 12.4999 7.99994 12.5Z" fill="#66666D"/>
+                  </svg>                        
+                </button>
+                <button class="order_btn">
+                  <p class="order_label">昇順</p>
+                  <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.3134 9.47995C10.3592 9.43083 10.4144 9.39143 10.4757 9.3641C10.537 9.33677 10.6032 9.32208 10.6704 9.32089C10.7375 9.31971 10.8042 9.33206 10.8665 9.3572C10.9287 9.38235 10.9853 9.41978 11.0328 9.46726C11.0802 9.51474 11.1177 9.57129 11.1428 9.63355C11.168 9.69581 11.1803 9.7625 11.1791 9.82963C11.1779 9.89677 11.1632 9.96298 11.1359 10.0243C11.1086 10.0856 11.0692 10.1408 11.0201 10.1866L8.35339 12.8533C8.25964 12.9469 8.13256 12.9995 8.00006 12.9995C7.86756 12.9995 7.74048 12.9469 7.64673 12.8533L4.98006 10.1866C4.93094 10.1408 4.89153 10.0856 4.86421 10.0243C4.83688 9.96298 4.82218 9.89677 4.821 9.82963C4.81982 9.7625 4.83216 9.69581 4.85731 9.63355C4.88246 9.57129 4.91989 9.51474 4.96737 9.46726C5.01485 9.41978 5.0714 9.38235 5.13366 9.3572C5.19592 9.33206 5.26261 9.31971 5.32974 9.32089C5.39688 9.32208 5.46309 9.33677 5.52442 9.3641C5.58575 9.39143 5.64095 9.43083 5.68673 9.47995L7.50006 11.2933V4.83329C7.50006 4.70068 7.55274 4.5735 7.64651 4.47973C7.74028 4.38596 7.86745 4.33329 8.00006 4.33329C8.13267 4.33329 8.25985 4.38596 8.35361 4.47973C8.44738 4.5735 8.50006 4.70068 8.50006 4.83329V11.2933L10.3134 9.47995Z" fill="#66666D"/>
+                  </svg>                                   
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="news_list">
+            <li class="news_item">
+              <p class="news_label">
+                <span class="news_pub">2024-11-11</span>
+              </p>
+              <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+            </li>
+            <li class="news_item">
+              <p class="news_label">
+                <span class="news_pub">2024-11-11</span>
+              </p>
+              <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+            </li>
+            <li class="news_item">
+              <p class="news_label">
+                <span class="news_pub">2024-11-11</span>
+              </p>
+              <a href="#" class="news_text">緊急事態宣言の発令により、来週の授業は無しです。</a>
+            </li>
+          </ul>
+        </section>
+      </div>
     </div>
   </div>
 </Layout>
@@ -129,6 +230,12 @@ import Layout from '../../layouts/Layout.astro';
     font-size: 20px;
     font-weight: 500;
     color: #252528;
+
+    @media (width < 768px) {
+		  margin-left: 12px;
+      padding-left: 12px;
+      font-size: 16px;
+		}
   }
 
   .title_wrapper{
@@ -145,6 +252,37 @@ import Layout from '../../layouts/Layout.astro';
     border-radius: 16px;
     background-color: #dadae3;
     transform: rotate(180deg);
+
+    @media (width < 768px) {
+		  width: 40px;
+      height: 40px;
+		}
+  }
+
+  .section_contents{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 24px;
+    padding-top: 32px;
+
+    @media (width < 768px) {
+		  gap: 32px;
+      margin-top: 16px;
+      padding-top: 24px;
+		}
+
+    &_first{
+      margin-top: 0;
+    }
+  }
+  .section_contents_border{
+    border-top: 1px solid #dadae3;
+  }
+  .section_box_label{
+    font-size: 16px;
+    font-weight: 500;
+    color: #252528;
   }
 
  .tag{
@@ -152,6 +290,15 @@ import Layout from '../../layouts/Layout.astro';
 		display: flex;
 		gap: 8;
 		align-items: center;
+    overflow-x: scroll;
+
+    @media (width < 768px) {
+		  margin-top: 16px;
+		}
+  
+    &::-webkit-scrollbar{
+      display: none;
+    }
 
 		&_list{
 			display: flex;
@@ -163,11 +310,18 @@ import Layout from '../../layouts/Layout.astro';
 			font-size: 12px;
 			color: #66666d;
 			font-weight: 500;
+      transition: all .3s;
 
 			>.active{
 				color: #fff;
 				background-color: #252528;
 			}
+
+      &:hover{
+        background-color: #e6e6ea;
+        border-radius: 16px;
+        transition: all .3s;
+      }
 
 			@media (width < 1080px) {
 			  font-size: 10px;
@@ -175,27 +329,37 @@ import Layout from '../../layouts/Layout.astro';
 		}
 
 		&_btn{
+      width: 100%;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 72px;
-      height: 32px;
-			border-radius: 8px;
+			padding: 0 16px;
+      height: 36px;
+			border-radius: 4px;
 
 			@media (width < 1080px) {
-				width: 44px;
+        padding: 0;
+        width: 48px;
 				height: 32px;
+        border-radius: 8px;
 		  }
 		}
 	} 
 
   .box{
-    margin-top: 32px;
+
+    &:nth-of-type(2){
+      padding-top: 8px;
+    }
 
     &_label{
       font-size: 14px;
       font-weight: 400;
       color: #66666d;
+
+      @media (width < 768px) {
+		    font-size: 12px;
+		  }
     }
   }
 
@@ -204,6 +368,10 @@ import Layout from '../../layouts/Layout.astro';
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 8px;
+
+    @media (width < 768px) {
+		 gap: 4px;
+		}
   }
 
   .card_item{
@@ -214,12 +382,20 @@ import Layout from '../../layouts/Layout.astro';
     background-color: #fff;
     border: 1px solid #dadae3;
 
+    @media (width < 768px) {
+		  padding: 12px 16px;
+		}
+
     &_left{
       flex: 1;
     }
 
     &_limit{
       font-size: 12px;
+
+      @media (width < 768px) {
+		    font-size: 10px;
+		  }
     }
 
     &_title{
@@ -227,11 +403,19 @@ import Layout from '../../layouts/Layout.astro';
       font-size: 16px;
       font-weight: 500;
       color: #252528;
+
+      @media (width < 768px) {
+		    font-size: 14px;
+		  }
     }
 
     &_time{
       font-size: 12px;
       margin-top: 8px;
+
+      @media (width < 768px) {
+		    font-size: 10px;
+		  }
     }
   }
 
@@ -266,14 +450,260 @@ import Layout from '../../layouts/Layout.astro';
 				text-decoration: underline;
 			}
   }
+
+  .search_box{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+
+    @media (width < 414px) {
+      margin-top: 24px;
+      flex-direction: column;
+      align-items: baseline;
+      gap: 16px;
+    }
+  }
+
+  .input{
+    // width: 100%;
+    font-size: 12px;
+    color: #66666d;
+  }
+
+  .input_box{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media (width < 414px) {
+      width: 100%;
+    }
+  }
+
+  .search_btn{
+    padding: 12px 16px;
+    background-color: #66666d;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 12px;
+  }
+
+  .input_wrapper{
+    display: flex;
+    width: 240px;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border: 1px solid #66666d;
+    border-radius: 100px;
+
+    @media (width < 414px) {
+      flex: 1; 
+      width: 100%;
+    }
+  }
+
+  .order_box{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .order_title{
+    font-size: 12px;
+    font-weight: 400;
+    color: #66666d;
+  }
+
+  .order_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .order_btn{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    border: 1px solid #66666d;
+  }
+
+  .order_label{
+    font-size: 12px;
+    color: #66666d;
+    font-weight: 400;
+  }
+
+  .attendance{
+    // margin-top: 16px;
+    display: flex;
+		align-items: center;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #dadae3;
+
+    @media (width < 768px) {
+		  padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background-color: #fff;
+      border: 1px solid #dadae3;
+		}
+  }
+
+  .attendance_wrapper{
+		width: 100%;
+		display: flex;
+		align-items: center;
+    padding: 16px 24px;
+		border-radius: 12px;
+		background-color: #fff;
+    border: 1px solid #dadae3;
+
+    @media (width < 768px) {
+		  padding: 0;
+      border: none;
+		}
+
+		@media (width >= 1920px) {
+		  // margin-top: 16px;
+		}
+	}
+  .attendance_label{
+    width: 64px;
+		font-size: 14px;
+		font-weight: 400;
+		color: #66666d;
+
+		@media (width < 768px) {
+      width: 52px;
+		  font-size: 12px;
+		}
+	}
+	.bar{
+    position: relative;
+		flex: 1;
+    width: 100%;
+		display: flex;
+		align-items: center;
+		gap: 2px;
+
+    &_now{
+      position: absolute;
+      font-size: 12px;
+      color: #6161DA;
+      text-align: center;
+      top: 28px;
+      // right: -24px;
+      padding: 8px 12px;
+      background-color: #fff;
+      border-radius: 12px;
+      border: 1px solid #dadae3;
+      animation: bar_now 1s forwards;
+      @keyframes bar_now {
+        0%{
+          right: 100%;
+        }
+        100%{
+          right: -24px;
+        }
+      }
+
+      &::after{
+        content: "";
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        width: 8px;
+        height: 8px;
+        border-radius: 100px;
+        background-color: #6161DA;
+      }
+    }
+	}
+	.elem{
+		width: 100%;
+		height: 8px;
+		border-radius: 2px;
+		background-color: #dadae3;
+
+		&_active{
+			animation: elem_active .3s forwards;
+			@keyframes elem_active {
+				0%{
+					background-color: #dadae3;
+				}
+				100%{
+					background-color: #6161DA;
+				}
+			}
+		}
+
+		&:nth-child(2){
+			animation-delay: 0.04s;
+		}
+		&:nth-child(3){
+			animation-delay: 0.08s;
+		}
+		&:nth-child(4){
+			animation-delay: 0.12s;
+		}
+		&:nth-child(5){
+			animation-delay: 0.16s;
+		}
+		&:nth-child(6){
+			animation-delay: 0.2s;
+		}
+		&:nth-child(7){
+			animation-delay: 0.24s;
+		}
+		&:nth-child(8){
+			animation-delay: 0.28s;
+		}
+		&:nth-child(9){
+			animation-delay: 0.32s;
+		}
+		&:nth-child(10){
+			animation-delay: 0.36s;
+		}
+		&:nth-child(11){
+			animation-delay: 0.4s;
+		}
+		&:nth-child(12){
+			animation-delay: 0.44s;
+		}
+	}
+	.attendance_number{
+		font-size: 12px;
+		font-weight: 500;
+		color: #66666d;
+    margin-left: 16px;
+		@media (width < 768px) {
+		  font-size: 10px;
+		}
+	}
+
+	.dis-none{
+		display: none;
+	}
+	.dis-grid{
+		display: grid;
+	}
 </style>
 
 <script>
-    const tag_btns = document.querySelectorAll('#tag_item')
+  const tag_btns = document.querySelectorAll('#tag_item')
+  const section_contents = document.querySelectorAll('#section_contents')
 	tag_btns.forEach((tag_btn_target) => {
 		tag_btn_target.addEventListener('click', () => {
 			tag_btns.forEach((tag_btn_all) => {
 				tag_btn_all.classList.remove('active')
+          section_contents.forEach((section_contents) => {
+          section_contents.classList.add('dis-none')
+          section_contents.classList.remove('dis-flex')
+        })
 			})
 			tag_btn_target.classList.add('active')
 		})
@@ -284,6 +714,29 @@ import Layout from '../../layouts/Layout.astro';
 		tag_btn_target.addEventListener('mouseleave', () => {
 			tag_btn_target.classList.remove('tag_item_mouseover')
 			tag_btn_target.classList.add('tag_item_mouseleave')
+		})
+	})
+  tag_btns[0].addEventListener('click', () => {
+    section_contents[0].classList.remove('dis-none')
+    section_contents[0].classList.add('dis-flex')
+  })
+  tag_btns[1].addEventListener('click', () => {
+    section_contents[1].classList.remove('dis-none')
+    section_contents[1].classList.add('dis-flex')
+  })
+  tag_btns[2].addEventListener('click', () => {
+    section_contents[2].classList.remove('dis-none')
+    section_contents[2].classList.add('dis-flex')
+  })
+
+  document.addEventListener('DOMContentLoaded', () => {
+		const progress_number = document.getElementById('progress_number')
+		const progress_bar = document.querySelectorAll('#progress_bar')
+		progress_bar.forEach((progress_bar) => {
+			const bar_active_elem = progress_bar.querySelectorAll('#bar_active_elem')
+			bar_active_elem.forEach((bar_active_elem) => {
+				bar_active_elem.classList.add('elem_active')
+			})
 		})
 	})
 </script>

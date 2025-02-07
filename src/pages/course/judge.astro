@@ -82,13 +82,17 @@ import IncreaseCreditDetail from '../../components/IncreaseCreditDetail.astro';
           </div>
         </div>
         <div class="class_list" id="class_list">
-          <button class="class_item" id="class_item">                                                  
+          <button class="class_item" id="class_item">       
+            数学演習                                          
           </button>          
-          <button class="class_item" id="class_item">                                  
+          <button class="class_item" id="class_item">     
+            数学演習                                                                   
           </button>
-          <button class="class_item" id="class_item">                                
+          <button class="class_item" id="class_item"> 
+            創造工学デザイン論                                                                                                    
           </button>
-          <button class="class_item" id="class_item">                               
+          <button class="class_item" id="class_item">                          
+            創造工学デザイン論                                                                     
           </button>
           <button class="class_item">                                 
           </button>
@@ -515,4 +519,73 @@ import IncreaseCreditDetail from '../../components/IncreaseCreditDetail.astro';
     alert("履修登録が完了しました");
     window.location.href = "/course";
   });
+
+  const tag_btns = document.querySelectorAll('#tag_item')
+  const class_item = document.querySelectorAll('#class_item')
+	tag_btns.forEach((tag_btn_target) => {
+		tag_btn_target.addEventListener('click', () => {
+      if(window.innerWidth >= 1080){
+      }
+			tag_btns.forEach((tag_btn_all) => {
+				tag_btn_all.classList.remove('active')
+			})
+			tag_btn_target.classList.add('active')
+		})
+		tag_btn_target.addEventListener('mouseover', () => {
+			tag_btn_target.classList.add('tag_item_mouseover')
+			tag_btn_target.classList.remove('tag_item_mouseleave')
+		})
+		tag_btn_target.addEventListener('mouseleave', () => {
+			tag_btn_target.classList.remove('tag_item_mouseover')
+			tag_btn_target.classList.add('tag_item_mouseleave')
+		})
+	})
+  tag_btns[0].addEventListener('click', () => {
+    class_item.forEach((class_item_all) => {
+      class_item_all.textContent = ""
+    })
+    class_item[0].textContent = "数学演習"
+    class_item[1].textContent = "数学演習"
+    class_item[2].textContent = "創造工学デザイン論"
+    class_item[3].textContent = "創造工学デザイン論"
+  })
+  tag_btns[1].addEventListener('click', () => {
+    class_item.forEach((class_item_all) => {
+      class_item_all.textContent = ""
+    })
+    class_item[0].textContent = "デザイン概論"
+    class_item[1].textContent = "デザイン概論"
+  })
+  tag_btns[2].addEventListener('click', () => {
+    class_item.forEach((class_item_all) => {
+      class_item_all.textContent = ""
+    })
+    class_item[0].textContent = "デザインプレゼンテーション"
+    class_item[1].textContent = "デザインプレゼンテーション"
+  })
+  tag_btns[3].addEventListener('click', () => {
+    class_item.forEach((class_item_all) => {
+      class_item_all.textContent = ""
+    })
+    class_item[0].textContent = "情報デザイン基礎"
+    class_item[1].textContent = "情報デザイン基礎"
+    class_item[0].textContent = "情報とデザイン"
+    class_item[1].textContent = "情報とデザイン"
+    class_item[0].textContent = "ディスプレイデザイン論及び演習"
+    class_item[1].textContent = "ディスプレイデザイン論及び演習"
+  })
+  tag_btns[4].addEventListener('click', () => {
+    class_item.forEach((class_item_all) => {
+      class_item_all.textContent = ""
+    })
+    class_item[0].textContent = "心理学"
+    class_item[1].textContent = "心理学"
+  })
+  tag_btns[5].addEventListener('click', () => {
+    class_item.forEach((class_item_all) => {
+      class_item_all.textContent = ""
+    })
+    class_item[0].textContent = "ゼミナール1"
+    class_item[3].textContent = "ゼミナール1"
+  })
 </script>

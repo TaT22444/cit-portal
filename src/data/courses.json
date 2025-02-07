@@ -59,7 +59,7 @@
   "Fri": [
     {
       "period": "1-2",
-      "name": "",
+      "name": "心理学",
       "location": "津田沼キャンパス4号館3002",
       "teacher": "千葉 工大",
       "credits": "2単位"
@@ -67,8 +67,8 @@
   ],
   "Sat": [
     {
-      "period": "1-2",
-      "name": "数学演習",
+      "period": "1-4",
+      "name": "ゼミナール1",
       "location": "津田沼キャンパス4号館3002",
       "teacher": "千葉 工大",
       "credits": "2単位"

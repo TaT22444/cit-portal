@@ -101,12 +101,15 @@ const { additionalClass } = Astro.props;
     cursor: pointer;
 
     &_question{
+      width: calc(100% - 8px);
       display: flex;
       align-items: center;
+      gap: 8px;
+      line-height: 1.6;
     }
 
     &_number{
-      width: 40px;
+      width: 32px;
       font-size: 12px;
       font-weight: 400;
       color: #66666d;

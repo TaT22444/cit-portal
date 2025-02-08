@@ -302,6 +302,9 @@ const questions = [
         font-size: 12px;
         font-weight: 400;
         color: #66666d;
+        @media (width < 768px) {
+          font-size: 10px;
+        }
       }
 
       &_navwrapper{
@@ -311,6 +314,9 @@ const questions = [
         font-size: 12px;
         font-weight: 400;
         color: #66666d;
+        @media (width < 768px) {
+          font-size: 10px;
+        }
       }
     }
 
@@ -326,6 +332,11 @@ const questions = [
       background-color: #fff;
       border: 1px solid #dadae3;
 
+      @media (width < 768px) {
+        padding: 12px 16px;
+        gap: 16px;
+      }
+
       >.help_section_btn_navwrapper{
         >svg{
           transform: rotate(180deg);
@@ -338,10 +349,15 @@ const questions = [
       display: flex;
       align-items: center;
       gap: 24px;
-      padding: 16px 12px;
+      padding: 16px 16px;
       border-radius: 16px;
       background-color: #fff;
       border: 1px solid #dadae3;
+
+      @media (width < 768px) {
+        padding: 12px 16px;
+        gap: 16px;
+      }
     }
   }
 
@@ -486,6 +502,8 @@ const questions = [
 </style>
 
 <script>
+import HelpAccount from "../../components/HelpAccount.astro"
+
   const nav_btns = document.querySelectorAll('.help_nav_item')
   nav_btns.forEach((nav_btn_target) => {
     nav_btn_target.addEventListener('click', () => {
@@ -507,6 +525,10 @@ const questions = [
   const next_label = document.getElementById('next_label')
   const next_number = document.getElementById('next_number')
   const next_btn = document.getElementById('next_btn')
+  const sp_nav_btn = document.getElementById('sp_nav_btn')
+  const sp_nav_toggle = document.getElementById('sp_nav_toggle')
+  const help_number = document.querySelectorAll('.help_nav_number')
+  const help_nav_btns = document.querySelectorAll('.help_nav_item')
 
   const H_chat = document.getElementById('H_chat')
   const H_chat_btn = document.getElementById('H_chat_btn')
@@ -554,6 +576,237 @@ const questions = [
   const H_account_btn = document.getElementById('H_account_btn') 
   H_account_btn?.addEventListener('click', () => {
     H_account?.classList.remove('dis-none')
+  })
+
+  next_btn?.addEventListener('click', () => {
+    let next_number_text = next_number?.textContent?.trim()
+    if(next_number_text == "1.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.remove('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[1].classList.add('active')
+    }
+    if(next_number_text == "2.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.remove('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[2].classList.add('active')
+    }
+    if(next_number_text == "3.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.remove('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[3].classList.add('active')
+    }
+    if(next_number_text == "4.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.remove('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[4].classList.add('active')
+    }
+    if(next_number_text == "5.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.remove('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[5].classList.add('active')
+    }
+    if(next_number_text == "6.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.remove('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[6].classList.add('active')
+    }
+    if(next_number_text == "7.") {
+      H_account?.classList.remove('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[7].classList.add('active')
+    }
+  })
+  prev_btn?.addEventListener('click', () => {
+    let prev_number_text = prev_number?.textContent?.trim()
+    if(prev_number_text == "0.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.remove('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[0].classList.add('active')
+    }
+    if(prev_number_text == "1.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.remove('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[1].classList.add('active')
+    }
+    if(prev_number_text == "2.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.remove('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[2].classList.add('active')
+    }
+    if(prev_number_text == "3.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.remove('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[3].classList.add('active')
+    }
+    if(prev_number_text == "4.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.remove('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[4].classList.add('active')
+    }
+    if(prev_number_text == "5.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.remove('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[5].classList.add('active')
+    }
+    if(prev_number_text == "6.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.remove('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[6].classList.add('active')
+    }
+    if(prev_number_text == "7.") {
+      H_account?.classList.remove('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.add('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[7].classList.add('active')
+    }
+    if(prev_number_text == "1.") {
+      H_account?.classList.add('dis-none')
+      H_chat?.classList.add('dis-none')
+      H_class?.classList.add('dis-none')
+      H_course?.classList.add('dis-none')
+      H_grades?.classList.add('dis-none')
+      H_service?.classList.add('dis-none')
+      H_use?.classList.add('dis-none')
+      FAQ?.classList.remove('dis-none')
+      help_nav_btns.forEach((help_nav_btns) => {
+        help_nav_btns.classList.remove('active')
+      })
+      help_nav_btns[1].classList.add('active')
+    }
   })
 
   const help_section_btnwrapper = document.getElementById('help_section_btnwrapper')
@@ -745,9 +998,7 @@ const questions = [
     }
   })
 
-  const sp_nav_btn = document.getElementById('sp_nav_btn')
-  const sp_nav_toggle = document.getElementById('sp_nav_toggle')
-  const help_nav_btns = document.querySelectorAll('.help_nav_item')
+
   help_nav_btns.forEach((help_nav_btn_target) => {
     help_nav_btn_target.addEventListener('click', () => {
       help_nav_btns.forEach((help_nav_btn_all) => {

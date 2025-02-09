@@ -1098,4 +1098,12 @@ submit?.addEventListener("click", async () => {
 		})
 	})
 
+	document.querySelectorAll('.class').forEach((classItem) => {
+		if(window.innerWidth < 768){
+			classItem.addEventListener('click', () => {
+				window.location.href = "class/class";
+			})
+		}
+	})
+
 </script>

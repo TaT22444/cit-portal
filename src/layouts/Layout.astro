@@ -2371,36 +2371,36 @@ const isGradesPage = currentPath === "/grades/";
 
 	document.querySelectorAll('.sidebar_item').forEach((sidebar_item) => {
 		const close_btn = document.getElementById('handle_sidebar_close')
-		sidebar_item.addEventListener('click', () => {
-			const sidebar_title = document.getElementById('sidebar_title')
-			const sidebar_text = sidebar_item.querySelector('.class_name')?.textContent?.trim()
-			console.log(sidebar_title)
-			console.log(sidebar_text)
+		// sidebar_item.addEventListener('click', () => {
+		// 	const sidebar_title = document.getElementById('sidebar_title')
+		// 	const sidebar_text = sidebar_item.querySelector('.class_name')?.textContent?.trim()
+		// 	console.log(sidebar_title)
+		// 	console.log(sidebar_text)
 
-			if (window.innerWidth <= 780) {
-      // 画面サイズが780px以下の場合
-        if (sp_modal?.classList.contains('dis-none')) {
-          sp_modal?.classList.remove('dis-none');
-          sp_modal?.classList.add('dis-flex');
-        } 
+		// 	if (window.innerWidth <= 780) {
+    //   // 画面サイズが780px以下の場合
+    //     if (sp_modal?.classList.contains('dis-none')) {
+    //       sp_modal?.classList.remove('dis-none');
+    //       sp_modal?.classList.add('dis-flex');
+    //     } 
 
-      } else {
-        // 画面サイズが780pxより大きい場合
-        if (newssidebar?.classList.contains('dis-block')) {
-          newssidebar?.classList.remove('dis-block');
-          newssidebar?.classList.add('dis-none');
-        }
+    //   } else {
+    //     // 画面サイズが780pxより大きい場合
+    //     if (newssidebar?.classList.contains('dis-block')) {
+    //       newssidebar?.classList.remove('dis-block');
+    //       newssidebar?.classList.add('dis-none');
+    //     }
 
-        if (sidebar?.classList.contains('dis-none')) {
-          sidebar?.classList.add('dis-block');
-          sidebar?.classList.remove('dis-none');
-        }
+    //     if (sidebar?.classList.contains('dis-none')) {
+    //       sidebar?.classList.add('dis-block');
+    //       sidebar?.classList.remove('dis-none');
+    //     }
 
-        if (sidebar_title && sidebar_text) {
-          sidebar_title.textContent = sidebar_text;
-        }
-      }
-		})
+    //     if (sidebar_title && sidebar_text) {
+    //       sidebar_title.textContent = sidebar_text;
+    //     }
+    //   }
+		// })
 
 		sp_classmodal_close?.addEventListener('click', () => {
 			sp_modal?.classList.add('dis-none');
